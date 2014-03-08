@@ -53,5 +53,6 @@ turnout_by_ward_year <- merge(votes_by_year_ward,turnout_df) %.%
             votes=sum(vote)) %.%
   mutate(turnout=votes/eligible)
 qplot(turnout,data=turnout_by_ward_year, facets=~year)
+qplot(ward,turnout,data=turnout_by_ward_year, facets=~year)
 ```
 
