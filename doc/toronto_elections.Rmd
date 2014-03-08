@@ -1,0 +1,31 @@
+Toronto mayoral election results
+========================================================
+
+
+
+```{r,setup,results='hide',echo=TRUE,message=FALSE}
+library(dplyr)
+library(ggplot2)
+election_results <- read.csv(file="..//data//election_results.csv")
+elections_df <- tbl_df(election_results)
+elections <- group_by(elections_df,year,ward)
+votes <- summarise(elections,vote=sum(votes))
+```
+
+```{r,candidates}
+election_results %.%
+  group_by(year,candidate) %.%
+  summarise(
+    vote=sum(votes)
+  ) %.%
+  filter(vote>5000) %.%
+  arrange(year,desc(vote))
+```
+
+
+
+```{r fig.width=7, fig.height=6, message=FALSE,fig.path="..//figures//"}
+qplot(ward,vote,data=votes, facets=~year)
+qplot(vote,data=votes, facets=~year)
+```
+
