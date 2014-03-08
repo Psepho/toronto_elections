@@ -1,16 +1,30 @@
 Toronto mayoral election results
 ========================================================
 
-
+As usual, we start with basic setup and cleaning of the data. Most of the import and cleanup was done with /util/import_Excel.R
 
 ```{r,setup,results='hide',echo=TRUE,message=FALSE}
 library(dplyr)
 library(ggplot2)
 election_results <- read.csv(file="..//data//election_results.csv")
 elections_df <- tbl_df(election_results)
-elections <- group_by(elections_df,year,ward)
-votes_by_year_ward <- summarise(elections,vote=sum(votes))
+elections <- group_by(elections_df,year,candidate,ward)
+votes_by_year_ward <- elections_df %.%
+  group_by(year,ward) %.%
+  summarise(
+    vote=sum(votes)
+  )
+turnout <- read.csv(file="..//data//turnout.csv")
+turnout_df <- tbl_df(turnout[,-1])
+
+votes_eligible_by_ward_area_year <- merge(votes_by_year_ward,turnout_df)
+detail_turnout <- mutate(votes_eligible_by_ward_area_year, 
+                         turnout = vote/total_eligible,
+                         spoiled = total_votes - vote) %.%
+  filter(total_eligible > 0)
 ```
+
+Now we can find the candidates that received at least 5,000 votes in each of the previous three elections:
 
 ```{r,candidates}
 candidates <- elections_df %.%
@@ -20,12 +34,24 @@ candidates <- elections_df %.%
   ) %.%
   filter(vote>5000) %.%
   arrange(year,desc(vote))
+candidates
 ```
 
+A couple of basic plots of the distribution of votes:
 
+```{r, histograms, fig.width=7, fig.height=6, message=FALSE,fig.path="..//figures//"}
+qplot(ward,vote,data=votes_by_year_ward, facets=~year)
+qplot(vote,data=votes_by_year_ward, facets=~year)
+```
 
-```{r fig.width=7, fig.height=6, message=FALSE,fig.path="..//figures//"}
-qplot(ward,vote,data=votes, facets=~year)
-qplot(vote,data=votes, facets=~year)
+And histograms of turnout:
+
+```{r,turnout_plot, fig.width=7, fig.height=6, message=FALSE,fig.path="..//figures//"}
+turnout_by_ward_year <- merge(votes_by_year_ward,turnout_df) %.%
+  group_by(year,ward) %.%
+  summarise(eligible=sum(total_eligible),
+            votes=sum(vote)) %.%
+  mutate(turnout=votes/eligible)
+qplot(turnout,data=turnout_by_ward_year, facets=~year)
 ```
 
