@@ -9,11 +9,11 @@ library(ggplot2)
 election_results <- read.csv(file="..//data//election_results.csv")
 elections_df <- tbl_df(election_results)
 elections <- group_by(elections_df,year,ward)
-votes <- summarise(elections,vote=sum(votes))
+votes_by_year_ward <- summarise(elections,vote=sum(votes))
 ```
 
 ```{r,candidates}
-election_results %.%
+candidates <- elections_df %.%
   group_by(year,candidate) %.%
   summarise(
     vote=sum(votes)

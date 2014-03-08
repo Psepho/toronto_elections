@@ -31,15 +31,16 @@ election_results <- processFiles(fpattern)
 rm(fpattern,fyear)
 write.csv(election_results, file="2003_election_results.csv")
 election_results <- rbind(read.csv("2003_election_results.csv"), read.csv("2006_election_results.csv"), read.csv("2010_election_results.csv"))
-write.csv(election_results[,-1], file="election_results.csv")
+election_results$candidate <- gsub(",","",tolower(election_results$candidate))
+write.csv(election_results[,-1], file="Data//election_results.csv")
 
 ###
 # Turnout
 ###
 
-turnout_2003 <- read.csv(file="Turnout//2003 turnout.csv")
-turnout_2006 <- read.csv(file="Turnout//2006 turnout.csv")
-turnout_2010 <- read.csv(file="Turnout//2010 turnout.csv")
+turnout_2003 <- read.csv(file="Data//2003 turnout.csv")
+turnout_2006 <- read.csv(file="Data//2006 turnout.csv")
+turnout_2010 <- read.csv(file="Data//2010 turnout.csv")
 turnout <- rbind(turnout_2003,turnout_2006,turnout_2010)
-turnout <- subset(turnout, !grepl("Total", Ward)) # Drop the total rows
-write.csv(turnout,file="turnout.csv")
+turnout <- subset(turnout, !grepl("Total", ward)) # Drop the total rows
+write.csv(turnout,file="Data//turnout.csv")
