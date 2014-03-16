@@ -11,13 +11,13 @@ head(toronto_census)
 
 # 2006 Census data
 library(dplyr)
-census_text <- readLines("census.txt")
+census_text <- readLines("data/census.txt")
 census_2006 <- matrix(data=census_text,ncol=4,byrow=TRUE, dimnames=list(NULL,c("GEO","age","sex","count")))
 rm(census_text)
 census_2006 <- as.data.frame(census_2006)
 census_2006_df <- tbl_df(census_2006)
-toronto_census_2006 <- census_2006_df %.%
-  filter(grep("5",GEO))
+toronto_census_2006 <- subset(census_2006_df, grepl("^535", GEO))
+write.csv(toronto_census_2006,file="data/toronto_census_2006.csv",row.names=FALSE)
 head(toronto_census_2006)
 rm(census_2006, census_2006_df)
-subset(toronto_census_2006, grepl("001000100", GEO))
+
