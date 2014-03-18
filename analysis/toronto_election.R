@@ -1,12 +1,34 @@
 library(dplyr)
 library(ggplot2)
 election_results <- read.csv(file="data//election_results.csv")
-elections_df <- tbl_df(election_results)
+elections_df <- tbl_df(election_results) %.%
+  select(-(ID))
 elections <- group_by(elections_df,year,candidate,ward)
 votes_by_year_ward <- elections_df %.%
   group_by(year,ward) %.%
   summarise(
     vote=sum(votes)
+  )
+
+votes_by_year <- elections_df %.%
+  group_by(year) %.%
+  summarise(
+    vote=sum(votes)
+  )
+
+areas_by_year <- elections_df %.%
+  mutate(location=paste(ward,area,sep="-")) %.%
+  select(year,location) %.%
+  group_by(year) %.%
+  summarise(
+    count=n_distinct(location)
+  )
+
+candidates_by_year <- elections_df %.%
+  select(year,candidate) %.%
+  group_by(year) %.%
+  summarise(
+    count=n_distinct(candidate)
   )
 
 candidates <- elections_df %.%
@@ -23,15 +45,30 @@ qplot(vote,data=votes_by_year_ward, facets=~year)
 turnout <- read.csv(file="data//turnout.csv")
 turnout_df <- tbl_df(turnout[,-1])
 
-votes_eligible_by_ward_area_year <- merge(votes_by_year_ward,turnout_df)
+turnout_by_year <- turnout_df %.%
+  group_by(year) %.%
+  summarise(eligible=sum(total_eligible, na.rm=T),
+            votes=sum(total_votes)) %.%
+  mutate(turnout=votes/eligible)
+
+
+votes_eligible_by_ward_area_year <- tbl_df(merge(votes_by_year_ward,turnout_df))
+
 detail_turnout <- mutate(votes_eligible_by_ward_area_year, 
                          turnout = vote/total_eligible,
                          spoiled = total_votes - vote) %.%
   filter(total_eligible > 0)
+
+turnout_year <- tbl_df(merge(votes_by_year_ward,turnout_df)) %.%
+  group_by(year) %.%
+  summarise(eligible=sum(total_eligible),
+            votes=sum(vote)) %.%
+  mutate(turnout=votes/eligible)
 
 turnout_by_ward_year <- merge(votes_by_year_ward,turnout_df) %.%
   group_by(year,ward) %.%
   summarise(eligible=sum(total_eligible),
             votes=sum(vote)) %.%
   mutate(turnout=votes/eligible)
+
 qplot(turnout,data=turnout_by_ward_year, facets=~year)
