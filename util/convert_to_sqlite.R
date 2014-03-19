@@ -1,0 +1,17 @@
+library(dplyr)
+library(RSQLite)
+library(RSQLite.extfuns)
+elections_db <- src_sqlite("data/elections_db.sqlite3", create = T)
+votes <- read.csv(file="data//election_results.csv")
+copy_to(elections_db, votes, temporary = FALSE, indexes = list("year", c("ward", "area"), "candidate"))
+turnout <- read.csv(file="data//turnout.csv") %.%
+                  select(-(ID))
+copy_to(elections_db, turnout, temporary = FALSE, indexes = list("year", c("ward", "area")))
+age_sex <- read.csv(file="data//toronto_census_age_sex.csv")
+copy_to(elections_db, age_sex, temporary = FALSE, indexes = list(c("SGC", "census")))
+census <- read.csv(file="data//census.csv") %.%
+  select(-c(CMA_CA_Name,Note))
+copy_to(elections_db, census, temporary = FALSE, indexes = list(c("GEO", "census")))
+locations <- read.csv(file="data//voting_locations.csv")
+copy_to(elections_db, locations, temporary = FALSE, indexes = list("CTUID", "year",c("ward","area")))
+rm(votes,turnout,age_sex,census,locations)
