@@ -7,6 +7,11 @@ elections_db <- src_sqlite("data/elections_db.sqlite3")
 votes <- tbl(elections_db,"votes")
 turnout <- tbl(elections_db,"turnout")
 locations <- tbl(elections_db,"locations")
+income <- tbl(elections_db,"family_income")
+
+median_income <- as.data.frame(income) %.%
+  filter(income_type=="Median 2005 family income $",family_structure=="Total - All economic families") %.%
+  select(SGC,value)
 
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
 
@@ -18,6 +23,16 @@ turnout_2010 <- turnout_geo %.%
 toronto_map <- qmap("queens park,toronto",zoom=11)
 toronto_map + geom_point(aes(x=long,y=lat,size=total_votes),data=turnout_2010)
 toronto_map + geom_point(aes(x=long,y=lat,size=turnout),data=turnout_2010)
+
+esri_import <- turnout_2010 %.%
+  select(long,lat,turnout)
+write.csv(esri_import,"esri_import.csv")
+
+setRepositories(addURLs =
+                  c(RStudio = "http://cran.rstudio.com/"))
+
+unzip("data//voting_location_2010_wgs84.zip"); library(maptools); library(gpclib); library(sp);
+gpclibPermit()
 
 
 
