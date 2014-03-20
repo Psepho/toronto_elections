@@ -14,4 +14,6 @@ census <- read.csv(file="data//census.csv") %.%
 copy_to(elections_db, census, temporary = FALSE, indexes = list(c("GEO", "census")))
 locations <- read.csv(file="data//voting_locations.csv")
 copy_to(elections_db, locations, temporary = FALSE, indexes = list("CTUID", "year",c("ward","area")))
-rm(votes,turnout,age_sex,census,locations)
+family_income <- read.csv(file="data//census_2006_family_income.csv")
+copy_to(elections_db, family_income, temporary = FALSE, indexes = list("SGC",c("income_type","family_structure")))
+rm(votes,turnout,age_sex,census,locations,family_income)
