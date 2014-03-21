@@ -104,7 +104,9 @@ toronto_map + geom_point(aes(x=long,y=lat,size=turnout),data=turnout_2010)
 toronto_map + geom_point(aes(x=long,y=lat,size=total_votes),data=turnout_2010)
 
 # Try the shapefile
-unzip("data//voting_subdivision_2010_wgs84.zip")
+download.file("http://opendata.toronto.ca/gcc/voting_subdivision_2010_wgs84.zip",
+              destfile = "subdivisions_2010.zip")
+unzip("subdivisions_2010.zip")
 shapefile <- readShapeSpatial("VOTING_SUBDIVISION_2010_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
 data <- fortify(shapefile)
 qmap("queens park,toronto", zoom=11, maptype="hybrid") +
