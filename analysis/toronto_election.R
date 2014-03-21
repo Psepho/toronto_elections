@@ -12,6 +12,7 @@ library(ggplot2)
 elections_db <- src_sqlite("data/elections_db.sqlite3")
 votes <- as.data.frame(tbl(elections_db,"votes"))
 turnout <- as.data.frame(tbl(elections_db,"turnout"))
+turnout$year <- as.integer(turnout$year)
 locations <- as.data.frame(tbl(elections_db,"locations"))
 income <- as.data.frame(tbl(elections_db,"family_income"))
 
@@ -87,6 +88,7 @@ qplot(turnout,data=turnout_by_ward_year, facets=~year)
 #-----------
 library(ggplot2)
 library(ggmap)
+library(maptools)
 
 # Start with a turnout map
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
@@ -100,3 +102,11 @@ toronto_map + geom_point(aes(x=long,y=lat,size=turnout),data=turnout_2010)
 
 # Also plot total votes
 toronto_map + geom_point(aes(x=long,y=lat,size=total_votes),data=turnout_2010)
+
+# Try the shapefile
+unzip("data//voting_subdivision_2010_wgs84.zip")
+shapefile <- readShapeSpatial("VOTING_SUBDIVISION_2010_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
+data <- fortify(shapefile)
+qmap("queens park,toronto", zoom=11, maptype="hybrid") +
+  geom_polygon(aes(x=long, y=lat, group=group), data=data, colour="white", fill="black", alpha=.4, size=.3) + 
+  geom_point(aes(x=long,y=lat,size=turnout),data=turnout_2010)
