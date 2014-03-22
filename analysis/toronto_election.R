@@ -7,14 +7,16 @@ library(dplyr)
 library(RSQLite)
 library(RSQLite.extfuns)
 library(ggplot2)
+library(reshape2)
 
 # Load the sqlite db and extract the tables
 elections_db <- src_sqlite("data/elections_db.sqlite3")
-votes <- as.data.frame(tbl(elections_db,"votes"))
-turnout <- as.data.frame(tbl(elections_db,"turnout"))
+votes <- as.data.frame(collect(tbl(elections_db,"votes")))
+turnout <- as.data.frame(collect(tbl(elections_db,"turnout")))
 turnout$year <- as.integer(turnout$year)
 locations <- as.data.frame(tbl(elections_db,"locations"))
 income <- as.data.frame(tbl(elections_db,"family_income"))
+positions <- as.data.frame(tbl(elections_db,"positions")
 
 #-----------
 # Summaries
@@ -83,6 +85,23 @@ turnout_by_ward_year <- merge(votes_by_year_ward,turnout) %.%
   mutate(turnout=votes/eligible)
 qplot(turnout,data=turnout_by_ward_year, facets=~year)
 
+# Positions
+
+positions_by_geo <- as.data.frame(inner_join(votes,positions, by=c("candidate","year")))
+positions_by_geo <- positions_by_geo %.%
+  group_by(year,ward,area) %.%
+  mutate(weighted_votes = votes*score/100)
+positions_by_area <- positions_by_geo %.%
+  select(year,ward,area,votes,weighted_votes) %.%
+  group_by(year,ward,area) %.%
+  summarize(weighted_votes = sum(weighted_votes),votes=sum(votes))
+positions_by_area$weighted_votes <- positions_by_area$weighted_votes/positions_by_area$votes
+positions_by_area$area <- as.integer(positions_by_area$area)
+positions_by_ward <- as.data.frame(inner_join(votes,positions, by=c("candidate","year"))) %.%
+  select(year,ward,votes) %.%
+  group_by(year,ward) %.%
+  summarize(votes=sum(votes))
+
 #-----------
 # Mapping
 #-----------
@@ -97,11 +116,20 @@ turnout_geo <- tbl_df(turnout_geo) %.%
 turnout_2010 <- turnout_geo %.% # Filter to 2010
   filter(year=="2010") %.%
   mutate(turnout=total_votes/total_eligible)
-toronto_map <- qmap("queens park,toronto",zoom=11)
-toronto_map + geom_point(aes(x=long,y=lat,size=turnout),data=turnout_2010)
+toronto_map <- qmap("queens park,toronto",zoom=11, maptype = 'terrain')
+toronto_map + geom_point(aes(x=long,y=lat,size=turnout),colour="blue",data=turnout_2010)
 
 # Also plot total votes
 toronto_map + geom_point(aes(x=long,y=lat,size=total_votes),data=turnout_2010)
+
+# Plot positions
+positions_geo <- as.data.frame(inner_join(positions_by_area,locations, by=c("ward", "area","year")))
+positions_geo <- tbl_df(positions_geo) %.%
+  select(year,ward,area,long,lat,weighted_votes)
+positions_2010 <- positions_geo %.% # Filter to 2010
+  filter(year=="2010")
+toronto_map <- qmap("queens park,toronto",zoom=11, maptype = 'terrain')
+toronto_map + geom_point(aes(x=long,y=lat,colour=weighted_votes),data=positions_geo)+facet_wrap(~year)
 
 # Try the shapefile
 download.file("http://opendata.toronto.ca/gcc/voting_subdivision_2010_wgs84.zip",
