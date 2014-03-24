@@ -133,6 +133,7 @@ toronto_map <- qmap("queens park,toronto",zoom=11, maptype = 'terrain')
 toronto_map + geom_point(aes(x=long,y=lat,colour=weighted_votes),data=positions_geo)+facet_wrap(~year)
 
 # 2010 results
+t_map <- qmap("queens park,toronto", zoom=11, maptype="terrain")
 download.file("http://opendata.toronto.ca/gcc/voting_subdivision_2010_wgs84.zip",
               destfile = "tmp/subdivisions_2010.zip")
 unzip("tmp/subdivisions_2010.zip", exdir="tmp")
@@ -147,8 +148,9 @@ data <- fortify(shapefile)
 # Get the data back into the dataframe (this seems like it should be unneccessary)
 data <-merge(data,shapefile@data,by.x="id",by.y="row.names")
 # Map the results
-t_map <- qmap("queens park,toronto", zoom=11, maptype="satellite")
-p <- t_map + geom_polygon(aes(x=long, y=lat, group=group,fill=cut_interval(weighted_votes,6)), alpha = 2/3, data=data) + scale_fill_brewer("Left-Right Score")
+p <- t_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes,6)), alpha = 5/6, data=data) + 
+  scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
 p
 
 # 2006 results
@@ -167,6 +169,7 @@ data <- fortify(shapefile)
 # Get the data back into the dataframe (this seems like it should be unneccessary)
 data <-merge(data,shapefile@data,by.x="id",by.y="row.names")
 # Map the results
-t_map <- qmap("queens park,toronto", zoom=11, maptype="satellite")
-p <- t_map + geom_polygon(aes(x=long, y=lat, group=group,fill=cut_interval(weighted_votes,6)), alpha = 2/3, data=data) + scale_fill_brewer("Left-Right Score")
+p <- t_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes,6)), alpha = 5/6, data=data) + 
+  scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
 p
