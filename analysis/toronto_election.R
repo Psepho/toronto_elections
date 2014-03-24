@@ -8,6 +8,7 @@ library(RSQLite)
 library(RSQLite.extfuns)
 library(ggplot2)
 library(reshape2)
+library(stringr)
 
 # Load the sqlite db and extract the tables
 elections_db <- src_sqlite("data/elections_db.sqlite3")
@@ -16,7 +17,7 @@ turnout <- as.data.frame(collect(tbl(elections_db,"turnout")))
 turnout$year <- as.integer(turnout$year)
 locations <- as.data.frame(tbl(elections_db,"locations"))
 income <- as.data.frame(tbl(elections_db,"family_income"))
-positions <- as.data.frame(tbl(elections_db,"positions")
+positions <- as.data.frame(tbl(elections_db,"positions"))
 
 #-----------
 # Summaries
@@ -136,7 +137,19 @@ download.file("http://opendata.toronto.ca/gcc/voting_subdivision_2010_wgs84.zip"
               destfile = "tmp/subdivisions_2010.zip")
 unzip("tmp/subdivisions_2010.zip", exdir="tmp")
 shapefile <- readShapeSpatial("tmp/VOTING_SUBDIVISION_2010_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
+
+shapefile$area <- as.integer(str_sub(shapefile$AREA_LONG,-3,-1))
+shapefile$ward <- as.integer(str_sub(shapefile$AREA_LONG,1,2))
+shapefile$ward_area <- paste(shapefile$ward,shapefile$area,sep="_")
+positions_2010 <- positions_2010 %.%
+  select(ward,area,weighted_votes) %.%
+  mutate(ward_area=paste(ward,area,sep="_"))
+shapefile@data = data.frame(shapefile@data, positions_2010[match(shapefile$ward_area, positions_2010$ward_area),])
 data <- fortify(shapefile)
 qmap("queens park,toronto", zoom=11, maptype="hybrid") +
-  geom_polygon(aes(x=long, y=lat, group=group), data=data, colour="white", fill="black", alpha=.4, size=.3) + 
+  geom_polygon(aes(x=long, y=lat, group=group), data=data, alpha=.4, size=.3, fill=data$weighted_votes)
+
+p <- ggplot(pakistan.adm2.df, aes(x = long, y = lat, group = group)) + geom_polygon(aes(fill = cut(unemployment,5)))
+
++ 
   geom_point(aes(x=long,y=lat,size=turnout),data=turnout_2010)
