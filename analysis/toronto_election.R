@@ -132,7 +132,7 @@ positions_2010 <- positions_geo %.% # Filter to 2010
 toronto_map <- qmap("queens park,toronto",zoom=11, maptype = 'terrain')
 toronto_map + geom_point(aes(x=long,y=lat,colour=weighted_votes),data=positions_geo)+facet_wrap(~year)
 
-# Try the shapefile
+# 2010 results
 download.file("http://opendata.toronto.ca/gcc/voting_subdivision_2010_wgs84.zip",
               destfile = "tmp/subdivisions_2010.zip")
 unzip("tmp/subdivisions_2010.zip", exdir="tmp")
@@ -143,6 +143,26 @@ positions_2010 <- positions_2010 %.%
   mutate(ward_area=paste(ward,area,sep="_"))
 # Join positions and locations
 shapefile@data = data.frame(shapefile@data, positions_2010[match(shapefile$ward_area, positions_2010$ward_area),])
+data <- fortify(shapefile)
+# Get the data back into the dataframe (this seems like it should be unneccessary)
+data <-merge(data,shapefile@data,by.x="id",by.y="row.names")
+# Map the results
+t_map <- qmap("queens park,toronto", zoom=11, maptype="satellite")
+p <- t_map + geom_polygon(aes(x=long, y=lat, group=group,fill=cut_interval(weighted_votes,6)), alpha = 2/3, data=data) + scale_fill_brewer("Left-Right Score")
+p
+
+# 2006 results
+download.file("http://opendata.toronto.ca/gcc/voting_subdivision_2006_wgs84.zip",
+              destfile = "tmp/subdivisions_2006.zip")
+unzip("tmp/subdivisions_2006.zip", exdir="tmp")
+shapefile <- readShapeSpatial("tmp/VOTING_SUBDIVISION_2006_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
+shapefile$ward_area <- paste(as.integer(str_sub(shapefile$AREA_LONG,1,2)),as.integer(str_sub(shapefile$AREA_LONG,-3,-1)),sep="_")
+positions_2006 <- positions_geo %.%
+  filter(year=="2006") %.%
+  select(ward,area,weighted_votes) %.%
+  mutate(ward_area=paste(ward,area,sep="_"))
+# Join positions and locations
+shapefile@data = data.frame(shapefile@data, positions_2006[match(shapefile$ward_area, positions_2010$ward_area),])
 data <- fortify(shapefile)
 # Get the data back into the dataframe (this seems like it should be unneccessary)
 data <-merge(data,shapefile@data,by.x="id",by.y="row.names")
