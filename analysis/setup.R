@@ -10,6 +10,13 @@ library(ggplot2)
 library(reshape2)
 library(stringr)
 
+# tmp directory for downloads and unzips
+if(file.exists("tmp")) {
+  # Nothing to do
+}  else {
+  dir.create("tmp")
+}
+
 # Load the sqlite db and extract the tables
 elections_db <- src_sqlite("data/elections_db.sqlite3")
 votes <- as.data.frame(collect(tbl(elections_db,"votes")))
@@ -29,3 +36,5 @@ positions_by_area <- positions_by_geo %.%
   summarize(weighted_votes = sum(weighted_votes),votes=sum(votes))
 positions_by_area$weighted_votes <- positions_by_area$weighted_votes/positions_by_area$votes
 positions_by_area$area <- as.integer(positions_by_area$area)
+positions_by_area <- positions_by_area %.%
+  filter(votes>0)
