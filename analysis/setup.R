@@ -26,15 +26,26 @@ locations <- as.data.frame(tbl(elections_db,"locations"))
 income <- as.data.frame(tbl(elections_db,"family_income"))
 # Positions
 positions <- as.data.frame(tbl(elections_db,"positions"))
-positions_by_geo <- as.data.frame(inner_join(votes,positions, by=c("candidate","year")))
-positions_by_geo <- positions_by_geo %.%
+positions <- as.data.frame(inner_join(votes,positions, by=c("candidate","year")))
+positions <- positions %.%
   group_by(year,ward,area) %.%
   mutate(weighted_votes = votes*score/100)
-positions_by_area <- positions_by_geo %.%
+positions_geo <- positions %.%
   select(year,ward,area,votes,weighted_votes) %.%
   group_by(year,ward,area) %.%
   summarize(weighted_votes = sum(weighted_votes),votes=sum(votes))
-positions_by_area$weighted_votes <- positions_by_area$weighted_votes/positions_by_area$votes
-positions_by_area$area <- as.integer(positions_by_area$area)
-positions_by_area <- positions_by_area %.%
+positions_geo$weighted_votes <- positions_geo$weighted_votes/positions_geo$votes
+positions_geo$area <- as.integer(positions_geo$area)
+positions_geo <- positions_geo %.%
   filter(votes>0)
+positions_geo <- as.data.frame(inner_join(positions_geo,locations, by=c("ward", "area","year")))
+positions_geo <- as.data.frame(inner_join(positions_geo,turnout, by=c("ward", "area","year")))
+positions_geo <- tbl_df(positions_geo) %.%
+  mutate(turnout=total_votes/total_eligible,ward_area=paste(ward,area,sep="_")) %.%
+  select(year,ward,area,long,lat,weighted_votes,turnout)
+
+# Turnout
+turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
+turnout_geo <- tbl_df(turnout_geo) %.%
+  select(year,ward,area,long,lat,total_eligible,total_votes) %.%
+  mutate(turnout=total_votes/total_eligible,ward_area=paste(ward,area,sep="_"))
