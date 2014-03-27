@@ -19,7 +19,6 @@ if(file.exists("tmp/subdivisions_2010.zip")) {
   unzip("tmp/subdivisions_2010.zip", exdir="tmp")
 }
 shapefile_2010 <- readShapeSpatial("tmp/VOTING_SUBDIVISION_2010_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
-shapefile_2010$ward_area <- paste(as.integer(str_sub(shapefile_2010$AREA_LONG,1,2)),as.integer(str_sub(shapefile_2010$AREA_LONG,-3,-1)),sep="_")
 if(file.exists("tmp/subdivisions_2006.zip")) {
   # Nothing to do
 }  else {
@@ -28,7 +27,6 @@ if(file.exists("tmp/subdivisions_2006.zip")) {
   unzip("tmp/subdivisions_2006.zip", exdir="tmp")
 }
 shapefile_2006 <- readShapeSpatial("tmp/VOTING_SUBDIVISION_2006_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
-shapefile_2006$ward_area <- paste(as.integer(str_sub(shapefile_2006$AREA_LONG,1,2)),as.integer(str_sub(shapefile_2006$AREA_LONG,-3,-1)),sep="_")
 #-----------
 # Standard base map
 #-----------
@@ -45,27 +43,18 @@ point_map(positions_geo,"weighted_votes")
 #---------
 # Shapefiles
 #---------
-# Join positions and locations
-shapefile@data = data.frame(shapefile@data, positions_2010[match(shapefile$ward_area, positions_2010$ward_area),])
-data <- fortify(shapefile)
-# Get the data back into the dataframe (this seems like it should be unneccessary)
-data <-merge(data,shapefile@data,by.x="id",by.y="row.names")
+# Extract the data object for each year and then combine into one data frame
+data_2010 <- fortify(shapefile_2010,region="AREA_NAME")
+data_2010$year <- as.integer(2010)
+data_2006 <- fortify(shapefile_2006,region="AREA_NAME")
+data_2006$year <- as.integer(2006)
+data <- rbind(data_2010,data_2006)
+rm(data_2006,data_2010)
+data$ward_area <- paste(as.integer(str_sub(data$id,1,2)),as.integer(str_sub(data$id,-3,-1)),sep="_")
+data <- as.data.frame(inner_join(data,positions_geo[,c(1,6:8)], by=c("ward_area","year")))
 # Map the results
-p <- toronto_map +
+toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes), alpha = 5/6, data=data) + 
-  scale_fill_gradient2("Left-Right Score", midpoint = 0.55, mid = "white",limit=c(0.25,0.85))
+  scale_fill_gradient2("Left-Right Score", midpoint = 0.55, mid = "white",limit=c(0.25,0.85)) +
+  facet_wrap(~year)
 #scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
-p
-
-# 2006 results
-# Join positions and locations
-shapefile@data = data.frame(shapefile@data, positions_2006[match(shapefile$ward_area, positions_2006$ward_area),])
-data <- fortify(shapefile)
-# Get the data back into the dataframe (this seems like it should be unneccessary)
-data <-merge(data,shapefile@data,by.x="id",by.y="row.names")
-# Map the results
-p <- toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes), alpha = 5/6, data=data) + 
-  scale_fill_gradient2("Left-Right Score", midpoint = 0.55, mid = "white",limit=c(0.25,0.85))
-  #scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
-p
