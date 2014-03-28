@@ -8,25 +8,23 @@ library(maptools)
 #-----------
 # Download shapefiles
 #-----------
-# TODO: Wrap these in functions based on a list of years
-shapefile_url_2010 <- "http://opendata.toronto.ca/gcc/voting_subdivision_2010_wgs84.zip"
-shapefile_url_2006 <- "http://opendata.toronto.ca/gcc/voting_subdivision_2006_wgs84.zip"
-if(file.exists("tmp/subdivisions_2010.zip")) {
-  # Nothing to do
-}  else {
-  download.file(shapefile_url_2010,
-                destfile = "tmp/subdivisions_2010.zip")
-  unzip("tmp/subdivisions_2010.zip", exdir="tmp")
+years <- c(2006,2010)
+for (year in years) {
+  var <- paste("shapefile_url_",year,sep="")
+  assign(var,paste("http://opendata.toronto.ca/gcc/voting_subdivision_",year,"_wgs84.zip",sep=""))
+  if(file.exists(paste("tmp/subdivisions_",year,".zip",sep=""))) {
+    # Nothing to do
+  }  else {
+    download.file(var,
+                  destfile = paste("tmp/subdivisions_",year,".zip",sep=""))
+    unzip(paste("tmp/subdivisions_",year,".zip",sep=""), exdir="tmp")
+  }
+  shape <- paste("shapefile_",year,sep="")
+  file <- paste("tmp/VOTING_SUBDIVISION_",year,"_WGS84.shp",sep="")
+  assign(shape,readShapeSpatial(file, proj4string=CRS("+proj=longlat +datum=WGS84")))
+  rm(file,var,shape)
 }
-shapefile_2010 <- readShapeSpatial("tmp/VOTING_SUBDIVISION_2010_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
-if(file.exists("tmp/subdivisions_2006.zip")) {
-  # Nothing to do
-}  else {
-  download.file(shapefile_url_2006,
-                destfile = "tmp/subdivisions_2006.zip")
-  unzip("tmp/subdivisions_2006.zip", exdir="tmp")
-}
-shapefile_2006 <- readShapeSpatial("tmp/VOTING_SUBDIVISION_2006_WGS84.shp", proj4string=CRS("+proj=longlat +datum=WGS84"))
+rm(year,years)
 #-----------
 # Standard base map
 #-----------
@@ -55,6 +53,6 @@ data <- as.data.frame(inner_join(data,positions_geo[,c(1,6:8)], by=c("ward_area"
 # Map the results
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes), alpha = 5/6, data=data) + 
-  scale_fill_gradient2("Left-Right Score", midpoint = 0.55, mid = "white",limit=c(0.25,0.85)) +
+  scale_fill_gradient2("Left-Right Score", midpoint = median(data$weighted_votes), mid = "white",limit=c(0.25,0.85)) +
   facet_wrap(~year)
 #scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
