@@ -43,6 +43,10 @@ positions_geo <- as.data.frame(inner_join(positions_geo,turnout, by=c("ward", "a
 positions_geo <- tbl_df(positions_geo) %.%
   mutate(turnout=total_votes/total_eligible,ward_area=paste(ward,area,sep="_")) %.%
   select(year,ward,area,long,lat,weighted_votes,turnout,ward_area)
+positions_geo <- positions_geo %.%
+  arrange(year) %.%
+  group_by(ward_area)%.%
+  mutate(weighted_votes_change = c(0,diff(weighted_votes)))
 
 # Turnout
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
