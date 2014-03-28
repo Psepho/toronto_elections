@@ -49,7 +49,7 @@ data_2006$year <- as.integer(2006)
 data <- rbind(data_2010,data_2006)
 rm(data_2006,data_2010)
 data$ward_area <- paste(as.integer(str_sub(data$id,1,2)),as.integer(str_sub(data$id,-3,-1)),sep="_")
-data <- as.data.frame(inner_join(data,positions_geo[,c(1,6:8)], by=c("ward_area","year")))
+data <- as.data.frame(inner_join(data,positions_geo[,-c(2:5)], by=c("ward_area","year")))
 # Map the results
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes), alpha = 5/6, data=data) + 
