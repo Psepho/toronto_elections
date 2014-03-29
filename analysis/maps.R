@@ -10,19 +10,17 @@ library(maptools)
 #-----------
 years <- c(2006,2010)
 for (year in years) {
-  var <- paste("shapefile_url_",year,sep="")
-  assign(var,paste("http://opendata.toronto.ca/gcc/voting_subdivision_",year,"_wgs84.zip",sep=""))
   if(file.exists(paste("tmp/subdivisions_",year,".zip",sep=""))) {
     # Nothing to do
   }  else {
-    download.file(var,
+    download.file(paste("http://opendata.toronto.ca/gcc/voting_subdivision_",year,"_wgs84.zip",sep=""),
                   destfile = paste("tmp/subdivisions_",year,".zip",sep=""))
     unzip(paste("tmp/subdivisions_",year,".zip",sep=""), exdir="tmp")
   }
   shape <- paste("shapefile_",year,sep="")
   file <- paste("tmp/VOTING_SUBDIVISION_",year,"_WGS84.shp",sep="")
   assign(shape,readShapeSpatial(file, proj4string=CRS("+proj=longlat +datum=WGS84")))
-  rm(file,var,shape)
+  rm(file,shape)
 }
 rm(year,years)
 #-----------
