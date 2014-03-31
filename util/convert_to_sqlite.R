@@ -2,6 +2,13 @@ library(dplyr)
 library(RSQLite)
 library(RSQLite.extfuns)
 elections_db <- src_sqlite("data/elections_db.sqlite3", create = T)
+
+conn <- dbConnect("SQLite", dbname = "data/elections_db.sqlite3")
+dbRemoveTable(conn, "positions")
+positions <- read.csv(file="data//positions.csv")
+copy_to(elections_db, positions, temporary = FALSE, indexes = list("candidate", "year"))
+rm(conn)
+
 votes <- read.csv(file="data//election_results.csv")
 copy_to(elections_db, votes, temporary = FALSE, indexes = list("year", c("ward", "area"), "candidate"))
 turnout <- read.csv(file="data//turnout.csv") %.%

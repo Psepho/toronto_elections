@@ -72,3 +72,27 @@ positions_by_ward <- as.data.frame(inner_join(votes,positions, by=c("candidate",
   select(year,ward,votes) %.%
   group_by(year,ward) %.%
   summarize(votes=sum(votes))
+
+
+
+library(lme4)
+turnout_motivated_by_position <- lmer(turnout ~ weighted_votes | year/ward, data = positions_geo)
+turnout_intercept <- lmer(turnout ~ 1 | year/ward, data = positions_geo)
+summary(turnout_motivated_by_position) # check for errors
+anova(turnout_motivated_by_position,turnout_intercept)
+
+plot(turnout_motivated_by_position)
+plot(turnout_motivated_by_position, form = resid(., type = "response") ~ fitted(.) | year, abline = 0)
+
+library(nlme)
+turnout_intercept <- lme(turnout ~ year, random = ~ 1|ward, data=positions_geo, method="ML")
+turnout_motivated_by_position <- update(turnout_intercept, ~ weighted_votes + .)
+anova(turnout_intercept,turnout_motivated_by_position)
+summary(turnout_motivated_by_position)
+
+
+changed_positions <- positions_geo %.%
+  filter(year==2010,weighted_votes_change!=0,turnout>0.5)
+
+
+# Calculate difference in score from 60 (absolute) scaled by eligible votes

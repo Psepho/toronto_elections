@@ -48,8 +48,21 @@ positions_geo <- positions_geo %.%
   group_by(ward_area)%.%
   mutate(weighted_votes_change = c(0,diff(weighted_votes)))
 
+
 # Turnout
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
 turnout_geo <- tbl_df(turnout_geo) %.%
   select(year,ward,area,long,lat,total_eligible,total_votes) %.%
   mutate(turnout=total_votes/total_eligible,ward_area=paste(ward,area,sep="_"))
+
+# Active areas
+active_areas <- turnout_geo %.%
+  select(year,ward,area,turnout)
+active_areas <- melt(active_areas,id=1:3)
+active_areas <- dcast(active_areas, ward + area ~ year)
+turnout_threshold <- 0.6
+active_areas <- active_areas %.%
+  filter(`2006`>turnout_threshold,`2010`>turnout_threshold) %.%
+  select(ward,area)
+turnout_in_active_areas <- tbl_df(merge(active_areas,turnout_geo))
+positions_in_active_areas <- tbl_df(merge(active_areas,positions_geo))

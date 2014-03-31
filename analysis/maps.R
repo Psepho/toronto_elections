@@ -53,4 +53,26 @@ toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes), alpha = 5/6, data=data) + 
   scale_fill_gradient2("Left-Right Score", midpoint = median(data$weighted_votes), mid = "white",limit=c(0.25,0.85)) +
   facet_wrap(~year)
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=turnout), alpha = 5/6, data=data) + 
+  scale_fill_gradient("Turnout", low="white", high="red", space="Lab",limit=c(0.25,1),na.value="white") +
+  facet_wrap(~year)
+
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=subset(data, year==2010)) + 
+  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")
+
+positions_geo_high_turnout <- positions_geo %.%
+  filter(turnout>0.5)
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=subset(data, year==2010 & turnout>0.5)) + 
+  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")
+
+
+positions_in_active_areas <- tbl_df(merge(active_areas,data))
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=positions_in_active_areas) + 
+  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")
+
+
 #scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
