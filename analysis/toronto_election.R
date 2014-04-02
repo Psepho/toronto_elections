@@ -96,3 +96,15 @@ changed_positions <- positions_geo %.%
 
 
 # Calculate difference in score from 60 (absolute) scaled by eligible votes
+
+
+p <- ggplot(positions, aes(score, votes))
+p + geom_boxplot() + facet_grid(year ~ .)
+
+head(positions_geo)
+
+qplot(as.factor(score), votes, data = positions, geom="boxplot") + facet_grid(~year)
+
+positions_geo %.%
+  filter(ward==1,area==8) %.%
+  select(year,turnout,weighted_votes,weighted_votes_change)
