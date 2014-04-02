@@ -23,6 +23,10 @@ votes <- as.data.frame(collect(tbl(elections_db,"votes")))
 turnout <- as.data.frame(collect(tbl(elections_db,"turnout")))
 turnout$year <- as.integer(turnout$year)
 locations <- as.data.frame(tbl(elections_db,"locations"))
+# Assuming (for now) that 2003 locations match 2006
+locations <- rbind(locations,locations %.%
+  filter(year==2006) %.%
+  mutate(year=as.integer(2003)))
 income <- as.data.frame(tbl(elections_db,"family_income"))
 # Positions
 positions <- as.data.frame(tbl(elections_db,"positions"))
@@ -42,7 +46,7 @@ positions_geo <- as.data.frame(inner_join(positions_geo,locations, by=c("ward", 
 positions_geo <- as.data.frame(inner_join(positions_geo,turnout, by=c("ward", "area","year")))
 positions_geo <- tbl_df(positions_geo) %.%
   mutate(turnout=total_votes/total_eligible,ward_area=paste(ward,area,sep="_")) %.%
-  select(year,ward,area,long,lat,weighted_votes,turnout,ward_area)
+  select(year,ward,area,long,lat,weighted_votes,turnout,total_votes,ward_area)
 positions_geo <- positions_geo %.%
   arrange(year) %.%
   group_by(ward_area)%.%
@@ -66,3 +70,17 @@ active_areas <- active_areas %.%
   select(ward,area)
 turnout_in_active_areas <- tbl_df(merge(active_areas,turnout_geo))
 positions_in_active_areas <- tbl_df(merge(active_areas,positions_geo))
+
+
+
+# positions_votes <- as.data.frame(inner_join(positions_geo,positions[,c(2:3,5:6,11)], by=c("ward","area","year")))
+# positions_votes$score <- positions_votes$score/100
+# positions_votes$intensity <- (1-(positions_votes$weighted_votes-positions_votes$score)^2)
+# 
+# head(positions_votes)
+# qplot(weighted_votes, intensity, data = positions_votes, geom="point") + facet_grid(candidate~year) + xlab("Area position") + ylab("Voting intensity")
+# qplot(weighted_votes, total_votes, data = positions_votes, geom="point") + facet_grid(~year) + xlab("Area position") + ylab("Total votes")
+# qplot(intensity, total_votes, data = positions_votes, geom="point") + facet_grid(~year) + xlab("Intensity") + ylab("Total votes")
+#positions_geo$intensity <- positions_geo$total_votes*(1-(positions_geo$weighted_votes-0.6)^2)
+
+
