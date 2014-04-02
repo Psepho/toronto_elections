@@ -44,23 +44,31 @@ data_2010 <- fortify(shapefile_2010,region="AREA_NAME")
 data_2010$year <- as.integer(2010)
 data_2006 <- fortify(shapefile_2006,region="AREA_NAME")
 data_2006$year <- as.integer(2006)
-data <- rbind(data_2010,data_2006)
-rm(data_2006,data_2010)
+data_2003 <- fortify(shapefile_2006,region="AREA_NAME") # Assuming 2006 locations for 2003 data
+data_2003$year <- as.integer(2003)
+data <- rbind(data_2010,data_2006,data_2003)
+rm(data_2003,data_2006,data_2010)
 data$ward_area <- paste(as.integer(str_sub(data$id,1,2)),as.integer(str_sub(data$id,-3,-1)),sep="_")
 data <- as.data.frame(inner_join(data,positions_geo[,-c(2:5)], by=c("ward_area","year")))
+#---------
 # Map the results
+#---------
+# Positions
 toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes), alpha = 5/6, data=data) + 
-  scale_fill_gradient2("Left-Right Score", midpoint = median(data$weighted_votes), mid = "white",limit=c(0.25,0.85)) +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes, length=0.15)), alpha = 5/6, data=data) + 
+  scale_fill_brewer("Position", type="div") +   
+  #scale_fill_gradient2("Left-Right Score", midpoint = median(data$weighted_votes), mid = "white",limit=c(0.25,0.85)) +
   facet_wrap(~year)
+# Turnout
 toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=turnout), alpha = 5/6, data=data) + 
-  scale_fill_gradient("Turnout", low="white", high="red", space="Lab",limit=c(0.25,1),na.value="white") +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=data) + 
+  scale_fill_brewer("Turnout") + 
   facet_wrap(~year)
-
+# Change in position
 toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=subset(data, year==2010)) + 
-  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=subset(data,year!=2003)) + # Exclude 2003
+  scale_fill_brewer("Change in position") + 
+  facet_wrap(~year)
 
 positions_geo_high_turnout <- positions_geo %.%
   filter(turnout>0.5)
@@ -73,6 +81,18 @@ positions_in_active_areas <- tbl_df(merge(active_areas,data))
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=positions_in_active_areas) + 
   scale_fill_gradient("Change in position", low="white", high="red", space="Lab")
+
+
+data_2014 <- fortify(shapefile_2010,region="AREA_NAME")
+data_2014$year <- as.integer(2014)
+data_2014$ward_area <- paste(as.integer(str_sub(data_2014$id,1,2)),as.integer(str_sub(data_2014$id,-3,-1)),sep="_")
+scenario_geo <- tbl_df(scenario) %.%
+  mutate(ward_area=paste(ward,area,sep="_"))
+data <- as.data.frame(inner_join(data_2014,scenario_geo, by=c("ward_area")))
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=value, alpha = 5/6, data=data)) +
+  scale_fill_gradient("Votes") + 
+  facet_wrap(~variable)
 
 
 #scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
