@@ -2,13 +2,6 @@ library(dplyr)
 library(RSQLite)
 library(RSQLite.extfuns)
 elections_db <- src_sqlite("data/elections_db.sqlite3", create = T)
-
-conn <- dbConnect("SQLite", dbname = "data/elections_db.sqlite3")
-dbRemoveTable(conn, "positions")
-positions <- read.csv(file="data//positions.csv")
-copy_to(elections_db, positions, temporary = FALSE, indexes = list("candidate", "year"))
-rm(conn)
-
 votes <- read.csv(file="data//election_results.csv")
 copy_to(elections_db, votes, temporary = FALSE, indexes = list("year", c("ward", "area"), "candidate"))
 turnout <- read.csv(file="data//turnout.csv") %.%
@@ -24,3 +17,7 @@ copy_to(elections_db, locations, temporary = FALSE, indexes = list("CTUID", "yea
 family_income <- read.csv(file="data//census_2006_family_income.csv")
 copy_to(elections_db, family_income, temporary = FALSE, indexes = list("SGC",c("income_type","family_structure")))
 rm(votes,turnout,age_sex,census,locations,family_income)
+
+scenario <- as.data.frame(read.csv(file="scenario1.csv"))
+scenario <- melt(scenario,id.vars=c("ward","area"))
+copy_to(elections_db,scenario,temporary=FALSE, indexes=list("ward", "area"))
