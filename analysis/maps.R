@@ -88,11 +88,11 @@ data_2014$year <- as.integer(2014)
 data_2014$ward_area <- paste(as.integer(str_sub(data_2014$id,1,2)),as.integer(str_sub(data_2014$id,-3,-1)),sep="_")
 scenario_geo <- tbl_df(scenario) %.%
   mutate(ward_area=paste(ward,area,sep="_"))
-data <- as.data.frame(inner_join(data_2014,scenario_geo, by=c("ward_area")))
+data <- as.data.frame(inner_join(data_2014,scenario_geo[,-c(1:2)], by=c("ward_area")))
 toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=value, alpha = 5/6, data=data)) +
-  scale_fill_gradient("Votes") + 
-  facet_wrap(~variable)
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(total_votes,length=200)), alpha = 5/6, data=data) +
+  scale_fill_brewer("Votes",palette="YlOrRd") + 
+  facet_wrap(~candidate)
 
 
 #scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")

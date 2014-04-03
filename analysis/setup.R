@@ -52,7 +52,10 @@ positions_geo <- positions_geo %.%
   group_by(ward_area)%.%
   mutate(weighted_votes_change = c(0,diff(weighted_votes)))
 
-
+# Scenarios
+scenario <- as.data.frame(tbl(elections_db,"scenario"))
+names(scenario)[3:4] <- c("candidate","total_votes") 
+scenario$candidate <- as.factor(scenario$candidate)
 # Turnout
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
 turnout_geo <- tbl_df(turnout_geo) %.%
