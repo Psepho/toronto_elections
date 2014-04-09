@@ -25,8 +25,8 @@ turnout$year <- as.integer(turnout$year)
 locations <- as.data.frame(tbl(elections_db,"locations"))
 # Assuming (for now) that 2003 locations match 2006
 locations <- rbind(locations,locations %.%
-  filter(year==2006) %.%
-  mutate(year=as.integer(2003)))
+                     filter(year==2006) %.%
+                     mutate(year=as.integer(2003)))
 income <- as.data.frame(tbl(elections_db,"family_income"))
 # Positions
 positions <- as.data.frame(tbl(elections_db,"positions"))
@@ -73,7 +73,8 @@ active_areas <- active_areas %.%
   select(ward,area)
 turnout_in_active_areas <- tbl_df(merge(active_areas,turnout_geo))
 positions_in_active_areas <- tbl_df(merge(active_areas,positions_geo))
-
+active_areas <- active_areas %.%
+  mutate(ward_area=paste(ward,area,sep="_"))
 
 
 # positions_votes <- as.data.frame(inner_join(positions_geo,positions[,c(2:3,5:6,11)], by=c("ward","area","year")))
@@ -85,5 +86,4 @@ positions_in_active_areas <- tbl_df(merge(active_areas,positions_geo))
 # qplot(weighted_votes, total_votes, data = positions_votes, geom="point") + facet_grid(~year) + xlab("Area position") + ylab("Total votes")
 # qplot(intensity, total_votes, data = positions_votes, geom="point") + facet_grid(~year) + xlab("Intensity") + ylab("Total votes")
 #positions_geo$intensity <- positions_geo$total_votes*(1-(positions_geo$weighted_votes-0.6)^2)
-
 
