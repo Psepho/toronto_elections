@@ -1,110 +1,93 @@
 source("analysis//setup.R")
-
 #-----------
-# Summaries
+# Packages
 #-----------
-
-# Income
-median_income <- income %.%
-  filter(income_type=="Median 2005 family income $",family_structure=="Total - All economic families") %.%
-  select(SGC,value)
-
-# Votes and candidates
-elections <- group_by(votes,year,candidate,ward)
-votes_by_year_ward <- votes %.%
-  group_by(year,ward) %.%
-  summarise(
-    vote=sum(votes)
-  )
-votes_by_year <- votes %.%
-  group_by(year) %.%
-  summarise(
-    vote=sum(votes)
-  )
-areas_by_year <- votes %.%
-  mutate(location=paste(ward,area,sep="-")) %.%
-  select(year,location) %.%
-  group_by(year) %.%
-  summarise(
-    count=n_distinct(location)
-  )
-candidates_by_year <- votes %.%
-  select(year,candidate) %.%
-  group_by(year) %.%
-  summarise(
-    count=n_distinct(candidate)
-  )
-candidates <- votes %.%
-  group_by(year,candidate) %.%
-  summarise(
-    vote=sum(votes)
-  ) %.%
-  filter(vote>5000) %.%
-  arrange(year,desc(vote))
-qplot(ward,vote,data=votes_by_year_ward, facets=~year)
-qplot(vote,data=votes_by_year_ward, facets=~year)
-
-# Turnout
-turnout_by_year <- turnout %.%
-  group_by(year) %.%
-  summarise(eligible=sum(total_eligible,na.rm=TRUE),
-            votes=sum(total_votes)) %.%
-  mutate(turnout=votes/eligible)
-votes_eligible_by_ward_area_year <- tbl_df(merge(votes_by_year_ward,turnout))
-detail_turnout <- mutate(votes_eligible_by_ward_area_year, 
-                         turnout = vote/total_eligible,
-                         spoiled = total_votes - vote) %.%
-  filter(total_eligible > 0)
-turnout_year <- tbl_df(merge(votes_by_year_ward,turnout)) %.%
-  group_by(year) %.%
-  summarise(eligible=sum(total_eligible),
-            votes=sum(vote)) %.%
-  mutate(turnout=votes/eligible)
-turnout_by_ward_year <- merge(votes_by_year_ward,turnout) %.%
-  group_by(year,ward) %.%
-  summarise(eligible=sum(total_eligible),
-            votes=sum(vote)) %.%
-  mutate(turnout=votes/eligible)
-qplot(turnout,data=turnout_by_ward_year, facets=~year)
-
+library(ggplot2)
+library(ggmap)
+library(maptools)
+#-----------
+# Download shapefiles
+#-----------
+years <- c(2006,2010)
+for (year in years) {
+  if(file.exists(paste("tmp/subdivisions_",year,".zip",sep=""))) {
+    # Nothing to do
+  }  else {
+    download.file(paste("http://opendata.toronto.ca/gcc/voting_subdivision_",year,"_wgs84.zip",sep=""),
+                  destfile = paste("tmp/subdivisions_",year,".zip",sep=""))
+    unzip(paste("tmp/subdivisions_",year,".zip",sep=""), exdir="tmp")
+  }
+  shape <- paste("shapefile_",year,sep="")
+  file <- paste("tmp/VOTING_SUBDIVISION_",year,"_WGS84.shp",sep="")
+  assign(shape,readShapeSpatial(file, proj4string=CRS("+proj=longlat +datum=WGS84")))
+  rm(file,shape)
+}
+rm(year,years)
+#-----------
+# Standard base map
+#-----------
+toronto_map <- qmap("queens park,toronto",zoom=11, maptype = 'terrain')
+#---------
+# Point maps
+#---------
+point_map <- function(data,variable){
+  toronto_map + geom_point(aes_string(x="long",y="lat",colour=variable),data=data) + facet_wrap(~year)
+}
+point_map(turnout_geo,"turnout")
+point_map(turnout_geo,"total_votes")
+point_map(positions_geo,"weighted_votes")
+#---------
+# Shapefiles
+#---------
+# Extract the data object for each year and then combine into one data frame
+data_2010 <- fortify(shapefile_2010,region="AREA_NAME")
+data_2010$year <- as.integer(2010)
+data_2006 <- fortify(shapefile_2006,region="AREA_NAME")
+data_2006$year <- as.integer(2006)
+data_2003 <- fortify(shapefile_2006,region="AREA_NAME") # Assuming 2006 locations for 2003 data
+data_2003$year <- as.integer(2003)
+data <- rbind(data_2010,data_2006,data_2003)
+rm(data_2003,data_2006,data_2010)
+data$ward_area <- paste(as.integer(str_sub(data$id,1,2)),as.integer(str_sub(data$id,-3,-1)),sep="_")
+data <- as.data.frame(inner_join(data,positions_geo[,-c(2:5)], by=c("ward_area","year")))
+#---------
+# Map the results
+#---------
 # Positions
-positions_by_ward <- as.data.frame(inner_join(votes,positions, by=c("candidate","year"))) %.%
-  select(year,ward,votes) %.%
-  group_by(year,ward) %.%
-  summarize(votes=sum(votes))
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes, length=0.15)), alpha = 5/6, data=data) + 
+  scale_fill_brewer("Position", type="div") +   
+  #scale_fill_gradient2("Left-Right Score", midpoint = median(data$weighted_votes), mid = "white",limit=c(0.25,0.85)) +
+  facet_wrap(~year)
+# Turnout
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=data) + 
+  scale_fill_brewer("Turnout") + 
+  facet_wrap(~year)
+# Change in position
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=subset(data,year!=2003)) + # Exclude 2003
+  scale_fill_brewer("Change in position") + 
+  facet_wrap(~year)
 
 
-
-library(lme4)
-turnout_motivated_by_position <- lmer(turnout ~ weighted_votes | year/ward, data = positions_geo)
-turnout_intercept <- lmer(turnout ~ 1 | year/ward, data = positions_geo)
-summary(turnout_motivated_by_position) # check for errors
-anova(turnout_motivated_by_position,turnout_intercept)
-
-plot(turnout_motivated_by_position)
-plot(turnout_motivated_by_position, form = resid(., type = "response") ~ fitted(.) | year, abline = 0)
-
-library(nlme)
-turnout_intercept <- lme(turnout ~ year, random = ~ 1|ward, data=positions_geo, method="ML")
-turnout_motivated_by_position <- update(turnout_intercept, ~ weighted_votes + .)
-anova(turnout_intercept,turnout_motivated_by_position)
-summary(turnout_motivated_by_position)
+positions_in_active_areas <- tbl_df(merge(active_areas,data))
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=positions_in_active_areas) + 
+  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")+ 
+  facet_wrap(~year)
 
 
-changed_positions <- positions_geo %.%
-  filter(year==2010,weighted_votes_change!=0,turnout>0.5)
+data_2014 <- fortify(shapefile_2010,region="AREA_NAME")
+data_2014$year <- as.integer(2014)
+data_2014$ward_area <- paste(as.integer(str_sub(data_2014$id,1,2)),as.integer(str_sub(data_2014$id,-3,-1)),sep="_")
+scenario_geo <- tbl_df(scenario) %.%
+  mutate(ward_area=paste(ward,area,sep="_"))
+data <- as.data.frame(inner_join(data_2014,scenario_geo[,-c(1:2)], by=c("ward_area")))
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(total_votes,length=150)), alpha = 5/6, data=data) +
+  scale_fill_brewer("Votes") + 
+  facet_wrap(~candidate)
 
 
-# Calculate difference in score from 60 (absolute) scaled by eligible votes
-
-
-p <- ggplot(positions, aes(score, votes))
-p + geom_boxplot() + facet_grid(year ~ .)
-
-head(positions_geo)
-
-qplot(as.factor(score), votes, data = positions, geom="boxplot") + facet_grid(~year)
-
-positions_geo %.%
-  filter(ward==1,area==8) %.%
-  select(year,turnout,weighted_votes,weighted_votes_change)
+#scale_fill_brewer(palette ="PuOr",type="div","Left-Right Score")
