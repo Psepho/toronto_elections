@@ -29,8 +29,8 @@ locations <- rbind(locations,locations %.%
                      mutate(year=as.integer(2003)))
 income <- as.data.frame(tbl(elections_db,"family_income"))
 # Positions
-positions <- as.data.frame(tbl(elections_db,"positions"))
-positions <- as.data.frame(inner_join(votes,positions, by=c("candidate","year")))
+candidate_positions <- as.data.frame(tbl(elections_db,"positions"))
+positions <- as.data.frame(inner_join(votes,candidate_positions, by=c("candidate","year")))
 positions <- positions %.%
   group_by(year,ward,area) %.%
   mutate(weighted_votes = votes*score/100)
