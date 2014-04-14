@@ -70,17 +70,12 @@ toronto_map +
   scale_fill_brewer("Change in position") + 
   facet_wrap(~year)
 
-positions_geo_high_turnout <- positions_geo %.%
-  filter(turnout>0.5)
-toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=subset(data, year==2010 & turnout>0.5)) + 
-  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")
-
 
 positions_in_active_areas <- tbl_df(merge(active_areas,data))
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=weighted_votes_change), alpha = 5/6, data=positions_in_active_areas) + 
-  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")
+  scale_fill_gradient("Change in position", low="white", high="red", space="Lab")+ 
+  facet_wrap(~year)
 
 
 data_2014 <- fortify(shapefile_2010,region="AREA_NAME")
@@ -91,7 +86,7 @@ scenario_geo <- tbl_df(scenario) %.%
 data <- as.data.frame(inner_join(data_2014,scenario_geo[,-c(1:2)], by=c("ward_area")))
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(total_votes,length=200)), alpha = 5/6, data=data) +
-  scale_fill_brewer("Votes",palette="YlOrRd") + 
+  scale_fill_brewer("Votes") + 
   facet_wrap(~candidate)
 
 
