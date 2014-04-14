@@ -9,6 +9,7 @@ age_sex_summary <- age_sex_expanded %.%
   group_by(census,sex,SGC) %.%
   summarize(median_age = median(age))
 rm(age_sex_expanded)
+age_sex$SGC <- sprintf("%.2f", age_sex$SGC)
 # Family income
 family_income <- as.data.frame(collect(tbl(elections_db,"family_income")))
 family_income <- transform(family_income,income_type=as.factor(family_income$income_type),family_structure=as.factor(family_income$family_structure))
@@ -18,15 +19,8 @@ family_median_income <- family_income %.%
   select(SGC,value)
 
 census <- as.data.frame(collect(tbl(elections_db,"census"))) %.%
-  mutate(SCG=as.character(GEO))
-head(filter(census,Characteristic=="Median commuting duration"))
-
-head(paste(as.character(census$GEO),str_sub(as.character(census$CT_Name),start=-2),sep=""))
-head(as.character(census$GEO)
-head(census$CT_Name)
-head(str_sub(as.character(census$CT_Name),start=-2))
-length(census$CT_Name)
+  mutate(SCG=sprintf("%.2f", GEO))
 census_commuting <- census %.%
-  group_by(GEO) %.%
+  group_by(SGC) %.%
   filter(Topic=="Median commuting duration", Characteristic=="Median commuting duration") %.%
   summarize(median_commuting_duration=mean(Total))
