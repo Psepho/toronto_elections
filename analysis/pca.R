@@ -1,26 +1,27 @@
+load("data//census.RData")
 source("analysis//setup.R")
-conn <- dbConnect("SQLite", dbname = "data/elections_db.sqlite3")
-dbListTables(conn)
-# Age sex
-age_sex <- as.data.frame(collect(tbl(elections_db,"age_sex"))) %.%
-  filter(count>0)
-age_sex_expanded <- data.frame(age=rep(age_sex[,1],times=age_sex[,3]),sex=rep(age_sex[,2],times=age_sex[,3]),SGC=rep(age_sex[,4],times=age_sex[,3]),census=rep(age_sex[,5],times=age_sex[,3]))
-age_sex_summary <- age_sex_expanded %.%
-  group_by(census,sex,SGC) %.%
-  summarize(median_age = median(age))
-rm(age_sex_expanded)
-age_sex$SGC <- sprintf("%.2f", age_sex$SGC)
-# Family income
-family_income <- as.data.frame(collect(tbl(elections_db,"family_income")))
-family_income <- transform(family_income,income_type=as.factor(family_income$income_type),family_structure=as.factor(family_income$family_structure))
-family_median_income <- family_income %.%
-  filter(income_type=="Median 2005 family income $",family_structure=="Total - All economic families") %.%
-  group_by(SGC) %.%
-  select(SGC,value)
+locations <- read.csv("data//voting_locations.csv")
+locations <- locations %.%
+  filter(year==2010) %.%
+  mutate(ward_area=paste(ward,area,sep="_"),GEO=as.character(CTUID))
+locations <- locations[,c(12:13)]
+locations$GEO <- as.factor(locations$GEO)
+library(MASS)
+require(akima)
+require(mgcv)
 
-census <- as.data.frame(collect(tbl(elections_db,"census"))) %.%
-  mutate(SCG=sprintf("%.2f", GEO))
-census_commuting <- census %.%
-  group_by(SGC) %.%
-  filter(Topic=="Median commuting duration", Characteristic=="Median commuting duration") %.%
-  summarize(median_commuting_duration=mean(Total))
+model <- (~ commuting_duration + income + median_age)
+pca <- princomp(model, data = census_summary, na.action = na.omit, cor = TRUE)
+summary(pca)
+loadings(pca)
+biplot(pca, c(1,2), scale = TRUE, main = model)
+biplot(pca, c(1,3), scale = TRUE, main = model)
+
+model_predictions <- predict(pca)
+merged_data <- merge(census_summary, model_predictions, by="row.names", all.x = TRUE, sort = FALSE)
+merged_data <- merged_data[,-1]
+merged_data <- inner_join(merged_data,locations, by=c("GEO"))
+merged_data <- inner_join(merged_data,positions_average_by_ward_area, by=c("ward_area"))
+
+position_model <- lm(position ~ Comp.1 + Comp.2, data = merged_data)
+summary(position_model)
