@@ -31,6 +31,7 @@ scenario_summary <- function(output) { # Summarize the total votes and percent o
   format(scenario_summary, digits=2)
 }
 scenario_map <- function(output) {
+  output <- droplevels(output)
   data <- as.data.frame(inner_join(locations_2014,output, by=c("ward_area")))
   candidate_labels <- sapply(strsplit(levels(data$candidate)," "), "[", 1)
   candidate_labels <- paste(toupper(substring(candidate_labels, 1, 1)), substring(candidate_labels, 2), sep = "", collapse = " ")
@@ -46,4 +47,8 @@ voteability=list("tory john"=0.243, "chow olivia"=0.4938, "ford rob"=1, "stintz 
 
 output <- election_scenario(preference_sensitivity,voteability)
 scenario_summary(output)
-scenario_map(output)
+
+output_major <- output %.%
+  filter(candidate %in% names(voteability)[1:3])
+
+scenario_map(output_major)
