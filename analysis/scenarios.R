@@ -1,4 +1,5 @@
 source("analysis//setup.R")
+ward_regions <- read.csv("data/ward_regions.csv")
 # Data required:
 #areas_for_2014 <- load("data/areas_for_2014.RData")
 #positions_2014 <- load("data/positions_2014.RData")
@@ -49,11 +50,13 @@ scenario_map <- function(output) {
     facet_wrap(~candidate)
 }
 scenario_region <- function(output) {
-  data <- as.data.frame(inner_join(geo_2014,output, by=c("ward_area")))
-  region_summary <- data %.%
+  output$ward <- as.integer(lapply(strsplit(as.character(output$ward_area), "_"), "[", 1))
+  output <- inner_join(output,ward_regions, by=c("ward"))
+  region_summary <- output %.%
     group_by(candidate,region) %.%
     summarize(votes=sum(votes))
-  region_summary
+  region_summary <- melt(region_summary)
+  format(dcast(region_summary, candidate ~ region, margins = TRUE, fun.aggregate = sum),digits=3)
 }
 preference_sensitivity <- 0.175
 voteability=list("tory john"=0.248, "chow olivia"=0.435, "ford rob"=0.9, "stintz karen"=0.068,"soknacki david"=0.041,"left rof"=0,"center rof"=0.048,"right rof"=0.019, "no one"=0.001) # calibrated to match polls
