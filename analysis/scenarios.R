@@ -56,7 +56,8 @@ scenario_region <- function(output) {
     group_by(candidate,region) %.%
     summarize(votes=sum(votes))
   region_summary <- melt(region_summary)
-  format(dcast(region_summary, candidate ~ region, margins = TRUE, fun.aggregate = sum),digits=3)
+  #format(dcast(region_summary, candidate ~ region, margins = TRUE, fun.aggregate = sum),digits=3)
+  prop.table(tapply(region_summary$value, region_summary[1:2], sum),2)
 }
 preference_sensitivity <- 0.175
 voteability=list("tory john"=0.248, "chow olivia"=0.435, "ford rob"=0.9, "stintz karen"=0.068,"soknacki david"=0.041,"left rof"=0,"center rof"=0.048,"right rof"=0.019, "no one"=0.001) # calibrated to match polls
