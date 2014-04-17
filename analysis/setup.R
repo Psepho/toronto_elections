@@ -132,7 +132,7 @@ geo <- rbind(geo_2010,geo_2006,geo_2003)
 rm(geo_2003,geo_2006,geo_2010)
 geo$ward_area <- paste(as.integer(str_sub(geo$id,1,2)),as.integer(str_sub(geo$id,-3,-1)),sep="_")
 geo$ward <- as.integer(str_sub(geo$id,1,2))
-geo <- as.geo.frame(inner_join(geo,positions_geo[,-c(2:5)], by=c("ward_area","year")))
+geo <- as.data.frame(inner_join(geo,positions_geo[,-c(2:5)], by=c("ward_area","year")))
 geo <- inner_join(geo,ward_regions, by=c("ward"))
 
 # For 2014, assume same geography as 2010
