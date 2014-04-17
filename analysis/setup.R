@@ -29,6 +29,8 @@ locations <- as.data.frame(tbl(elections_db,"locations"))
 locations <- rbind(locations,locations %.%
                      filter(year==2006) %.%
                      mutate(year=as.integer(2003)))
+ward_regions <- read.csv("data/ward_regions.csv")
+locations <- inner_join(locations,ward_regions, by=c("ward"))
 income <- as.data.frame(tbl(elections_db,"family_income"))
 # Positions
 candidate_positions <- as.data.frame(tbl(elections_db,"positions"))
