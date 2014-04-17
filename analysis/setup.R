@@ -122,17 +122,21 @@ toronto_map <- qmap("queens park,toronto",zoom=11, maptype = 'terrain')
 # Shapefiles
 #---------
 # Extract the data object for each year and then combine into one data frame
-data_2010 <- fortify(shapefile_2010,region="AREA_NAME")
-data_2010$year <- as.integer(2010)
-data_2006 <- fortify(shapefile_2006,region="AREA_NAME")
-data_2006$year <- as.integer(2006)
-data_2003 <- fortify(shapefile_2006,region="AREA_NAME") # Assuming 2006 locations for 2003 data
-data_2003$year <- as.integer(2003)
-data <- rbind(data_2010,data_2006,data_2003)
-rm(data_2003,data_2006,data_2010)
-data$ward_area <- paste(as.integer(str_sub(data$id,1,2)),as.integer(str_sub(data$id,-3,-1)),sep="_")
-data <- as.data.frame(inner_join(data,positions_geo[,-c(2:5)], by=c("ward_area","year")))
+geo_2010 <- fortify(shapefile_2010,region="AREA_NAME")
+geo_2010$year <- as.integer(2010)
+geo_2006 <- fortify(shapefile_2006,region="AREA_NAME")
+geo_2006$year <- as.integer(2006)
+geo_2003 <- fortify(shapefile_2006,region="AREA_NAME") # Assuming 2006 locations for 2003 geo
+geo_2003$year <- as.integer(2003)
+geo <- rbind(geo_2010,geo_2006,geo_2003)
+rm(geo_2003,geo_2006,geo_2010)
+geo$ward_area <- paste(as.integer(str_sub(geo$id,1,2)),as.integer(str_sub(geo$id,-3,-1)),sep="_")
+geo$ward <- as.integer(str_sub(geo$id,1,2))
+geo <- as.geo.frame(inner_join(geo,positions_geo[,-c(2:5)], by=c("ward_area","year")))
+geo <- inner_join(geo,ward_regions, by=c("ward"))
+
 # For 2014, assume same geography as 2010
-data_2014 <- fortify(shapefile_2010,region="AREA_NAME")
-data_2014$year <- as.integer(2014)
-data_2014$ward_area <- paste(as.integer(str_sub(data_2014$id,1,2)),as.integer(str_sub(data_2014$id,-3,-1)),sep="_")
+geo_2014 <- geo %.%
+  filter(year==2010) %.%
+  mutate(year=2014)
+rm(ward_regions)
