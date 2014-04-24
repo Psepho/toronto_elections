@@ -24,6 +24,7 @@ issues_by_ward <- dlply(issues_df, .(ward), issues_model)
 coefs_by_ward <- ldply(issues_by_ward, function(x) coef(x))
 coefs_melt <- melt(coefs_by_ward[,-2])
 max_coefficients_by_ward <- ddply(coefs_melt, "ward", function(x) x[which.max(abs(x$value)),])
+max_coefficients_by_ward$ward <- as.integer(max_coefficients_by_ward$ward)
 
 # Predict votes from position scores --------------------------------------
 names(candidate_positions)[3:7] <- names(issues_df)[3:7]
@@ -50,6 +51,15 @@ results$adj_votes <- results$votes * results$count
 prop.table(tapply(results$adj_votes, results[1:2], sum, na.rm=TRUE),2)
 prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
 max_coefficients_by_ward
+
+
+# Maps --------------------------------------------------------------------
+library(dplyr)
+source("analysis//setup_maps.R")
+geo_2014 <- left_join(geo_2014, max_coefficients_by_ward[,1:2], by = "ward")
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=variable), alpha = 5/6, data=geo_2014) + 
+  scale_fill_brewer("Top issue", type="qual")
 
 # dplyr attempt -----------------------------------------------------------
 
