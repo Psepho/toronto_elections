@@ -1,12 +1,17 @@
+
+# Setup -------------------------------------------------------------------
+
 source("analysis//setup.R")
+source("analysis//setup_maps.R")
+# Assigns wards to regions for summary table
 ward_regions <- read.csv("data/ward_regions.csv")
 # Data required:
 #areas_for_2014 <- load("data/areas_for_2014.RData")
 #positions_2014 <- load("data/positions_2014.RData")
 #geo_2014 <- load("data/geo_2014.RData")
 
-positions_2014 <- c(positions_2014, 0.5)
-names(positions_2014)[9] <- "no one"
+# Scenario function -------------------------------------------------------
+
 election_scenario <- function(preference_sensitivity,voteability) { # Takes a preference parameter (preference_sensitivity) and list of "voteability" values for each candidate
   # Returns the votes for each ward_area, by candidate
   voteability <- voteability[order(names(voteability))]
@@ -33,7 +38,7 @@ scenario_summary <- function(output) { # Summarize the total votes and percent o
   scenario_summary$percent <- scenario_summary$votes/sum(scenario_summary$votes)
   format(scenario_summary, digits=2)
 }
-scenario_map <- function(output) {
+scenario_map <- function(output) { # Plot the results on a map by ward area
   output <- droplevels(output)
   data <- as.data.frame(inner_join(geo_2014,output, by=c("ward_area")))
   candidate_labels <- sapply(strsplit(levels(data$candidate)," "), "[", 1)
@@ -49,7 +54,7 @@ scenario_map <- function(output) {
     scale_fill_brewer("Votes") + 
     facet_wrap(~candidate)
 }
-scenario_region <- function(output) {
+scenario_region <- function(output) { # Outputs a summary table of % votes by region
   output$ward <- as.integer(lapply(strsplit(as.character(output$ward_area), "_"), "[", 1))
   output <- inner_join(output,ward_regions, by=c("ward"))
   region_summary <- output %.%
@@ -59,19 +64,22 @@ scenario_region <- function(output) {
   #format(dcast(region_summary, candidate ~ region, margins = TRUE, fun.aggregate = sum),digits=3)
   prop.table(tapply(region_summary$value, region_summary[1:2], sum),2)
 }
+
+# Scenario 1 --------------------------------------------------------------
+
 preference_sensitivity <- 0.175
 voteability=list("tory john"=0.248, "chow olivia"=0.435, "ford rob"=0.9, "stintz karen"=0.068,"soknacki david"=0.041,"left rof"=0,"center rof"=0.048,"right rof"=0.019, "no one"=0.001) # calibrated to match polls
+
+output <- election_scenario(preference_sensitivity,voteability)
+scenario_summary(output)
+scenario_region(output)
+output_major <- output %.%
+  filter(candidate %in% names(voteability)[1:3])
+scenario_map(output_major)
+
+# Scenario 4 --------------------------------------------------------------
 
 # Scenario 4: Move left slightly
 # positions_2014$`tory john` <- positions_2014$tory-0.05
 # positions_2014$`chow olivia` <- positions_2014$chow-0.05
 # voteability$`tory john` <- 0.284
-
-output <- election_scenario(preference_sensitivity,voteability)
-scenario_summary(output)
-scenario_region(output)
-
-output_major <- output %.%
-  filter(candidate %in% names(voteability)[1:3])
-
-scenario_map(output_major)

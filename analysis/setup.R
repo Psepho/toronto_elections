@@ -41,6 +41,9 @@ positions_2014 <- candidate_positions %.%
   mutate(score=score/100)
 positions_2014 <- split(positions_2014$score, positions_2014$candidate)
 positions_2014 <- positions_2014[order(names(positions_2014))]
+#Add in the "none" candidate
+positions_2014 <- c(positions_2014, 0.5)
+names(positions_2014)[9] <- "no one"
 # Positions by area
 positions <- as.data.frame(inner_join(votes,candidate_positions, by=c("candidate","year")))
 positions <- positions %.%
