@@ -45,10 +45,10 @@ for(candidate in candidates) {
 detach("package:plyr", unload=TRUE)
 results <- results[-1,]
 results$ward <- as.integer(results$ward)
-#results <- left_join(results, areas_per_ward, by = "ward")
-#results$adj_votes <- results$votes * results$count
-prop.table(tapply(results$votes, results[1:2], sum, na.rm=TRUE),2)
-prop.table(tapply(results$votes, results[1], sum, na.rm=TRUE))
+results <- left_join(results, areas_per_ward, by = "ward")
+results$adj_votes <- results$votes * results$count
+prop.table(tapply(results$adj_votes, results[1:2], sum, na.rm=TRUE),2)
+prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
 max_coefficients_by_ward
 
 # dplyr attempt -----------------------------------------------------------
