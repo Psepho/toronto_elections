@@ -22,6 +22,8 @@ issues_model <- function(df){
 }
 issues_by_ward <- dlply(issues_df, .(ward), issues_model)
 coefs_by_ward <- ldply(issues_by_ward, function(x) coef(x))
+coefs_melt <- melt(coefs_by_ward[,-2])
+max_coefficients_by_ward <- ddply(coefs_melt, "ward", function(x) x[which.max(x$value),])
 
 # Predict votes from position scores --------------------------------------
 names(candidate_positions)[3:7] <- names(issues_df)[3:7]
@@ -45,9 +47,9 @@ results <- results[-1,]
 results$ward <- as.integer(results$ward)
 #results <- left_join(results, areas_per_ward, by = "ward")
 #results$adj_votes <- results$votes * results$count
-prop.table(tapply(results$votes, results[1:2], sum),2)
-prop.table(tapply(results$votes, results[1], sum))
-
+prop.table(tapply(results$votes, results[1:2], sum, na.rm=TRUE),2)
+prop.table(tapply(results$votes, results[1], sum, na.rm=TRUE))
+max_coefficients_by_ward
 
 # dplyr attempt -----------------------------------------------------------
 
