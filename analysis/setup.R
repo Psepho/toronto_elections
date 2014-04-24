@@ -33,7 +33,28 @@ income <- as.data.frame(tbl(elections_db,"family_income"))
 
 # Positions ---------------------------------------------------------------
 
-candidate_positions <- as.data.frame(tbl(elections_db,"positions"))
+library(XLConnect)
+positions_excel <- readWorksheet(object=loadWorkbook("data//Position Scores.xlsx"), "Detailed Postions", startRow=3)
+names(positions_excel) <- tolower(names(positions_excel))
+positions_excel$candidate <- tolower(positions_excel$candidate)
+candidate_positions <- positions_excel %.%
+  mutate(topic=topic.type, year=as.character(year)) %.%
+  group_by(candidate, year, topic) %.%
+  summarize(score=mean(score)) %.%
+  filter(topic!="Life & environment")
+candidate_scores <- positions_excel %.%
+  filter(topic!="Life & environment") %.%
+  mutate(year=as.character(year)) %.%
+  group_by(candidate, year) %.%
+  summarize(score=mean(score))
+candidate_positions <- melt(candidate_positions)
+candidate_positions <- dcast(candidate_positions, candidate + year ~ topic)
+candidate_positions <- inner_join(candidate_positions,candidate_scores, by=c("candidate","year"))
+rm(positions_excel, candidate_scores)
+rof <- cbind(expand.grid(candidate=c("left rof", "center rof", "right rof"), year=2014), `Airport expansion` = NA, `Finance & Budget` = NA, `Transit` = NA, `Transportation` = NA, `Waste management` = NA, score=c(10,50,90))
+candidate_positions <- rbind(candidate_positions,rof)
+candidate_positions$year <- as.integer(candidate_positions$year)
+#candidate_positions <- as.data.frame(tbl(elections_db,"positions"))
 # Positions for just candidates in the upcoming election
 positions_2014 <- candidate_positions %.%
   filter(year==2014) %.%
