@@ -1,4 +1,5 @@
 source("analysis//setup.R")
+source("analysis//setup_maps.R")
 #---------
 # Point maps
 #---------
