@@ -26,6 +26,8 @@ coefs_by_ward <- ldply(issues_by_ward, function(x) coef(x))
 pred_values <- issues_df[1,5:8] # Position scores
 predicted_votes <- ldply(issues_by_ward, function(x) predict(x, pred_values, interval = "confidence"))
 
+#issues_by_ward.dplyr <- do(issues_df, failwith(NULL, lm), formula = votes ~ transportation + life_environment + finance_budget + waste_management)
+
 # Archived stuff ----------------------------------------------------------
 # library(biglm)
 # 
@@ -40,11 +42,3 @@ predicted_votes <- ldply(issues_by_ward, function(x) predict(x, pred_values, int
 # issues_model_ward <- update(issues_model, . ~ (.):ward)
 # summary(issues_model_ward)
 # anova(issues_model,issues_model_ward)
-# 
-# issues_ward_df <- positions %.%
-#   group_by(ward,candidate, add = FALSE) %.%
-#   summarize(votes=sum(votes), transportation=mean(Transportation), life_environment=mean(Life_environment), finance_budget=mean(Finance_Budget), waste_management=mean(Waste_management))
-# issues_ward_df$ward <- as.factor(issues_ward_df$ward)
-# 
-# mod1 <- do(issues_ward_df, biglm, formula = votes ~ transportation + life_environment + finance_budget + waste_management)
-# mod2 <- do(issues_df, failwith(NULL, lm), formula = votes ~ transportation + life_environment + finance_budget + waste_management)
