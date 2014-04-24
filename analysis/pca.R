@@ -39,6 +39,3 @@ contour(interp(AbilityContour[,1], AbilityContour[,2], AbilityContour$fitted, du
 
 predict.pca <- predict(pca)
 eqscplot(model_predictions)
-
-# median of over 18
-# count of kids

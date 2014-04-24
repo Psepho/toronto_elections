@@ -1,6 +1,6 @@
-#-----------
-# Packages
-#-----------
+
+# Packages ----------------------------------------------------------------
+
 library(dplyr)
 library(RSQLite)
 library(RSQLite.extfuns)
@@ -8,9 +8,9 @@ library(ggplot2)
 library(reshape2)
 library(stringr)
 library(ggplot2)
-#-----------
-# Data setup
-#-----------
+
+# Data setup --------------------------------------------------------------
+
 # tmp directory for downloads and unzips
 if(file.exists("tmp")) {
   # Nothing to do
@@ -30,7 +30,9 @@ locations <- rbind(locations,locations %.%
 ward_regions <- read.csv("data/ward_regions.csv")
 locations <- inner_join(locations,ward_regions, by=c("ward"))
 income <- as.data.frame(tbl(elections_db,"family_income"))
-# Positions
+
+# Positions ---------------------------------------------------------------
+
 candidate_positions <- as.data.frame(tbl(elections_db,"positions"))
 # Positions for just candidates in the upcoming election
 positions_2014 <- candidate_positions %.%
@@ -72,16 +74,22 @@ active_areas_2010 <- positions_geo %.%
   select(ward,area,ward_area)
 active_areas_2010 <- active_areas_2010[,1:2]
 areas_for_2014 <- as.data.frame(inner_join(active_areas_2010,positions_average_by_ward_area, by=c("ward", "area")))
-# Scenarios
+
+# Scenarios ---------------------------------------------------------------
+
 scenario <- as.data.frame(tbl(elections_db,"scenario"))
 names(scenario)[3:4] <- c("candidate","total_votes") 
 scenario$candidate <- as.factor(scenario$candidate)
-# Turnout
+
+# Turnout -----------------------------------------------------------------
+
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
 turnout_geo <- tbl_df(turnout_geo) %.%
   select(year,ward,area,long,lat,total_eligible,total_votes) %.%
   mutate(turnout=total_votes/total_eligible,ward_area=paste(ward,area,sep="_"))
-# Active areas
+
+# Active areas ------------------------------------------------------------
+
 active_areas <- turnout_geo %.%
   select(year,ward,area,turnout)
 active_areas <- melt(active_areas,id=1:3)
