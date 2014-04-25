@@ -60,6 +60,27 @@ geo_2014 <- left_join(geo_2014, max_coefficients_by_ward[,1:2], by = "ward")
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=variable), alpha = 5/6, data=geo_2014) + 
   scale_fill_brewer("Top issue", type="qual")
+issue_map <- function(output) { # Plot the results on a map by ward
+  output <- droplevels(output)
+  data <- as.data.frame(inner_join(geo_2014,output, by=c("ward")))
+  candidate_labels <- sapply(strsplit(levels(data$candidate)," "), "[", 1)
+  candidate_labels <- paste(toupper(substring(candidate_labels, 1, 1)), substring(candidate_labels, 2), sep = "", collapse = " ")
+  levels(data$candidate) <- unlist(strsplit(candidate_labels, split=" "))
+  toronto_map +
+    geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(adj_votes, n = 8)), alpha = 5/6, data=data) +
+    scale_fill_brewer("Votes") + 
+    facet_wrap(~candidate)
+}
+output_major <- results %.%
+  filter(candidate %in% c("tory john", "chow olivia", "ford rob")) %.%
+  mutate(candidate=as.factor(candidate))
+issue_map(output_major)
+names(coefs_melt)[2:3] <- c("coefficient", "beta")
+data <- as.data.frame(inner_join(geo_2014,coefs_melt, by=c("ward")))
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(beta,7)), alpha = 5/6, data=data) +
+  scale_fill_brewer("Votes", type="div") + 
+  facet_wrap(~coefficient)
 
 # dplyr attempt -----------------------------------------------------------
 
