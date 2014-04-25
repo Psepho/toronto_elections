@@ -68,7 +68,7 @@ scenario_region <- function(output) { # Outputs a summary table of % votes by re
 # Scenario 1 --------------------------------------------------------------
 
 preference_sensitivity <- 0.175
-voteability=list("tory john"=0.248, "chow olivia"=0.435, "ford rob"=0.9, "stintz karen"=0.068,"soknacki david"=0.041,"left rof"=0,"center rof"=0.048,"right rof"=0.019, "no one"=0.001) # calibrated to match polls
+voteability=list("tory john"=0.239, "chow olivia"=0.443, "ford rob"=0.935, "stintz karen"=0.079,"soknacki david"=0.044,"left rof"=0.005,"center rof"=0.043,"right rof"=0.019, "no one"=0.001) # calibrated to match polls
 
 output <- election_scenario(preference_sensitivity,voteability)
 scenario_summary(output)
