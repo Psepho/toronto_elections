@@ -1,5 +1,6 @@
 library(ggmap)
 library(maptools)
+library(stringr)
 
 # Download shapefiles -----------------------------------------------------
 
@@ -33,13 +34,19 @@ geo_2006$year <- as.integer(2006)
 geo_2003 <- fortify(shapefile_2006,region="AREA_NAME") # Assuming 2006 locations for 2003 geo
 geo_2003$year <- as.integer(2003)
 geo <- rbind(geo_2010,geo_2006,geo_2003)
-rm(geo_2003,geo_2006,geo_2010)
 geo$ward_area <- paste(as.integer(str_sub(geo$id,1,2)),as.integer(str_sub(geo$id,-3,-1)),sep="_")
 geo$ward <- as.integer(str_sub(geo$id,1,2))
-geo <- as.data.frame(inner_join(geo,positions_geo[,-c(2:5)], by=c("ward_area","year")))
-geo <- inner_join(geo,ward_regions, by=c("ward"))
 # For 2014, assume same geography as 2010
 geo_2014 <- geo %.%
   filter(year==2010) %.%
   mutate(year=2014)
+geo <- rbind(geo, geo_2014)
+geo$year <- as.factor(geo$year)
+rm(geo_2014, geo_2003, geo_2006, geo_2010)
+ward_regions <- read.csv("data/ward_regions.csv")
+geo <- inner_join(geo,ward_regions, by=c("ward"))
 rm(ward_regions)
+
+# Save objects ------------------------------------------------------------
+
+save(geo, toronto_map, file = "data/map_data.RData")
