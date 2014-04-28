@@ -1,3 +1,8 @@
+# ----------
+# Pulls in various data sources
+# Exports vote_history.RData
+# ----------
+
 # Packages ----------------------------------------------------------------
 
 library(dplyr)
@@ -29,6 +34,7 @@ ward_regions <- read.csv("data/ward_regions.csv")
 locations <- inner_join(locations,ward_regions, by=c("ward"))
 turnout$year <- as.factor(turnout$year)
 locations$year <- as.factor(locations$year)
+
 # Turnout -----------------------------------------------------------------
 
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
@@ -48,5 +54,5 @@ area_left_right_history <- votes_by_issues %.%
   summarize(weighted_votes = sum(weighted_votes)/sum(votes))
 votes_by_issues <- as.data.frame(inner_join(votes_by_issues,area_left_right_history, by=c("ward", "area", "year")))
 vote_history <- as.data.frame(inner_join(votes_by_issues,locations, by=c("ward", "area", "year")))
-save(vote_history, "data/vote_history.RData")
-rm(candidate_positions, area_left_right_history, votes_by_issues, turnout_geo, turnout, votes, locations, votes_by_positions, ward_regions, elections_db)
+save(vote_history, file = "data/vote_history.RData")
+rm(candidate_positions, area_left_right_history, votes_by_issues, turnout_geo, turnout, votes, locations, ward_regions, elections_db)
