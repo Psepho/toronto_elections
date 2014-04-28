@@ -47,7 +47,7 @@ turnout_geo <- tbl_df(turnout_geo) %.%
 load("data/candidate_positions.RData")
 votes_by_issues <- as.data.frame(inner_join(votes,candidate_positions, by=c("candidate", "year")))
 votes_by_issues <- as.data.frame(inner_join(votes_by_issues,turnout, by=c("ward", "area", "year"))) %.%
-  mutate(turnout=total_votes/total_eligible)
+  mutate(turnout=total_votes/total_eligible, candidate = as.factor(candidate))
 area_left_right_history <- votes_by_issues %.%
   group_by(year, ward, area) %.%
   mutate(weighted_votes = votes*left_right_score/100) %.%
