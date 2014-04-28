@@ -16,7 +16,7 @@ candidate_positions <- positions_excel %.%
 candidate_scores <- positions_excel %.% # Generate summary left-right score
   filter(topic!=drop_topic) %.% # Drop this topic
   group_by(candidate, year) %.%
-  summarize(score=mean(score))
+  summarize(left_right_score=mean(score))
 candidate_positions <- melt(candidate_positions)
 candidate_positions <- dcast(candidate_positions, candidate + year ~ topic)
 candidate_positions <- inner_join(candidate_positions,candidate_scores, by=c("candidate","year"))
