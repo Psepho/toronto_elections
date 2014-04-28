@@ -12,19 +12,20 @@ locations <- inner_join(locations,positions_average_by_ward_area, by=c("ward_are
 library(MASS)
 require(akima)
 require(mgcv)
-
+census_toronto <- inner_join(census_summary,locations, by=c("GEO"))
+census_toronto$prop_children <- census_toronto$children/census_toronto$pop
 #model <- (~ commuting_duration + income + median_age + median_home_value + public_transit + children)
-model <- (~ median_age + median_home_value + public_transit + children)
-pca <- princomp(model, data = census_summary, na.action = na.omit, cor = TRUE)
+model <- (~ median_age + median_home_value + public_transit + prop_children)
+pca <- princomp(model, data = census_toronto, na.action = na.omit, cor = TRUE)
 summary(pca)
 loadings(pca)
 biplot(pca, c(1,2), scale = TRUE, main = model)
 biplot(pca, c(1,3), scale = TRUE, main = model)
 
 model_predictions <- predict(pca)
-merged_data <- merge(census_summary, model_predictions, by="row.names", all.x = TRUE, sort = FALSE)
+merged_data <- merge(census_toronto, model_predictions, by="row.names", all.x = TRUE, sort = FALSE)
 merged_data <- merged_data[,-1]
-merged_data <- inner_join(merged_data,locations, by=c("GEO"))
+#merged_data <- inner_join(merged_data,locations, by=c("GEO"))
 
 position_model <- lm(position ~ Comp.1 + Comp.2, data = merged_data)
 summary(position_model)
