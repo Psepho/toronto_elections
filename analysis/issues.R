@@ -1,17 +1,29 @@
 # Basic setup -------------------------------------------------------------
-
-source("analysis//setup.R")
+library(ggmap)
+library(maptools)
+library(mapproj)
+library(dplyr)
+library(reshape2)
+load("data/map_data.RData")
+load("data/vote_history.RData")
+load("data/candidate_positions.RData")
 
 # Create data frame -------------------------------------------------------
 
-issues_df <- positions  %.%
+issues_df <- vote_history  %.%
   group_by(ward, area, candidate, add = FALSE) %.%
   summarize(votes=sum(votes), airport_expansion=mean(`Airport expansion`), finance_budget=mean(`Finance & Budget`), transit=mean(Transit), transportation=mean(Transportation), waste_management=mean(`Waste management`))
 issues_df$ward <- as.factor(issues_df$ward)
 issues_df <- group_by(issues_df[,c(1,4:9)], ward)
-areas_per_ward <- areas_for_2014 %.%
-  group_by(ward) %.%
-  summarize(count=n())
+
+areas_per_ward <- geo %.%
+  filter(year == "2014") %.%
+  group_by(ward, area) %.%
+  summarize(count = n()) %.%
+  group_by(ward, add = FALSE) %.% # Seems roundabout, but need to summarize with area first
+  summarize(count = n())
+
+geo_2014 <- filter(geo, year == 2014)
 
 # Issue models for each ward ----------------------------------------------
 issues_formula <- votes ~ transportation + transit + finance_budget + waste_management + airport_expansion
@@ -52,14 +64,18 @@ prop.table(tapply(results$adj_votes, results[1:2], sum, na.rm=TRUE),2)
 prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
 max_coefficients_by_ward
 
+# Top issue by ward -------------------------------------------------------
 
-# Maps --------------------------------------------------------------------
 library(dplyr)
-source("analysis//setup_maps.R")
 geo_2014 <- left_join(geo_2014, max_coefficients_by_ward[,1:2], by = "ward")
+names(geo_2014)[13] <- "top_issue"
 toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=variable), alpha = 5/6, data=geo_2014) + 
+  geom_polygon(aes(x=long, y=lat, group=group, fill=top_issue), alpha = 5/6, data=geo_2014) + 
   scale_fill_brewer("Top issue", type="qual")
+ggsave(file = "fig/top_issue_map.png")
+
+# Candidate support by ward -----------------------------------------------
+
 issue_map <- function(output) { # Plot the results on a map by ward
   output <- droplevels(output)
   data <- as.data.frame(inner_join(geo_2014,output, by=c("ward")))
@@ -75,34 +91,15 @@ output_major <- results %.%
   filter(candidate %in% c("tory john", "chow olivia", "ford rob")) %.%
   mutate(candidate=as.factor(candidate))
 issue_map(output_major)
+ggsave(file = "fig/candidate_support_by_issue_map.png")
+
+# Issue importance by ward ------------------------------------------------
+
 names(coefs_melt)[2:3] <- c("coefficient", "beta")
 data <- as.data.frame(inner_join(geo_2014,coefs_melt, by=c("ward")))
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(beta,7)), alpha = 5/6, data=data) +
   scale_fill_brewer("Position", type="div", labels=c("Left", rep("",5), "Right")) + 
   facet_wrap(~coefficient)
+ggsave(file = "fig/issue_importance_map.png")
 
-# dplyr attempt -----------------------------------------------------------
-
-issues_df.dplyr <- group_by(issues_df[,c(1,4:9)], ward)
-issues_by_ward.dplyr <- do(issues_df.dplyr, failwith(NULL, lm), formula = issues_formula)
-
-# Archived stuff ----------------------------------------------------------
-# library(biglm)
-# 
-# issues_df <- positions  %.%
-#   group_by(ward, area, candidate, add = FALSE) %.%
-#   summarize(votes=sum(votes), transportation=mean(Transportation), life_environment=mean(Life_environment), finance_budget=mean(Finance_Budget), waste_management=mean(Waste_management))
-# issues_df$ward <- as.factor(issues_df$ward)
-# 
-issues_df <- positions  %.%
-  group_by(year, candidate, ward, area, add = FALSE) %.%
-  summarize(votes=sum(votes), airport_expansion=mean(`Airport expansion`), finance_budget=mean(`Finance & Budget`), transit=mean(Transit), transportation=mean(Transportation), waste_management=mean(`Waste management`))
-issues_df$year <- as.factor(issues_df$year)
-#issues_df <- group_by(issues_df[,c(1,4:9)], ward)
-i_model <- votes ~ transportation + life_environment + finance_budget + waste_management
-issues_model <- lm(issues_formula, data=issues_df, na.action = na.omit)
-summary(issues_model)
-issues_model_ward <- update(issues_model, . ~ (.):year)
-summary(issues_model_ward)
-# anova(issues_model,issues_model_ward)
