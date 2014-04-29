@@ -1,27 +1,36 @@
 
 # Setup -------------------------------------------------------------------
 
-source("analysis//setup.R")
-source("analysis//setup_maps.R")
-# Assigns wards to regions for summary table
-ward_regions <- read.csv("data/ward_regions.csv")
-# Data required:
-#areas_for_2014 <- load("data/areas_for_2014.RData")
-#positions_2014 <- load("data/positions_2014.RData")
-#geo_2014 <- load("data/geo_2014.RData")
+load("data/map_data.RData")
+load("data/vote_history.RData")
+library(dplyr)
+library(reshape2)
+areas_for_2014 <- geo %.% # Only run scenarios for areas active in 2014
+  filter(year == "2014") %.%
+  group_by(ward, area) %.%
+  summarize(count = n())
+areas_for_2014 <- areas_for_2014[,1:2]
+
+position_history <-  vote_history %.% # History of left-right scores by ward, area
+  group_by(ward, area) %.%
+  summarize(area_position = mean(weighted_votes))
+
+areas_for_2014 <- left_join(areas_for_2014, position_history, by = c("ward", "area"))
+
 
 # Scenario function -------------------------------------------------------
 
 election_scenario <- function(preference_sensitivity,voteability) { # Takes a preference parameter (preference_sensitivity) and list of "voteability" values for each candidate
   # Returns the votes for each ward_area, by candidate
   voteability <- voteability[order(names(voteability))]
-  scenario_output <- matrix(ncol=length(names(voteability)),nrow=length(areas_for_2014$ward_area)) # Create a matrix to hold scenario results
+  scenario_output <- matrix(ncol=length(names(voteability)),nrow=dim(areas_for_2014)[1]) # Create a matrix to hold scenario results
   for (candidate in 1:length(names(voteability))) { # Each candidate receives support based on their deviation from the normal distribution of position score for the ward_area
-    scenario_output[,candidate] <- voteability[[candidate]]*(dnorm(positions_2014[names(voteability)[candidate]][[1]],areas_for_2014$position,preference_sensitivity)/dnorm(areas_for_2014$position,areas_for_2014$position,preference_sensitivity))
+    scenario_output[,candidate] <- voteability[[candidate]]*(dnorm(positions_2014[names(voteability)[candidate]][[1]],areas_for_2014$area_position,preference_sensitivity)/dnorm(areas_for_2014$area_position,areas_for_2014$area_position,preference_sensitivity))
   }
   scenario_output <- data.frame(scenario_output)
   names(scenario_output)<-names(voteability)
-  scenario_output$ward_area <- areas_for_2014$ward_area
+  scenario_output$ward <- areas_for_2014$ward
+  scenario_output$area <- areas_for_2014$area
   scenario_output$votes <- areas_for_2014$votes
   scenario_output_adj <- scenario_output # Now each candidate receives votes in proportion to their relative share of support in each ward_area
   for (i in 1:dim(scenario_output)[1]) {
