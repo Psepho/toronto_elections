@@ -41,8 +41,9 @@ geo_2006$year <- as.integer(2006)
 geo_2003 <- fortify(shapefile_2006,region="AREA_NAME") # Assuming 2006 locations for 2003 geo
 geo_2003$year <- as.integer(2003)
 geo <- rbind(geo_2010,geo_2006,geo_2003)
-geo$ward_area <- paste(as.integer(str_sub(geo$id,1,2)),as.integer(str_sub(geo$id,-3,-1)),sep="_")
+#geo$ward_area <- paste(as.integer(str_sub(geo$id,1,2)),as.integer(str_sub(geo$id,-3,-1)),sep="_")
 geo$ward <- as.integer(str_sub(geo$id,1,2))
+geo$area <- as.integer(str_sub(geo$id,-3,-1))
 # For 2014, assume same geography as 2010
 geo_2014 <- geo %.%
   filter(year==2010) %.%
