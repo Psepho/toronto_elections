@@ -30,16 +30,17 @@ locations <- as.data.frame(tbl(elections_db,"locations"))
 locations <- rbind(locations,locations %.%
                      filter(year==2006) %.%
                      mutate(year=as.integer(2003)))
-ward_regions <- read.csv("data/ward_regions.csv")
-locations <- inner_join(locations,ward_regions, by=c("ward"))
+#ward_regions <- read.csv("data/ward_regions.csv")
+#locations <- inner_join(locations,ward_regions, by=c("ward"))
 turnout$year <- as.factor(turnout$year)
 locations$year <- as.factor(locations$year)
+locations <- select(locations, CTUID:area)
 
 # Turnout -----------------------------------------------------------------
 
 turnout_geo <- as.data.frame(inner_join(turnout,locations, by=c("ward", "area","year")))
 turnout_geo <- tbl_df(turnout_geo) %.%
-  select(year,ward,area,long,lat,total_eligible,total_votes) %.%
+  select(year,ward,area,total_eligible,total_votes) %.%
   mutate(turnout=total_votes/total_eligible)
 
 # Positions, votes, and turnout by geo -------------------------------------
