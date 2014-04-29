@@ -8,8 +8,6 @@ library(mgcv)
 load("data//census.RData")
 load("data/map_data.RData")
 load("data/vote_history.RData")
-census_summary$year <- as.factor(2010) # TODO: Move to census setup
-names(census_summary)[1] <- "CTUID" # TODO: Move to census setup
 vote_history$CTUID <- as.factor(vote_history$CTUID)
 vote_history <- vote_history %.%
   group_by(year, ward, area, CTUID) %.%
