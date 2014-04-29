@@ -85,4 +85,6 @@ census_summary$GEO <- as.factor(census_summary$GEO)
 census_summary <- as.data.frame(inner_join(census_summary,total_pop, by=c("GEO")))
 census_summary <- as.data.frame(inner_join(census_summary,age_sex_summary, by=c("GEO")))
 census_summary <- as.data.frame(inner_join(census_summary,children, by=c("GEO")))
+census_summary$year <- as.factor(2010)
+names(census_summary)[1] <- "CTUID"
 save(census_summary,file="data/census.RData")
