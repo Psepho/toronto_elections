@@ -2,6 +2,13 @@ library(ggmap)
 library(maptools)
 library(stringr)
 
+# fig directory for downloads and unzips
+if(file.exists("fig")) {
+  # Nothing to do
+}  else {
+  dir.create("fig")
+}
+
 # Download shapefiles -----------------------------------------------------
 
 years <- c(2006,2010)

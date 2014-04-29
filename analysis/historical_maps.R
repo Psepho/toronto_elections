@@ -18,6 +18,7 @@ toronto_map +
   scale_fill_brewer("Position", type="div") +   
   #scale_fill_gradient2("Left-Right Score", midpoint = median(data$weighted_votes), mid = "white",limit=c(0.25,0.85)) +
   facet_wrap(~year)
+ggsave(file = "fig/history_weighted_votes_map.png")
 
 # Turnout -----------------------------------------------------------------
 
@@ -25,3 +26,4 @@ toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=geo) + 
   scale_fill_brewer("Turnout") + 
   facet_wrap(~year)
+ggsave(file = "fig/history_turnout_map.png")
