@@ -1,4 +1,5 @@
 # Basic setup -------------------------------------------------------------
+
 library(ggmap)
 library(maptools)
 library(mapproj)
@@ -64,6 +65,10 @@ prop.table(tapply(results$adj_votes, results[1:2], sum, na.rm=TRUE),2)
 prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
 max_coefficients_by_ward
 
+max_coefficients_by_ward %.%
+  group_by(variable) %.%
+  summarize(count = n())
+
 # Top issue by ward -------------------------------------------------------
 
 library(dplyr)
@@ -102,4 +107,3 @@ toronto_map +
   scale_fill_brewer("Position", type="div", labels=c("Left", rep("",5), "Right")) + 
   facet_wrap(~coefficient)
 ggsave(file = "fig/issue_importance_map.png")
-
