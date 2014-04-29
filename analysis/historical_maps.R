@@ -5,10 +5,9 @@ library(dplyr)
 load("data/map_data.RData")
 load("data/vote_history.RData")
 vote_history <- vote_history %.%
-  mutate(ward_area = paste(ward, area, sep = "_")) %.%
-  group_by(year, ward_area) %.%
+  group_by(year, ward, area) %.%
   summarize(total_votes = mean(votes), turnout = mean(turnout), weighted_votes = mean(weighted_votes))
-geo <- left_join(geo, vote_history, by = c("ward_area", "year")) %.%
+geo <- left_join(geo, vote_history, by = c("ward", "area", "year")) %.%
   filter(year != 2014)
 
 # Positions ---------------------------------------------------------------
