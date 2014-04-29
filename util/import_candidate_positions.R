@@ -3,6 +3,8 @@
 # Outputs candidate_positions.RData
 #----------
 library(XLConnect)
+library(dplyr)
+library(reshape2)
 drop_topic <- "Life & environment" # Drop this topic
 positions_excel <- readWorksheet(object=loadWorkbook("data//Position Scores.xlsx"), "Detailed Postions", startRow=3)
 names(positions_excel) <- tolower(names(positions_excel))
