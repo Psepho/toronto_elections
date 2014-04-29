@@ -56,4 +56,4 @@ area_left_right_history <- votes_by_issues %.%
 votes_by_issues <- as.data.frame(inner_join(votes_by_issues,area_left_right_history, by=c("ward", "area", "year")))
 vote_history <- as.data.frame(inner_join(votes_by_issues,locations, by=c("ward", "area", "year")))
 save(vote_history, file = "data/vote_history.RData")
-rm(candidate_positions, area_left_right_history, votes_by_issues, turnout_geo, turnout, votes, locations, ward_regions, elections_db)
+rm(candidate_positions, area_left_right_history, votes_by_issues, turnout_geo, turnout, votes, locations, elections_db)
