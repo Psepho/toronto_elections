@@ -38,15 +38,16 @@ summary(position_model)
 
 # Map components ----------------------------------------------------------
 
-component_data <- merged_data[,c(9,10,12,14:17)]
+component_data <- merged_data[,c(9,11,12,14:17)]
 component_data <- melt(component_data, id.vars = c("year", "ward", "area"), variable.name = "component", value.name = "loading")
 geo <- left_join(component_data, geo, by = c("ward", "area", "year"))
+levels(geo$component) <- c("Young transit users", "Poorer families", "Richer families", "Comp.4")
+geo <- filter(geo, component!="Comp.4")
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(loading, n = 8)), alpha = 5/6, data=geo) + 
-  scale_fill_brewer("Component loading", type = "div", palette = "RdBu") +   
+  scale_fill_brewer("Component loading", type = "div", palette = "RdBu", labels=c("Low", rep("", 6), "High")) +   
   facet_wrap(~component)
 ggsave(file = "fig/pca_component_map.png")
-
 # plot(pca$scores[,1:2], main = "Position score", xlab = "Comp1", ylab = "Comp2")
 # contour(interp(pca$scores[,1], pca$scores[,2], fitted(position_model), duplicate = "mean"), add = TRUE, col = "red", labcex = 0.8)
 # AbilityContour <- merge(MuniPCA$scores, as.data.frame(fitted(AbilityModel)), by = "row.names")
