@@ -26,15 +26,20 @@ models <- models %>% group_by(ward)
 
 # Predict votes for positions ---------------------------------------------
 
-issue_resolution <- 10.0
+issue_resolution <- 20.0
 issue_vector <- as.integer(seq(0, 100, issue_resolution))
-issue_universe <- expand.grid(airport_expansion = issue_vector, finance_budget = issue_vector, transit = issue_vector, transportation = issue_vector, waste_management = issue_vector, ward = levels(issues_df$ward))
+issue_universe <- expand.grid(airport_expansion = issue_vector, finance_budget = 50, transit = 50, transportation = issue_vector, waste_management = 50, ward = levels(issues_df$ward))
 issue_universe <- issue_universe %>% group_by(airport_expansion, finance_budget, transit, transportation, waste_management, ward)
 predictions <- issue_universe %>% do(votes = predict(models$mod[models$ward==.$ward][[1]], ., interval = "confidence")[1])
+predictions$votes <- unlist(predictions$votes)
+
 
 # Plot contour maps -------------------------------------------------------
 
 library(ggplot2)
 
-p <- ggplot(issue_universe, aes(airport_expansion, transportation, z = votes))
-p + stat_contour()
+p <- ggplot(filter(predictions), aes(airport_expansion, transportation, z = votes))
+p + 
+  stat_contour(binwidth = 10, size = 1, aes(colour = ..level..)) +
+  scale_colour_gradient2() +
+  facet_wrap(~ward)
