@@ -24,15 +24,12 @@ issues_df <- group_by(issues_df[,c(1,4:9)], ward)
 models <- issues_df %>% do(mod = lm(votes ~ transportation + transit + finance_budget + waste_management + airport_expansion, data = ., na.action = na.omit))
 models <- models %>% group_by(ward)
 
-
 # Predict votes for positions ---------------------------------------------
 
-issue_resolution <- 20
-issue_vector <- seq(20, 80, issue_resolution)
-issue_universe <- expand.grid(airport_expansion = issue_vector, finance_budget = issue_vector, transit = issue_vector, transportation = issue_vector, waste_management = issue_vector)
+issue_resolution <- 10
+issue_vector <- as.integer(seq(20, 80, issue_resolution))
+issue_universe <- expand.grid(airport_expansion = issue_vector, finance_budget = issue_vector, transit = issue_vector, transportation = issue_vector, waste_management = issue_vector, ward = levels(issues_df$ward), votes = 0, lwr = 0, upr = 0)
 
-predictions <- function(data) {
-  models %>% do(votes = predict(.$mod[[1]], data, interval = "confidence")[[1]])
+for (i in 1:dim(issue_universe)[1]) {
+  issue_universe[i,7:9] <- predict(models$mod[models$ward==issue_universe$ward[i]][[1]], issue_universe[i,1:5], interval = "confidence")
 }
-
-test <- predictions(issue_universe[1,])
