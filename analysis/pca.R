@@ -38,7 +38,7 @@ summary(position_model)
 
 # Map components ----------------------------------------------------------
 
-component_data <- merged_data[,c(9,11,12,14:17)]
+component_data <- merged_data[,c(9,10,11,14:17)]
 component_data <- melt(component_data, id.vars = c("year", "ward", "area"), variable.name = "component", value.name = "loading")
 geo <- left_join(component_data, geo, by = c("ward", "area", "year"))
 levels(geo$component) <- c("Young transit users", "Poorer families", "Richer families", "Comp.4")
