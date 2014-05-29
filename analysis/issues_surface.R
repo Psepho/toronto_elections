@@ -2,6 +2,7 @@
 
 library(dplyr)
 library(reshape2)
+library(ggplot2)
 load("data/vote_history.RData")
 load("data/candidate_positions.RData")
 
@@ -27,20 +28,22 @@ models <- models %>% group_by(ward)
 # Predict votes for positions ---------------------------------------------
 
 issue_resolution <- 10.0
-issue_vector <- as.integer(seq(0, 100, issue_resolution))
-issue_universe <- expand.grid(airport_expansion = issue_vector, finance_budget = issue_vector, transit = issue_vector, transportation = issue_vector, waste_management = issue_vector, ward = levels(issues_df$ward))
+issue_vector <- as.integer(seq(20, 80, issue_resolution))
+issue_universe <- expand.grid(airport_expansion = issue_vector, finance_budget = issue_vector, transit = 50, transportation = issue_vector, waste_management = 50, ward = levels(issues_df$ward))
 issue_universe <- issue_universe %>% group_by(airport_expansion, finance_budget, transit, transportation, waste_management, ward)
 predictions <- issue_universe %>% do(votes = predict(models$mod[models$ward==.$ward][[1]], ., interval = "confidence")[1])
 predictions$votes <- unlist(predictions$votes)
 rm(issue_resolution, issue_vector, issue_universe)
-saveRDS(predictions, "data/issue_predictions.rds")
+#saveRDS(predictions, "data/issue_predictions.rds")
 
 # Plot contour maps -------------------------------------------------------
 
-library(ggplot2)
-
-p <- ggplot(predictions, aes(airport_expansion, transportation, z = votes))
-p + 
+predictions <- readRDS("data/issue_predictions.rds")
+plot_axes <- c("airport_expansion", "transportation")
+# Dynamically summarize votes, based on plot_axes
+data <- eval(parse( text = paste( "predictions %>% group_by(ward, ", plot_axes[1], ",", plot_axes[2], ", add = FALSE) %>% summarize(votes = mean(votes))", sep ='')))
+# Plot the results
+ggplot(data, aes_string(x = plot_axes[1], y = plot_axes[2], z = plot_response)) + 
   stat_contour(binwidth = 5, size = 1.5, aes(colour = ..level..)) +
-  scale_colour_gradient2("Votes", labels=c("Low", rep("", 2), "High"), low = "white") +
+  scale_colour_gradient2("Votes", labels=c("Low", rep("", 3), "High"), low = "white") +
   facet_wrap(~ward)
