@@ -39,11 +39,14 @@ rm(issue_resolution, issue_vector, issue_universe)
 # Plot contour maps -------------------------------------------------------
 
 predictions <- readRDS("data/issue_predictions.rds")
-plot_axes <- c("airport_expansion", "transportation")
+plot_axes <- c("transportation", "airport_expansion")
 # Dynamically summarize votes, based on plot_axes
 data <- eval(parse( text = paste( "predictions %>% group_by(ward, ", plot_axes[1], ",", plot_axes[2], ", add = FALSE) %>% summarize(votes = mean(votes))", sep ='')))
+tory_positions <- eval(parse( text = paste( "candidate_positions %>% select(", plot_axes[1], ",", plot_axes[2], ") %>% filter(candidate == \"tory john\")", sep ='')))
+
 # Plot the results
 ggplot(data, aes_string(x = plot_axes[1], y = plot_axes[2], z = plot_response)) + 
-  stat_contour(binwidth = 5, size = 1.5, aes(colour = ..level..)) +
-  scale_colour_gradient2("Votes", labels=c("Low", rep("", 3), "High"), low = "white") +
+  stat_contour(aes(colour = ..level..)) +
+  scale_colour_gradient2("Votes", low = "white") +
+  annotate("text", x = tory_positions[1,2], y = tory_positions[1,3], label = "T") + 
   facet_wrap(~ward)
