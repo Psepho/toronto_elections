@@ -15,8 +15,7 @@ areas_for_2014 <- geo %.% # Only run scenarios for areas active in 2014
   summarize(count = n())
 areas_for_2014 <- areas_for_2014[,1:2]
 candidates_for_2014 <- candidate_positions %.%
-  filter(year == 2014) %.%
-  select(candidate, left_right_score)
+  filter(year == 2014)
 candidates_for_2014 <- split(candidates_for_2014$left_right_score/100, candidates_for_2014$candidate) # Convert to list
 geo_2014 <- filter(geo, year == 2014)
 position_history <-  vote_history %.% # History of left-right scores by ward, area
@@ -68,25 +67,25 @@ scenario_map <- function(output) { # Plot the results on a map by ward area
   print(prop.table(tapply(region_summary$value, region_summary[1:2], sum),2))
   toronto_map +
     geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(votes, n = 9)), alpha = 5/6, data = data) +
-    scale_fill_brewer("Votes") + 
+    scale_fill_brewer("Votes", labels=c("Low", rep("",7), "High")) + 
     facet_wrap(~candidate)
 }
 
 # Scenario 1 --------------------------------------------------------------
 
 preference_sensitivity <- 0.175
-#voteability=list("tory john"=0.239, "chow olivia"=0.443, "ford rob"=0.935, "stintz karen"=0.079,"soknacki david"=0.044,"left rof"=0.005,"center rof"=0.043,"right rof"=0.019, "no one"=0.001) # calibrated to match polls
-voteability=list("tory john"=0.239, "chow olivia"=0.443, "ford rob"=0.935, "stintz karen"=0.079,"soknacki david"=0.044)
+voteability=list("tory john"=0.304, "chow olivia"=0.504, "ford rob"=0.915, "stintz karen"=0.046,"soknacki david"=0.037) # calibrated to match polls
+# voteability=list("tory john"=1, "chow olivia"=1, "ford rob"=1, "stintz karen"=0,"soknacki david"=0)
 
 output <- election_scenario(preference_sensitivity,voteability)
 scenario_summary(output)
 output_major <- output %.%
   filter(candidate %in% names(voteability)[1:3])
 scenario_map(output_major)
+ggsave(file = "fig/scenario_map.png")
 
 # Scenario 4 --------------------------------------------------------------
 
 # Scenario 4: Move left slightly
-# candidates_for_2014$`tory john` <- candidates_for_2014$tory-0.05
-# candidates_for_2014$`chow olivia` <- candidates_for_2014$chow-0.05
-# voteability$`tory john` <- 0.284
+candidates_for_2014$`tory john` <- candidates_for_2014$tory - 0.05
+candidates_for_2014$`chow olivia` <- candidates_for_2014$chow - 0.05
