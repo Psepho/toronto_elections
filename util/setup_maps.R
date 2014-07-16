@@ -1,4 +1,5 @@
 library(ggmap)
+library(rgeos)
 library(maptools)
 library(stringr)
 
