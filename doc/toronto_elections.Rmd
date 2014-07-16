@@ -2,31 +2,88 @@
 title: "Analyzing the 2014 Toronto Mayoral Election"
 author: "Matthew Routley and Matt DesRosiers"
 date: "July 7, 2014"
-output: html_document
+output:
+  html_document:
+    fig_caption: yes
+    toc: yes
+  word_document:
+    fig_caption: yes
 ---
 
-A specific but lofty goal
-=========================
+```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=TRUE}
+#source('util/preprocess_data.R')
+#source('util/setup_maps.R')
+load("data/map_data.RData")
+load("data/vote_history.RData")
+load("data/candidate_positions.RData")
+```
+```{r load_packages, warning=FALSE, message=FALSE, echo=FALSE, results='hide'}
+library(reshape2)
+library(ggmap)
+library(maptools)
+library(mapproj)
+library(dplyr)
+```
 
-Campaigns have limited resources – both time and financial – that should be spent on attracting voters that are more likely to support their candidates. Identifying these voters can be critical to the success of a candidate
+# Overview
+
+Campaigns have limited resources – both time and financial – that should be spent on attracting voters that are more likely to support their candidates. Identifying these voters can be critical to the success of a candidate.
+
 Given the privacy of voting and the lack of useful surveys at the municipal level, there are few options for identifying voter preferences:
-City-wide polling, which is large-scale but does nothing to identify voters
-Voter databases, which identify individual voters, but are small scale
-In-depth analytical modeling, which is both large-scale and helps to 'identify' voters at a neighbourhood level on average
 
-￼GOAL: To effectively model – at a neighbourhood level – which candidates voters are likely to support, specifically in the 2014 Toron mayoral race
+* City-wide polling, which is large-scale but does nothing to identify voters
+* Voter databases, which identify individual voters, but are small scale
+* In-depth analytical modeling, which is both large-scale and helps to 'identify' voters at a neighbourhood level on average
 
-Voters aren’t stuck in their ways
-=================================
+The goal of this work is to effectively model -- at a neighbourhood level -- which candidates voters are likely to support, specifically in the 2014 Toronto mayoral race.
 
-Voters have revealed that their preferences aren’t stuck in stone
+# Voters aren’t stuck in their ways
 
-Are voters changing positions or voting strategically (and are those the same?), or is it simply that different voters are showing up?
+```{r setup_historical_maps, echo=FALSE, results='hide'}
+vote_history <- vote_history %.%
+  group_by(year, ward, area) %.%
+  summarize(total_votes = mean(votes), turnout = mean(turnout), weighted_votes = mean(weighted_votes))
+geo <- left_join(geo, vote_history, by = c("ward", "area", "year")) %.%
+  filter(year != 2014)
+```
 
-To try to separate out the latter, we looked at turnout, and specifically areas where turnout is above 60% in all three elections to see if those areas change positions. Turns out that they do (by close to 0.1 on the position scale, on average) – suggesting that it’s not simply voters waiting for the 'right' candidate to come along
+Voters have revealed that their preferences aren’t stuck in stone. As shown in the figure below, the positions of voters changed dramatically in 2010 from predominantly left positions to right.
 
-Proximity voting and calibration
-================================
+```{r history_weighted_votes_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", echo=FALSE}
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes, length=0.15)), alpha = 5/6, data=geo) + 
+  scale_fill_brewer("Position", type="div") +
+  facet_wrap(~year)
+```
+
+Are voters changing positions or voting strategically (and are those the same?), or is it simply that different voters are showing up? We can see in the figure below that turnout increased in 2010. Perhaps right-leaning voters simply turned out to vote in 2010, rather than individual voters changing their positions.
+
+```{r history_turnout_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", echo=FALSE}
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=geo) + 
+  scale_fill_brewer("Turnout") + 
+  facet_wrap(~year)
+```
+```{r position_change, echo=FALSE}
+active_areas <- vote_history %>%
+  select(year,ward,area,turnout)
+active_areas <- melt(active_areas,id=1:3)
+active_areas <- dcast(active_areas, ward + area ~ year)
+turnout_threshold <- 0.6
+active_areas <- active_areas %>%
+  filter(`2006`>turnout_threshold,`2010`>turnout_threshold) %>%
+  select(ward,area)
+positions_in_active_areas <- tbl_df(merge(active_areas,vote_history)) %>%
+  group_by(add = TRUE) %>%
+  filter(year != 2003) %>%
+  mutate(position_change = weighted_votes - lag(weighted_votes, default = 0)) %>%
+  filter(year == 2010) %.%
+  summarize(position_change=mean(position_change))
+```
+
+To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas[[1]],2)` on the position scale, on average) -- suggesting that it’s not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
+
+# Proximity voting and calibration
 
 The theory of ‘proximity’ voting (see appendix); and
 A ‘voteability' variable to calibrate to the most recent polls. 'Voteability' includes numerous factors, including:
@@ -38,8 +95,7 @@ Whether voters are voting strategically (e.g., choosing the 'lesser of two evils
 
 This does not yet say why voters vote the way they do (which we hope comes next as we add additional complexity), but does identify where those voters may be
 
-Current challenge for Tory is 'Voteability'
-===========================================
+# Current challenge for Tory is 'Voteability'
 
 If strictly based on currently* stated positions, John Tory would win a three- way election, easily beating Chow and Ford (48%, 38%, and 14% of the votes)
 
@@ -47,8 +103,7 @@ This assumes that all issues are equally important to voters However, calibratin
 ‘voteability’ is relatively low (~ 60% of Chow and 33% of Ford)
 Taking this into account, the election – if held today – might see the following number of votes cast for each of the three 'main' candidates:
 
-Scenarios
-=========
+# Scenarios
 
 At this point, we can still conduct useful scenarios. These show how changes in candidates’ positions and voteability scores would impact high-level and geographic breakdown of support
 As examples, Tory just wins (all other things unchanged) when his voteability score increases by:
@@ -56,26 +111,22 @@ As examples, Tory just wins (all other things unchanged) when his voteability sc
 9%, if Ford drops out of the race, or
 0%, if he moves 5 “points” to the left, forcing Chow to do the same
 
-A couple issues have been important
-===================================
+# A couple issues have been important
 
 Over the last three elections, various issues have been influential in the way wards have voted, but a few key issues certainly stand out:
 ￼Island airport expansion: Top issue overall; top issue in 30 wards; close second in another 6. Voters have typically voted against expansion
 Transportation (roads and bike lanes): Top issue in 10 wards; close second in another 6. Votes split depending on ward
 Finance and budget, transit, waste management, and other issues have been much less important historically
 
-If these issues were still important...
-=======================================
+# If these issues were still important...
 
 If voters placed the same importance on issues as they have over the last three elections (i.e., not weighted equally as on slide 10), then strictly based on currently* stated positions, Chow would narrowly beat Tory:
 
-Neighbourhood characteristics are predictive
-============================================
+# Neighbourhood characteristics are predictive
 
 Based on 2011 Census data, there are three general components that are modestly correlated with voting over the last three elections. If these hold in 2014, neighbourhoods that are predominantly:
 
-Core and GOTV areas
-===================
+# Core and GOTV areas
 
 Based on a combination of issue importance (by ward) and “directional positional alignment” with Tory (e.g., both his and the ward’s average position on topic X are right or left), we have identified two types of areas:
 "Core” areas – highly directionally aligned and average turnout is relatively high (>52.5%)
