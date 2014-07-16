@@ -2,6 +2,7 @@ library(ggmap)
 library(rgeos)
 library(maptools)
 library(stringr)
+library(dplyr)
 
 # fig directory for downloads and unzips
 if(file.exists("fig")) {
