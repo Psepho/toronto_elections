@@ -11,8 +11,6 @@ output:
 ---
 
 ```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=TRUE}
-#source('util/preprocess_data.R')
-#source('util/setup_maps.R')
 load("data/map_data.RData")
 load("data/vote_history.RData")
 load("data/candidate_positions.RData")
@@ -27,7 +25,7 @@ library(dplyr)
 
 # Overview
 
-Campaigns have limited resources – both time and financial – that should be spent on attracting voters that are more likely to support their candidates. Identifying these voters can be critical to the success of a candidate.
+Campaigns have limited resources -– both time and financial –- that should be spent on attracting voters that are more likely to support their candidates. Identifying these voters can be critical to the success of a candidate.
 
 Given the privacy of voting and the lack of useful surveys at the municipal level, there are few options for identifying voter preferences:
 
@@ -39,11 +37,11 @@ The goal of this work is to effectively model -- at a neighbourhood level -- whi
 
 # Voters aren’t stuck in their ways
 
-```{r setup_historical_maps, echo=FALSE, results='hide'}
+```{r setup_historical_maps, echo=FALSE, results='hide', cache=TRUE}
 vote_history <- vote_history %.%
   group_by(year, ward, area) %.%
   summarize(total_votes = mean(votes), turnout = mean(turnout), weighted_votes = mean(weighted_votes))
-geo <- left_join(geo, vote_history, by = c("ward", "area", "year")) %.%
+geo_history <- left_join(geo, vote_history, by = c("ward", "area", "year")) %.%
   filter(year != 2014)
 ```
 
@@ -51,7 +49,7 @@ Voters have revealed that their preferences aren’t stuck in stone. As shown in
 
 ```{r history_weighted_votes_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", echo=FALSE}
 toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes, length=0.15)), alpha = 5/6, data=geo) + 
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes, length=0.15)), alpha = 5/6, data=geo_history) + 
   scale_fill_brewer("Position", type="div") +
   facet_wrap(~year)
 ```
@@ -60,7 +58,7 @@ Are voters changing positions or voting strategically (and are those the same?),
 
 ```{r history_turnout_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", echo=FALSE}
 toronto_map +
-  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=geo) + 
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=geo_history) + 
   scale_fill_brewer("Turnout") + 
   facet_wrap(~year)
 ```
@@ -85,35 +83,123 @@ To try to separate out these effects, we specifically looked at areas where turn
 
 # Proximity voting and calibration
 
-The theory of ‘proximity’ voting (see appendix); and
-A ‘voteability' variable to calibrate to the most recent polls. 'Voteability' includes numerous factors, including:
+In order to analyze the upcoming election, we use previous election results and apply:
 
-How well known is/are the candidate and their positions
-How'likeable'/'trustworthy'isthecandidate
-Perceived viability of the candidate winning
-Whether voters are voting strategically (e.g., choosing the 'lesser of two evils' if their preferred choice is perceived to be unviable)
+* The theory of ‘proximity’ voting (see appendix); and
+* A ‘voteability' variable to calibrate to the most recent polls. 'Voteability' includes numerous factors, including:
+  * How well known is/are the candidate and their positions
+  * How'likeable'/'trustworthy'isthecandidate
+  * Perceived viability of the candidate winning
+  * Whether voters are voting strategically (e.g., choosing the 'lesser of two evils' if their preferred choice is perceived to be unviable)
 
-This does not yet say why voters vote the way they do (which we hope comes next as we add additional complexity), but does identify where those voters may be
+This does not yet say _why_ voters vote the way they do (which we hope comes next as we add additional complexity), but does identify _where_ those voters may be.
 
 # Current challenge for Tory is 'Voteability'
 
-If strictly based on currently* stated positions, John Tory would win a three- way election, easily beating Chow and Ford (48%, 38%, and 14% of the votes)
+```{r scenario_setup, echo=FALSE, cache=TRUE}
+areas_for_2014 <- geo %.% # Only run scenarios for areas active in 2014
+  filter(year == "2014") %.%
+  group_by(ward, area) %.%
+  summarize(count = n())
+areas_for_2014 <- areas_for_2014[,1:2]
+candidates_for_2014 <- candidate_positions %.%
+  filter(year == 2014)
+candidates_for_2014 <- split(candidates_for_2014$left_right_score/100, candidates_for_2014$candidate) # Convert to list
+geo_2014 <- filter(geo, year == 2014)
+position_history <-  vote_history %.% # History of left-right scores by ward, area
+  group_by(ward, area) %.%
+  summarize(area_position = mean(weighted_votes), area_votes = sum(total_votes), year = 2014)
 
-This assumes that all issues are equally important to voters However, calibrating to recent polls** suggests that John Tory’s current
-‘voteability’ is relatively low (~ 60% of Chow and 33% of Ford)
-Taking this into account, the election – if held today – might see the following number of votes cast for each of the three 'main' candidates:
+areas_for_2014 <- left_join(areas_for_2014, position_history, by = c("ward", "area"))
+# rm(geo, vote_history, candidate_positions)
+election_scenario <- function(preference_sensitivity,voteability) { # Takes a preference parameter (preference_sensitivity) and list of "voteability" values for each candidate
+  # Returns the votes for each ward_area, by candidate
+  voteability <- voteability[order(names(voteability))]
+  scenario_output <- matrix(ncol=length(names(voteability)),nrow=dim(areas_for_2014)[1]) # Create a matrix to hold scenario results
+  for (candidate in 1:length(names(voteability))) { # Each candidate receives support based on their deviation from the normal distribution of position score for the ward_area
+    scenario_output[,candidate] <- voteability[[candidate]]*(dnorm(candidates_for_2014[names(voteability)[candidate]][[1]],areas_for_2014$area_position,preference_sensitivity)/dnorm(areas_for_2014$area_position,areas_for_2014$area_position,preference_sensitivity))
+  }
+  scenario_output <- data.frame(scenario_output)
+  names(scenario_output)<-names(voteability)
+  scenario_output$ward <- areas_for_2014$ward
+  scenario_output$area <- areas_for_2014$area
+  scenario_output$votes <- areas_for_2014$area_votes
+  scenario_output_adj <- scenario_output # Now each candidate receives votes in proportion to their relative share of support in each ward_area
+  for (i in 1:dim(scenario_output)[1]) {
+    for (j in 1:length(names(voteability))) {
+      scenario_output_adj[i,j] <- scenario_output[i,length(names(voteability))+3]*scenario_output[i,j]/sum(scenario_output[i,1:length(names(voteability))])
+    }
+  }
+  melt(scenario_output_adj[,-length(names(scenario_output_adj))],id = c(length(names(voteability))+1, length(names(voteability))+2), value.name = "votes", variable.name = "candidate")
+}
+scenario_summary <- function(output) { # Summarize the total votes and percent of votes for each candidate
+  scenario_summary <- output %.%
+    group_by(candidate) %.%
+    summarize(votes=sum(votes))
+  scenario_summary$percent <- scenario_summary$votes/sum(scenario_summary$votes)
+  format(scenario_summary, digits=2)
+}
+scenario_map <- function(output) { # Plot the results on a map by ward area
+  output <- droplevels(output)
+  data <- as.data.frame(inner_join(geo_2014,output, by=c("ward", "area")))
+  candidate_labels <- sapply(strsplit(levels(data$candidate)," "), "[", 1)
+  candidate_labels <- paste(toupper(substring(candidate_labels, 1, 1)), substring(candidate_labels, 2), sep = "", collapse = " ")
+  levels(data$candidate) <- unlist(strsplit(candidate_labels, split=" "))
+  region_summary <- data %.%
+    group_by(candidate,region) %.%
+    summarize(votes=sum(votes))
+  region_summary <- melt(region_summary)
+  print(prop.table(tapply(region_summary$value, region_summary[1:2], sum),2))
+  toronto_map +
+    geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(votes, n = 9)), alpha = 5/6, data = data) +
+    scale_fill_brewer("Votes", labels=c("Low", rep("",7), "High")) + 
+    facet_wrap(~candidate)
+}
+scenario_candidate <- function(output, candidate_name) { # Summarize the percent of votes for a candidate
+  total_votes <- sum(output$votes)
+  candidate_votes <- sum(output$votes[output$candidate==candidate_name])
+  round(candidate_votes/total_votes *100,1)
+}
+```
 
-# Scenarios
+```{r no_voteability_scenario, echo=FALSE}
+preference_sensitivity <- 0.175
+voteability=list("tory john"=1, "chow olivia"=1, "ford rob"=1,"soknacki david"=1)
+output <- election_scenario(preference_sensitivity,voteability)
+```
 
-At this point, we can still conduct useful scenarios. These show how changes in candidates’ positions and voteability scores would impact high-level and geographic breakdown of support
-As examples, Tory just wins (all other things unchanged) when his voteability score increases by:
-34% (still less than Chow and much less than Ford), or
-9%, if Ford drops out of the race, or
-0%, if he moves 5 “points” to the left, forcing Chow to do the same
+If strictly based on currently[^position_date] stated positions, John Tory would win a four-way election with `r scenario_candidate(output,"tory john")`% of the vote, followed closely by David Soknacki with `r scenario_candidate(output,"soknacki david")`%. Olivia Chow would come in third at `r scenario_candidate(output,"chow olivia")`% and Rob Ford would place a distant fourth at `r scenario_candidate(output,"ford rob")`%.
+
+[^position_date]: As of 26 May 2014
+
+As we can see in the map below, support for both Tory and Soknacki is widespread, while Chow's support is concentrated west of downtown. Ford has moderate support around downtown.
+
+```{r no_voteability_scenario_map, fig.cap="Votes cast for each candidate, based only on their stated positions.", echo=FALSE, results='hide', message=FALSE}
+scenario_map(output)
+```
+
+```{r voteability_scenario, echo=FALSE}
+preference_sensitivity <- 0.175
+voteability = list("tory john"=0.304, "chow olivia"=0.504, "ford rob"=0.915,"soknacki david"=0.037)
+output <- election_scenario(preference_sensitivity,voteability)
+```
+
+This assumes that all issues are equally important to voters. However, calibrating to recent polls[^poll_date] suggests that John Tory’s current ‘voteability’ is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
+
+Taking this into account, the election – if held today – might see the following distribution of votes cast for each of candidates.
+
+[^poll_date]: As of 21 May 2014
+
+```{r voteability_scenario_map, echo=FALSE, fig.cap="Votes cast for each candidate, after taking voteability into account.", echo=FALSE, results='hide', message=FALSE}
+scenario_map(output)
+```
+
+This distribution of votes gives Chow the lead with `r scenario_candidate(output,"chow olivia")`% of the votes. Tory is far behind with `r scenario_candidate(output,"tory john")`% and Ford is third with `r scenario_candidate(output,"ford rob")`%. Soknacki only obtains `r scenario_candidate(output,"soknacki david")`%.
 
 # A couple issues have been important
 
 Over the last three elections, various issues have been influential in the way wards have voted, but a few key issues certainly stand out:
+
 ￼Island airport expansion: Top issue overall; top issue in 30 wards; close second in another 6. Voters have typically voted against expansion
 Transportation (roads and bike lanes): Top issue in 10 wards; close second in another 6. Votes split depending on ward
 Finance and budget, transit, waste management, and other issues have been much less important historically
