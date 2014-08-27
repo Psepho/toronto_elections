@@ -38,11 +38,12 @@ The goal of this work is to effectively model -- at a neighbourhood level -- whi
 # Voters aren’t stuck in their ways
 
 ```{r setup_historical_maps, echo=FALSE, results='hide', cache=TRUE}
-vote_history <- vote_history %.%
+history <- vote_history %.%
   group_by(year, ward, area) %.%
   summarize(total_votes = mean(votes), turnout = mean(turnout), weighted_votes = mean(weighted_votes))
-geo_history <- left_join(geo, vote_history, by = c("ward", "area", "year")) %.%
+geo_history <- left_join(geo, history, by = c("ward", "area", "year")) %.%
   filter(year != 2014)
+rm(history)
 ```
 
 Voters have revealed that their preferences aren’t stuck in stone. As shown in the figure below, the positions of voters changed dramatically in 2010 from predominantly left positions to right.
@@ -62,7 +63,7 @@ toronto_map +
   scale_fill_brewer("Turnout") + 
   facet_wrap(~year)
 ```
-```{r position_change, echo=FALSE}
+```{r position_change, echo=FALSE, cache=TRUE}
 active_areas <- vote_history %>%
   select(year,ward,area,turnout)
 active_areas <- melt(active_areas,id=1:3)
@@ -109,7 +110,6 @@ geo_2014 <- filter(geo, year == 2014)
 position_history <-  vote_history %.% # History of left-right scores by ward, area
   group_by(ward, area) %.%
   summarize(area_position = mean(weighted_votes), area_votes = sum(total_votes), year = 2014)
-
 areas_for_2014 <- left_join(areas_for_2014, position_history, by = c("ward", "area"))
 # rm(geo, vote_history, candidate_positions)
 election_scenario <- function(preference_sensitivity,voteability) { # Takes a preference parameter (preference_sensitivity) and list of "voteability" values for each candidate
@@ -162,7 +162,7 @@ scenario_candidate <- function(output, candidate_name) { # Summarize the percent
 }
 ```
 
-```{r no_voteability_scenario, echo=FALSE}
+```{r no_voteability_scenario, echo=FALSE, cache=TRUE}
 preference_sensitivity <- 0.175
 voteability=list("tory john"=1, "chow olivia"=1, "ford rob"=1,"soknacki david"=1)
 output <- election_scenario(preference_sensitivity,voteability)
@@ -178,7 +178,7 @@ As we can see in the map below, support for both Tory and Soknacki is widespread
 scenario_map(output)
 ```
 
-```{r voteability_scenario, echo=FALSE}
+```{r voteability_scenario, echo=FALSE, cache=TRUE}
 preference_sensitivity <- 0.175
 voteability = list("tory john"=0.304, "chow olivia"=0.504, "ford rob"=0.915,"soknacki david"=0.037)
 output <- election_scenario(preference_sensitivity,voteability)
@@ -198,11 +198,49 @@ This distribution of votes gives Chow the lead with `r scenario_candidate(output
 
 # A couple issues have been important
 
-Over the last three elections, various issues have been influential in the way wards have voted, but a few key issues certainly stand out:
+```{r issue_setup,echo=FALSE, cache=TRUE}
+issues_df <- vote_history  %.%
+  group_by(ward, area, candidate, add = FALSE) %.%
+  summarize(votes=sum(total_votes), airport_expansion=mean(`Airport expansion`), finance_budget=mean(`Finance & Budget`), transit=mean(Transit), transportation=mean(Transportation), waste_management=mean(`Waste management`))
+issues_df$ward <- as.factor(issues_df$ward)
+issues_df <- group_by(issues_df[,c(1,4:9)], ward)
 
-￼Island airport expansion: Top issue overall; top issue in 30 wards; close second in another 6. Voters have typically voted against expansion
-Transportation (roads and bike lanes): Top issue in 10 wards; close second in another 6. Votes split depending on ward
-Finance and budget, transit, waste management, and other issues have been much less important historically
+areas_per_ward <- geo_2014 %.%
+#   filter(year == "2014") %.%
+  group_by(ward, area) %.%
+  summarize(count = n()) %.%
+  group_by(ward, add = FALSE) %.% # Seems roundabout, but need to summarize with area first
+  summarize(count = n())
+
+geo_2014 <- filter(geo, year == 2014)
+
+# Issue models for each ward ----------------------------------------------
+issues_formula <- votes ~ transportation + transit + finance_budget + waste_management + airport_expansion
+library(plyr)
+library(dplyr)
+issues_model <- function(df){
+  lm(issues_formula, data = df, na.action = na.omit)
+}
+issues_by_ward <- dlply(issues_df, .(ward), issues_model)
+coefs_by_ward <- ldply(issues_by_ward, function(x) coef(x))
+coefs_melt <- melt(coefs_by_ward[,-2])
+max_coefficients_by_ward <- ddply(coefs_melt, "ward", function(x) x[which.max(abs(x$value)),])
+max_coefficients_by_ward$ward <- as.integer(max_coefficients_by_ward$ward)
+detach("package:plyr", unload=TRUE)
+library(dplyr)
+top_coefficients <- max_coefficients_by_ward %.%
+  group_by(variable) %.%
+  summarize(count = n()) %.%
+  arrange(desc(count))
+top_coefficients
+```
+
+
+Over the last three elections, various issues have been influential in the way wards have voted, but two key issues certainly stand out:
+
+* `r gsub("_", " ", top_coefficients$variable[1])`: top issue overall; top issue in `r top_coefficients$count[1]` wards; close second in another 6. Voters have typically voted against expansion
+* `r gsub("_", " ", top_coefficients$variable[2])` (roads and bike lanes): Top issue in `r top_coefficients$count[2]` wards; close second in another 6. Votes split depending on ward
+* Finance and budget, transit, waste management, and other issues have been much less important historically
 
 # If these issues were still important...
 
