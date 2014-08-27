@@ -13,9 +13,9 @@ output:
 ```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=TRUE}
 #source('util/preprocess_data.R')
 #source('util/setup_maps.R')
-load("./data/map_data.RData")
-load("./data/vote_history.RData")
-load("./data/candidate_positions.RData")
+load("data/map_data.RData")
+load("data/vote_history.RData")
+load("data/candidate_positions.RData")
 ```
 ```{r load_packages, warning=FALSE, message=FALSE, echo=FALSE, results='hide'}
 library(reshape2)

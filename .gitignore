@@ -6,3 +6,5 @@ tmp/*
 *Temp*
 data/*sqlite*
 data
+toronto_elections.html
+toronto_elections_cache
