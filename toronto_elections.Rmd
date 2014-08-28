@@ -48,7 +48,7 @@ rm(history)
 
 Voters have revealed that their preferences aren’t stuck in stone. As shown in the figure below, the positions of voters changed dramatically in 2010 from predominantly left positions to right.
 
-```{r history_weighted_votes_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", echo=FALSE}
+```{r history_weighted_votes_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", results='hide', message=FALSE, echo=FALSE, warning=FALSE, fig.height=2}
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes, length=0.15)), alpha = 5/6, data=geo_history) + 
   scale_fill_brewer("Position", type="div") +
@@ -57,13 +57,13 @@ toronto_map +
 
 Are voters changing positions or voting strategically (and are those the same?), or is it simply that different voters are showing up? We can see in the figure below that turnout increased in 2010. Perhaps right-leaning voters simply turned out to vote in 2010, rather than individual voters changing their positions.
 
-```{r history_turnout_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", echo=FALSE}
+```{r history_turnout_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", results='hide', message=FALSE, echo=FALSE, warning=FALSE, fig.height=2}
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=geo_history) + 
   scale_fill_brewer("Turnout") + 
   facet_wrap(~year)
 ```
-```{r position_change, echo=FALSE, cache=TRUE}
+```{r position_change, echo=FALSE, cache=TRUE, results='hide', warning=FALSE, message=FALSE}
 active_areas <- vote_history %>%
   select(year,ward,area,turnout)
 active_areas <- melt(active_areas,id=1:3)
@@ -84,18 +84,18 @@ To try to separate out these effects, we specifically looked at areas where turn
 
 # Proximity voting and calibration
 
-In order to analyze the upcoming election, we use previous election results and apply:
+In order to analyze the upcoming election, we use previous election results and apply both the theory of ‘proximity’ voting (see appendix) and a ‘voteability' variable to calibrate to the most recent polls.
 
-* The theory of ‘proximity’ voting (see appendix); and
-* A ‘voteability' variable to calibrate to the most recent polls. 'Voteability' includes numerous factors, including:
+'Voteability' includes numerous factors, including:
+
   * How well known is/are the candidate and their positions
   * How'likeable'/'trustworthy'isthecandidate
   * Perceived viability of the candidate winning
   * Whether voters are voting strategically (e.g., choosing the 'lesser of two evils' if their preferred choice is perceived to be unviable)
 
-This does not yet say _why_ voters vote the way they do (which we hope comes next as we add additional complexity), but does identify _where_ those voters may be.
+This does not yet say _why_ voters vote the way they do, but does identify _where_ those voters may be.
 
-# Current challenge for Tory is 'Voteability'
+# Candidate positions _alone_ don't predict outcomes
 
 ```{r scenario_setup, echo=FALSE, cache=TRUE}
 areas_for_2014 <- geo %.% # Only run scenarios for areas active in 2014
@@ -198,22 +198,12 @@ This distribution of votes gives Chow the lead with `r scenario_candidate(output
 
 # A couple issues have been important
 
-```{r issue_setup,echo=FALSE, cache=TRUE}
+```{r issue_setup,echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE}
 issues_df <- vote_history  %.%
   group_by(ward, area, candidate, add = FALSE) %.%
-  summarize(votes=sum(total_votes), airport_expansion=mean(`Airport expansion`), finance_budget=mean(`Finance & Budget`), transit=mean(Transit), transportation=mean(Transportation), waste_management=mean(`Waste management`))
+  summarize(votes=sum(votes), airport_expansion=mean(`Airport expansion`), finance_budget=mean(`Finance & Budget`), transit=mean(Transit), transportation=mean(Transportation), waste_management=mean(`Waste management`))
 issues_df$ward <- as.factor(issues_df$ward)
 issues_df <- group_by(issues_df[,c(1,4:9)], ward)
-
-areas_per_ward <- geo_2014 %.%
-#   filter(year == "2014") %.%
-  group_by(ward, area) %.%
-  summarize(count = n()) %.%
-  group_by(ward, add = FALSE) %.% # Seems roundabout, but need to summarize with area first
-  summarize(count = n())
-
-geo_2014 <- filter(geo, year == 2014)
-
 # Issue models for each ward ----------------------------------------------
 issues_formula <- votes ~ transportation + transit + finance_budget + waste_management + airport_expansion
 library(plyr)
@@ -232,7 +222,6 @@ top_coefficients <- max_coefficients_by_ward %.%
   group_by(variable) %.%
   summarize(count = n()) %.%
   arrange(desc(count))
-top_coefficients
 ```
 
 
@@ -242,9 +231,53 @@ Over the last three elections, various issues have been influential in the way w
 * `r gsub("_", " ", top_coefficients$variable[2])` (roads and bike lanes): Top issue in `r top_coefficients$count[2]` wards; close second in another 6. Votes split depending on ward
 * Finance and budget, transit, waste management, and other issues have been much less important historically
 
+Looking at the distribution of these issues, we can the dominance of the airport expansion. We can also see that tranportation issues are also most important in the north-west of the city.
+
+```{r top_issue_figure, echo=FALSE, fig.cap="The top issue for voters changes by ward, with airport expansion and transportation dominating.", echo=FALSE, results='hide', message=FALSE}
+issue_geo_2014 <- left_join(geo_2014, max_coefficients_by_ward[,1:2], by = "ward")
+names(issue_geo_2014)[13] <- "top_issue"
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=top_issue), alpha = 5/6, data=issue_geo_2014) + 
+  scale_fill_brewer("Top issue", type="qual")
+```
+
+
 # If these issues were still important...
 
-If voters placed the same importance on issues as they have over the last three elections (i.e., not weighted equally as on slide 10), then strictly based on currently* stated positions, Chow would narrowly beat Tory:
+```{r issue_model}
+# Predict votes from position scores --------------------------------------
+names(candidate_positions)[3:7] <- names(issues_df)[3:7]
+predicted_votes <- function(pred_values) {
+  output <- ldply(issues_by_ward, function(x) predict(x, pred_values, interval = "confidence"))
+  names(output)[2] <- "votes"
+  output
+}
+# Collect votes by candidate ----------------------------------------------
+areas_per_ward <- geo %.%
+  filter(year == "2014") %.%
+  group_by(ward, area) %.%
+  summarize(count = n()) %.%
+  group_by(ward, add = FALSE) %.% # Seems roundabout, but need to summarize with area first
+  summarize(count = n())
+library(plyr)
+library(dplyr)
+results <- data.frame(candidate = NA, ward = 0, votes = NA, lwr = NA, upr = NA)
+candidates <- c(1,3,13,16)
+for(candidate in candidates) {
+  pred_values <- candidate_positions[candidate,] # Position scores
+  results <- rbind(results, data.frame(candidate=candidate_positions[candidate,1],predicted_votes(pred_values)))
+}
+detach("package:plyr", unload=TRUE)
+results <- results[-1,]
+results$ward <- as.integer(results$ward)
+results <- left_join(results, areas_per_ward, by = "ward")
+results$adj_votes <- results$votes * results$count
+prop.table(tapply(results$adj_votes, results[1:2], sum, na.rm=TRUE),2)
+prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
+```
+
+
+If voters placed the same importance on issues as they have over the last three elections (i.e., not weighted equally as above), then strictly based on currently* stated positions, Chow would narrowly beat Tory:
 
 # Neighbourhood characteristics are predictive
 
