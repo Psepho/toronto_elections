@@ -1,0 +1,1563 @@
+ward,area,POINT_NAME,long,lat,CTUID
+1,1,"Msgr. John Corrigan School, 100 Royalcrest Road, Gym, 1st floor",-79.60502,43.75157864,5350249.03
+1,2,"John D. Parker Junior School, 202 Mount Olive Drive, Gym B, 1st Floor",-79.59579,43.7533954,5350249.01
+1,3,"St. Angela Catholic School, 220 Mount Olive Drive, Small Gym, 1st Floor",-79.59687,43.75443142,5350249.01
+1,8,"North Kipling Community Centre, 2 Rowntree Road, Gym, 1st Floor",-79.5849,43.75177069,5350250.05
+1,9,"Platinum on the Humber III, 1 Rowntree Road, Lobby, Basement",-79.58286,43.75120645,5350250.05
+1,10,"Platinum on the Humber II, 3 Rowntree Road, Party Room, 1st Floor",-79.58174,43.75041783,5350250.05
+1,11,"Platinum on the Humber I, 5 Rowntree Road, PI Party Room, Basement",-79.58078,43.74952937,5350250.05
+1,15,"Leisureworld Caregiving Centre, 70 Humberline Drive, Activity Room, 1st Floor",-79.61739,43.7319366,5350248.04
+1,17,"St. Andrew Catholic School, 2533 Kipling Avenue, Multi Purpose Room, 1st Floor",-79.58239,43.74493973,5350250.05
+1,18,"Smithfield Public School, 175 Mount Olive Drive, Gym, 1st Floor",-79.59576,43.75001972,5350249.04
+1,19,"Claireville Junior School, 350 Silverstone Drive, Gym, 1st Floor",-79.59823,43.74785079,5350249.03
+1,20,"Highfield Junior School, 85 Mount Olive Drive, Old Gym, 1st Floor",-79.58921,43.74558426,5350249.05
+1,22,"Humber College Athletic Centre, 205 Humber College Blvd. Building A, Gym A, 1st Floor",-79.60684,43.72917513,5350248.04
+1,23,"Forest Manor, 20/30 Humberline Drive, Party Room, 1st Floor",-79.61487,43.73169001,5350248.04
+1,24,"Humberline Place, 10 Humberline Drive, Recreation Room, Basement",-79.6118,43.73124833,5350248.04
+1,25,"King's Terrace, 6 Humberline Drive, Party Room, 1st Floor",-79.6109,43.73072084,5350248.04
+1,26,"Melody Village Junior Public School, 520 Silverstone Drive, Gym, 1st floor",-79.59485,43.73814334,5350248.03
+1,27,"Elmbank Junior Middle Academy, 10 Pittsboro Drive, Gym, 1st floor",-79.59005,43.73651049,5350248.02
+1,28,"Beaumonde Heights Jr. Middle School, 70 Monterrey Drive, Gym, 1st Floor",-79.57553,43.74296573,5350250.01
+1,29,"Rowntree Manor, 2765 Islington Avenue, Lobby, Basement",-79.56699,43.74357491,5350250.02
+1,30,"Thistletown Lutheran Lodge, 2715 Islington Avenue, Recreation Room, 1st Floor",-79.5664,43.74167369,5350250.02
+1,31,"St. John Vianney Catholic School, 105 Thistledown Blvd., Gym, 1st Floor",-79.55385,43.7379845,5350250.02
+1,32,"Thistletown Multi-Service Centre, 925 Albion Road, Gym, 1st Floor",-79.56258,43.73547907,5350250.02
+1,33,"Central Park Lodge, 1145 Albion Road, Bar Lounge, 1st Floor",-79.56776,43.73729984,5350250.01
+1,34,"Robert J. Smith Apartments, 121 Kendleton Drive, Auditorium, Basement",-79.58083,43.7376027,5350248.02
+1,36,"Greenholme Junior Middle School, 10 Jamestown Crescent, Gym, 1st Floor",-79.58291,43.73508012,5350248.02
+1,37,"St. Dorothy Catholic School, 155 John Garland Blvd., Gym, 1st Floor",-79.59174,43.73150129,5350248.05
+1,38,"Albion Heights Public School, 45 Lynmont Road, Gym A, 1st Floor",-79.59432,43.73139685,5350248.05
+1,39,"Antonio Mazzota Seniors Building, 88 Humber College Blvd., Recreation Room, Basement",-79.59865,43.73173485,5350248.05
+1,40,Versa Care Centre,-79.59793,43.72954371,5350248.05
+2,1,"Humberwood Community Centre, 850 Humberwood Blvd., Gym A, 1st floor",-79.61919,43.72889445,5350247.01
+2,2,"Ascot Co-Operative Community Centre, 920 Queen's Plate Drive, Party Room, 1st floor",-79.60411,43.72014955,5350247.01
+2,3,"Martin Grove United Church, 75 Pergola Road, Friendship Hall, Basement",-79.58706,43.725708,5350247.02
+2,4,"West Humber Junior Middle School, 15 Delsing Drive, Gym, 1st floor",-79.58008,43.72383481,5350247.02
+2,5,"Msgr. Percy Johnson Catholic School, 2170 Kipling Avenue, Gym, 1st floor",-79.57202,43.72070325,5350247.02
+2,6,"Rivercrest Junior Public School, 30 Harefield Drive, Gym, 1st floor",-79.56952,43.72972477,5350246
+2,7,"Kipling Acres, 2233 Kipling Avenue, Lobby, 1st floor",-79.57189,43.72512809,5350246
+2,8,"Thistletown Collegiate Institute, 20 Fordwich Crescent, Gym, 1st floor",-79.56246,43.72773515,5350246
+2,9,"Braeburn Junior School, 15 Tandridge Crescent, Gym, 1st floor",-79.54887,43.72803842,5350244.02
+2,10,"The Elms Junior Middle School, 45 Golfdown Drive, North Gym, 1st floor",-79.55212,43.72223589,5350244.01
+2,11,"The Humberwood, 2 Armel Court, Party Room, Basement",-79.54551,43.72222874,5350244.02
+2,12,"Humberset, 238 Albion Road, Boardroom P1, Basement",-79.54374,43.72298616,5350244.02
+2,13,"Rio Plaza, 236 Albion Road, Party Room P1, Basement",-79.54395,43.72208805,5350244.02
+2,14,"Humber Green Grand Vista, 234 Albion Road, Leisure Room, Basement",-79.54413,43.72119398,5350244.02
+2,15,"Elmlea Junior School, 50 Hadrian Drive, Gym, 1st floor",-79.55058,43.71563527,5350244.01
+2,16,"Rexdale Presbyterian Church, 2314 Islington Avenue, Auditorium, 1st floor",-79.55626,43.7162998,5350245
+2,17,"Mississauga Private School, 30 Barrhead Crescent, Gym, 1st floor",-79.56656,43.71932182,5350245
+2,18,"School of Experiential Education, 40 McArthur Street, Gym, 1st floor",-79.54639,43.70164361,5350239
+2,20,"Islington 2000, 2000 Islington Avenue, Recreation Centre, Basement",-79.54851,43.69733409,5350243.01
+2,21,"Kingsview Village Jr. School, 1 York Road, Gym, Basement",-79.55079,43.69787524,5350243.01
+2,22,"St. Maurice Catholic School, 45 Kingsview Blvd., Gym, 1st floor",-79.55394,43.69782135,5350243.01
+2,23,"Kingsview Park, 320 Dixon Road, Party Room P1, Basement",-79.55253,43.69683093,5350243.01
+2,24,"Humber Heights Long Term Care, 2245 Lawrence Avenue West, Library, 1st floor",-79.52596,43.6971352,5350241
+2,25,"Humbervale Place, 1447 Royal York Road, Parkwood Lounge, 1st Floor",-79.52766,43.68652753,5350240.02
+2,28,"390 Dixon Road, Room off Lobby, Basement",-79.55768,43.69470435,5350243.01
+2,29,"St. Andrew's Presbyterian Church, 1579 Royal York Road, West Room, 1st floor",-79.53362,43.69949485,5350241
+2,30,"Mansions of Humberwood, 710 Humberwood Blvd., Party Room, 1st Floor",-79.61657,43.72422495,5350247.01
+2,31,"Westmount Junior School, 95 Chapman Road, Gym, 1st floor",-79.51966,43.68910471,5350240.02
+2,32,"Westmount Park Church, 1483 Royal York Road, Lounge, 1st floor",-79.52931,43.68956737,5350240.02
+2,33,"Highway Terraces Apartments, 2314 Islington Avenue, Terrace Lounge, 1st floor",-79.55626,43.7162998,5350245
+3,1,"Briarcrest Junior Public School, 60 Wellesworth Drive, Gym, 1st floor",-79.58008,43.66647435,5350235.01
+3,2,"Martingrove Collegiate Institute, 50 Winterton Drive, Gym, 1st floor",-79.56074,43.67339135,5350233
+3,3,"John G. Althouse Middle School, 130 Lloyd Manor Road, Gym B, 1st floor",-79.55416,43.66812499,5350233
+3,4,"Josyf Cardinal Slipyj School, 35 West Deane Park Drive, Gym, 1st floor",-79.56603,43.65948377,5350234
+3,5,"Wellesworth Jr. Public School, 225 Wellesworth Drive, Gym, 1st floor",-79.57672,43.65664592,5350235.02
+3,6,"Michael Power/St. Joseph School, 105 Eringate Drive, Foyer, 1st floor",-79.58199,43.65929857,5350235.02
+3,7,"Centennial Park Place, 25 Centennial Park Road, Lobby, 1st floor",-79.58206,43.65326542,5350236.02
+3,8,"Hollycrest Middle School, 630 Renforth Drive, Gym, 1st floor",-79.58271,43.6561128,5350236.02
+3,9,"The Buckingham, 714 The West Mall, Party Room Unit 112, 1st floor",-79.57127,43.65613344,5350235.02
+3,10,"The Westbury, 495 The West Mall, Celebration Room, 1st floor",-79.56767,43.64829138,5350236.01
+3,11,"625 The West Mall, Party Room, Basement",-79.57109,43.65569251,5350235.02
+3,12,"St. Gregory Catholic School, 126 Rathburn Road, Gym, 1st floor",-79.54502,43.65964751,5350233
+3,13,"West Glen Junior School, 47 Cowley Avenue, Gym, 1st floor",-79.56029,43.65083898,5350222.02
+3,15,"Wesburn Manor, 400 The West Mall, Multipurpose Room, 1st floor",-79.56753,43.64374394,5350221.02
+3,16,"Lincoln Towers, 545 The West Mall, Lobby, 1st floor",-79.56953,43.65182319,5350236.01
+3,17,"The Grange, 551 The West Mall, Party Room, Interior",-79.56969,43.65199198,5350236.01
+3,18,"The Church of Christ the King, 475 Rathburn Road, Room 1 and Foyer, Basement",-79.57499,43.6522296,5350236.01
+3,19,"Mill Valley Junior School, 411 Mill Road, Gym, 1st floor",-79.58697,43.64419796,5350236.02
+3,20,"Broadacres Junior School, 45 Crendon Drive, Gym, 1st floor",-79.57202,43.6480753,5350236.01
+3,21,"Bransfield House, 511 The West Mall, Lobby, 1st floor",-79.5689,43.65059396,5350236.01
+3,22,"Sunset West, 475 The West Mall, Party Room, 1st floor",-79.56758,43.64739023,5350236.01
+3,23,"Sussex House, 451 The West Mall, Party Room, Basement",-79.56751,43.64664475,5350236.01
+3,24,"Burnhamthorpe Adult Learning Centre, 500 The East Mall, Gym, 1st floor",-79.56184,43.64962968,5350222.02
+3,25,"Highbourne Life Care Centre, 420 The East Mall, Tea Room, 1st floor",-79.5607,43.64747826,5350222.02
+3,26,"Eatonville Junior School, 15 Rossburn Drive, Gym, 1st floor",-79.56701,43.63831653,5350221.02
+3,27,"Bloordale Middle School, 10 Toledo Road, Gym, 1st floor",-79.57195,43.63915422,5350221.01
+3,28,"Millgate Manor Recreation Centre, 303 Mill Road, Recreation Centre, 1st floor",-79.58329,43.63867978,5350221.01
+3,30,"340 Mill Road, Lobby, 1st floor",-79.58561,43.63986893,5350236.02
+3,32,"The Masters, 288 Mill Road, Clubhouse Concierge Foyer, 1st floor",-79.58274,43.63737711,5350221.01
+3,33,"Millwood Junior Public School, 222 Mill Road, Gym, 1st floor",-79.57712,43.63337085,5350221.01
+3,34,"St. Clement Catholic School, 4319 Bloor Street West, Gym, 1st floor",-79.57381,43.63225586,5350220
+3,35,"Bloordale United Church, 4258 Bloor Street West, Gym, Basement (level from north entrance)",-79.56886,43.63462796,5350221.01
+3,36,"Dom Lipa Seniors Centre, 52 Neilson Drive, Lobby, 1st floor",-79.56528,43.62916427,5350220
+4,1,"Parkfield Junior School, 31 Redgrave Drive, Gym, 1st floor",-79.56977,43.68210277,5350237.01
+4,2,"44 Longbourne Drive, Party Room, 1st floor",-79.56899,43.68069717,5350237.01
+4,3,"20 Fontenay Court, Lobby, 1st floor",-79.51286,43.6826046,5350230.02
+4,4,"Transfiguration Catholic School, 55 Ludstone Drive, Gym, 1st floor",-79.56287,43.69152984,5350237.02
+4,5,"Westway United Church, 8 Templar Drive, Upper Auditorium, 2nd floor",-79.55491,43.68767715,5350238.02
+4,6,"Tiffany Place, 11 Wincott Drive, Lobby, 1st floor",-79.55087,43.69521067,5350238.02
+4,7,"Westway Junior School, 25 Poynter Drive, Gym, 1st floor",-79.549,43.6908307,5350238.02
+4,8,"Valleyfield Junior School, 35 Saskatoon Drive, Gym, 1st floor",-79.53822,43.69422434,5350239
+4,9,"Hilltop Middle School, 35 Trehorne Drive, Gym, 1st floor",-79.53307,43.68947132,5350240.01
+4,10,"Father Serra Catholic School, 111 Sun Row Drive, Gym, 1st floor",-79.53685,43.68625201,5350240.01
+4,12,"Dixon Grove Junior Middle School, 315 The Westway, Gym, 1st floor",-79.55596,43.68471775,5350237.03
+4,13,"Kipling Collegiate Institute, 380 The Westway, Gym C, 1st floor",-79.56236,43.6852967,5350237.02
+4,14,"Central Etobicoke High School, 10 Denfield Street, Gym, 1st floor",-79.55549,43.67902714,5350237.03
+4,15,"Richview Seniors Residence, 1540 Kipling Avenue, Second Floor Link, 1st floor",-79.55417,43.6805315,5350237.03
+4,16,"Huntingwood Place, 63 Widdicombe Hill Blvd., Library, Basement",-79.55501,43.67796007,5350237.03
+4,17,"Huntingwood Place, 120 Widdicombe Hill Blvd., Library, Basement",-79.55833,43.67647524,5350237.03
+4,18,"Huntingwood Place, 73 Widdicombe Hill Blvd., Hobby Room, Basement",-79.55771,43.67654818,5350237.03
+4,19,"Widdicombe Place, 53-57 Widdicombe Hill Blvd., Party Room, Basement",-79.55295,43.67846208,5350237.03
+4,21,"St. Demetrius Catholic School, 125 La Rose Avenue, Gym, 1st floor",-79.52197,43.68466279,5350240.02
+4,22,"St. Demetrius Residence, 123 La Rose Avenue, Common Room, 1st floor",-79.52181,43.68521004,5350240.02
+4,23,"Humber Hill Tower, 15 La Rose Avenue, Recreation Room, 1st floor",-79.51419,43.68633804,5350240.02
+4,24,"Richview Terrace, 1 Richview Road, Lobby, 1st floor",-79.51325,43.68515961,5350230.02
+4,25,"Top of the Humber, 61 Richview Road, Party Room, 1st floor",-79.51673,43.68409309,5350230.02
+4,26,"Ukrainian Canadian Care Centre, 60 Richview Road, Atrium, 1st floor",-79.51896,43.6844972,5350240.02
+4,27,"Richview Collegiate Institute, 1738 Islington Avenue, Cafeteria Extension, 1st floor",-79.53892,43.67887721,5350232
+4,28,"Leonardo DaVinci Academy, 100 Allanhurst Drive, Gym, 1st floor",-79.51948,43.68015621,5350230.02
+4,29,"St. George's Junior School, 70 Princess Anne Crescent, Gym, 1st floor",-79.54172,43.67260908,5350232
+4,30,"Humber Valley Junior Middle School, 65 Hartfield Road, Gym, Interior/Windows",-79.52734,43.66553687,5350231
+4,31,"Rosethorn Junior School, 2 Remington Drive, Gym, 1st floor",-79.53948,43.65992914,5350224
+4,32,"St. Giles Kingsway Presb. Church, 15 Lambeth Road, Auditorium, Basement",-79.52105,43.66106975,5350231
+4,33,"Royal York Gardens, 1139 Royal York Road, Lobby, 1st floor",-79.51587,43.66111035,5350230.01
+4,34,"Etobicoke Collegiate Institute, 86 Montgomery Road, Auditorium, 1st floor",-79.5223,43.65009278,5350226
+4,36,"Willowridge Towers, 44 Willowridge Road, Recreation Room, Basement",-79.5696,43.6759923,5350237.01
+4,38,"Scarlett Heights Retirement Res., 4005 Eglinton Avenue West, Gourmet Kitchen",-79.51974,43.68267564,5350230.02
+5,1,"Wedgewood Junior School, 5 Swan Avenue, Gym, 1st floor",-79.54626,43.64532552,5350223
+5,2,"Old Mill Towers, 39 Old Mill Road, Lobby, 1st floor",-79.49403,43.65019102,5350228
+5,3,"Our Lady of Peace Catholic School, 70 Mattice Avenue, Gym, 1st floor",-79.54108,43.64652082,5350223
+5,4,"Islington United Church, 25 Burnhamthorpe Road, Room 6, 1st floor",-79.52993,43.6495662,5350225.01
+5,5,"Islington Junior Middle School, 44 Cordova Avenue, Gym, 1st floor",-79.52795,43.6474914,5350225.02
+5,6,"52 Mabelle Avenue, Lobby, 1st floor",-79.52945,43.64640294,5350225.02
+5,7,"Islington Manor, 41 Mabelle Avenue, Recreation Room, 1st floor",-79.52771,43.64483798,5350225.02
+5,8,"Kingsway Retirement Residence, 4251 Dundas Street  West, Ice Cream Parlour, 1st floor",-79.51445,43.65888063,5350229
+5,10,"Tapestry Village Gate West, 15 Summerland Terrace, Games Room, 1st floor",-79.53227,43.64404425,5350225.02
+5,11,"Loggia, 1040-1050 The Queensway, Party Room",-79.51653,43.6236155,5350214
+5,12,"Labdara Lithuanian Nursing Home, 5 Resurrection Road, Conference Room, Basement",-79.53087,43.64389791,5350225.02
+5,13,"Barclay Terrace, 1300 Islington Avenue, Hospitality Room, Basement",-79.52659,43.64957659,5350225.01
+5,14,"The Kingsway on the Park, 1 Aberfoyle Crescent, Main Lobby, Interior",-79.52008,43.64586988,5350225.01
+5,15,"Memorial Pool, 44 Montgomery Road, Community Room, 1st floor",-79.52011,43.64909671,5350226
+5,16,"Lambton Kingsway Jr. Middle School, 525 Prince Edward Drive North, Gym, 1st floor",-79.50932,43.6586658,5350228
+5,17,"Kingsway Lambton United Church, 85 The Kingsway, Gym, Basement",-79.50792,43.6529255,5350229
+5,18,"Royal York Road United Church, 851 Royal York Road, Queensway Hall, Basement",-79.50892,43.64274664,5350218
+5,19,"All Saints Kingsway Anglican Church, 2850 Bloor Street West, Auditorium, Basement",-79.50506,43.64908914,5350227
+5,20,"Fairfield Seniors' Centre, 80 Lothian Avenue, Gym, 1st floor",-79.51932,43.6396866,5350219
+5,21,"The Essex, 5229 & 5233 Dundas Street West, Party Room, Basement",-79.53698,43.63894158,5350213
+5,22,"Residence at Kingsgate, 101 Subway Crescent, Boardroom, 1st floor",-79.53949,43.63486049,5350213
+5,23,"Parc Nuvo at Essex, 25-35 Viking Lane, Party Room, 1st floor",-79.53589,43.63855983,5350213
+5,24,"Recreation Centre, 362 The East Mall, Party Room B2, Basement",-79.55883,43.64263752,5350222.01
+5,25,"Bloorlea Middle School, 4050 Bloor Street West, Gym, 1st floor",-79.5553,43.63752946,5350222.01
+5,26,"St. Elizabeth Catholic School, 5 Redcar Avenue, Gym, 1st floor",-79.55746,43.63495127,5350213
+5,27,"Holy Angels Catholic School, 65 Jutland Road, Gym, 1st floor",-79.51766,43.62841783,5350214
+5,28,"Norseman Junior Middle School, 105 Norseman Street, Gym, 1st floor",-79.51633,43.63431384,5350219
+5,29,"Bishop Allen Academy, 721 Royal York Road, Gym, 1st floor",-79.50447,43.63443649,5350215
+5,30,"Ivan Franko Home for the Aged, 767 Royal York Road, Recreation Room, Basement",-79.50709,43.637689,5350215
+5,32,"Park Lawn Junior Middle School, 71 Ballacaine Drive, Gym, 1st floor",-79.49645,43.63771518,5350216
+5,33,"Etienne Brule Public School, 50 Cloverhill Road, Gym, Basement",-79.48969,43.63562731,5350217
+5,34,"St. Mark Catholic School, 45 Cloverhill Road, Gym, 1st floor",-79.4902,43.63450843,5350217
+5,35,"One Sherway, 225 - 235 Sherway Gardens Road, Party Room",-79.55833,43.609209,5350213
+5,36,"Etobicoke School of the Arts, 675 Royal York Road, Gym, 1st floor",-79.50415,43.63074078,5350215
+5,37,"Church of The Resurrection, 1 Resurrection Road, Hall B, Basement",-79.53068,43.64344516,5350225.02
+5,38,"St. Louis Catholic School, 11 Morgan Avenue, Gym, 1st floor",-79.50096,43.6257537,5350215
+5,39,"Kingsway Lambton Seniors Home, 781 The Queensway, Recreation Room, 5th floor",-79.50576,43.62544724,5350215
+5,40,"McCall Centre for Continuing Care, 140 Sherway Drive, Staff Room, 1st floor",-79.56213,43.61001092,5350213
+5,41,"Holy Angels Church, 61 Jutland Road, Hall, 1st floor",-79.51921,43.62799073,5350214
+6,1,"St. Ambrose Catholic School, 20 Coules Court, Gym, 1st floor",-79.55013,43.60837866,5350212
+6,2,"Lanor Junior Middle School, 450 Lanor Avenue, Gym, 1st floor",-79.54477,43.60967529,5350211
+6,4,"Ourland Community Centre, 18 Ourland Avenue, Gym, 1st floor",-79.50826,43.61510546,5350210
+6,5,"Edwards Manor, 340 Royal York Road, Recreation Room, 1st floor",-79.49935,43.61692085,5350209
+6,6,"George R. Gauld Junior School, 200 Melrose Street, Gym, 1st floor",-79.49852,43.62064567,5350209
+6,7,"Palace Pier, 2045 Lake Shore Blvd. West, Meeting Room Level B 1, Basement",-79.47452,43.63150875,5350210
+6,8,"Palace Place, 1 Palace Pier Court, Piano Lounge 47th Floor, 47th floor",-79.47264,43.63149015,5350210
+6,9,"Newport Beach, 2111 Lake Shore Blvd. West, Lobby, 1st floor",-79.47778,43.62895082,5350210
+6,10,"David Hornell Junior School, 32 Victoria Street, Gym, 1st floor",-79.4889,43.61934185,5350201
+6,11,"Marina Del Rey Malibu Club, 2261 Lake Shore Blvd. West, Hospitality Room, 1st floor",-79.48336,43.62016983,
+6,12,"Grand Harbour, 2285 Lake Shore Blvd. West, Lobby Building ""A"", 1st floor",-79.48554,43.61871696,
+6,13,"St. Leo Catholic School, 165 Stanley Avenue, Gym, 1st floor",-79.49629,43.61428856,5350201
+6,14,"Griggs Manor, 100 Cavell Avenue, Recreation  Room, 1st floor",-79.497,43.61548767,5350201
+6,15,"Long Branch Public Library, 3500 Lake Shore Blvd. West, Meeting Room, 1st floor",-79.53133,43.59531436,5350206.01
+6,16,"Lakeshore Collegiate Institute, 350 Kipling Avenue, Room 153, 1st floor",-79.51916,43.60157199,5350207
+6,17,"Franklin Horner Community Centre, 432 Horner Avenue, Auditorium, 1st floor",-79.53804,43.60367298,5350211
+6,18,"Sir Adam Beck Junior School, 544 Horner Avenue, Gym, 1st floor",-79.54817,43.60161044,5350212
+6,20,"Twentieth Street Junior School, 3190 Lake Shore Blvd. West, Gym, 1st floor",-79.51994,43.59798572,5350207
+6,21,"Lakeshore Lodge, 3197 Lake Shore Blvd. West, Meeting Room, 1st floor",-79.51972,43.59742858,5350205
+6,22,"Lerette Manor, 250 Twelfth Street, Recreation Room, 1st floor",-79.51152,43.60066964,5350208
+6,23,"Second Street Junior Middle School, 71 Second Street, Old Gym, 1st floor",-79.49977,43.60367699,5350208
+6,24,"Mimico Adult Centre, 255 Royal York Road, Gym, 1st floor",-79.49442,43.61186431,5350202
+6,25,"Storefront Humber Community Centre, 2445 Lake Shore Blvd. West, Hall, 1st floor",-79.48885,43.61353373,
+6,26,"Garden Court Nursing Home, 1 Sand Beach Road, Program Room, Basement",-79.4969,43.60194327,5350203
+6,27,"Woods Manor, 2835 Lake Shore Blvd. West, 5th Floor Recreation Room, 5th floor",-79.50154,43.60137199,5350204
+6,28,"Seventh Street Junior School, 101 Seventh Street, Gym, 1st floor",-79.50399,43.59971792,5350204
+6,29,"St. Teresa Catholic School, 110 Tenth Street, Gym, 1st floor",-79.50906,43.59930713,5350204
+6,30,"James S. Bell Junior Middle School, 90 Thirty First Street, Gym, 1st floor",-79.53019,43.59436279,5350206.02
+6,31,"Grenadier Landing, 5 Marine Parade Drive, Party Room, 1st floor",-79.47548,43.62975265,5350210
+6,32,"DELETE - MOVE TO LEGION FOR 2014 Parkview Public School, 85 Forty First Street, Room 105, 1st floor",-79.54378,43.59022743,5350206.01
+6,33,"Lake Shore Park Estates, 3845 Lake Shore Blvd. West, Party Room, 1st floor",-79.54421,43.59068058,5350206.01
+6,34,"Royal Canadian Legion Branch 3, 150 Eighth Street, Hall, 1st floor",-79.5076,43.60215267,5350208
+6,35,"Nevis Condominiums, 88 Palace Pier Court, Lobby, 1st floor",-79.47531,43.63082232,5350210
+6,36,"The Tides at Mystic Pointe, 185 Legion Road North, Party Room, 2nd floor",-79.48878,43.62483255,5350210
+6,37,"The Waterford, 2083 Lake Shore Blvd. West, Party Room, 19th floor",-79.47687,43.62996907,5350210
+6,38,"Voyager at Waterview, 2119 & 2121 Lake Shore Blvd. West, Dining Room, 1st floor",-79.47816,43.62792737,5350210
+6,39,"Hearthstone by the Bay, 3 Marine Parade Drive, Game area - 2nd floor, 2nd floor",-79.47622,43.63024181,5350210
+6,40,"The Explorer, 58 Marine Parade Drive, Party Room, 1st floor",-79.47713,43.62747774,5350210
+7,1,"Venerable John Merlini School, 123 Whitfield Avenue, Gym, 1st floor",-79.57941,43.7565731,5350315.01
+7,2,"Humber Summit Library, 2990 Islington Avenue, Auditorium, Basement",-79.5716,43.75904662,5350315.01
+7,4,"Gracedale Public School, 186 Gracedale Blvd., Gym, 1st floor",-79.56185,43.75320613,5350315.03
+7,5,"St. Roch Catholic School, 174 Duncanwoods Drive, Gym, 1st floor",-79.56675,43.75371657,5350315.02
+7,8,"Humber Summit Middle School, 60 Pearldale Avenue, Gym, 1st floor (level from entrance #5)",-79.56453,43.75057334,5350315.02
+7,10,"Weston Towers, 3400 Weston Road, Lobby, 1st floor",-79.54344,43.74981922,5350314.01
+7,11,"Century Gardens, 3390 Weston Road, Lobby, 1st floor",-79.54278,43.74911718,5350314.01
+7,12,"Lori Gardens, 2405 Finch Avenue West, Lobby, 1st floor",-79.54404,43.75062988,5350314.01
+7,13,"Daystrom Public School, 25 Daystrom Drive, Gym, 1st floor",-79.54697,43.74795552,5350314.01
+7,14,"Bambolino Montessori Preschool, 5 Blue Haven Crescent, Gym, 1st floor",-79.55827,43.74453019,5350314.02
+7,15,"Yorkview Life Care Centre, 2045 Finch Avenue West, Activity Room, 1st floor",-79.52142,43.75607648,5350312.04
+7,16,"St. Francis De Sales School, 333 Firgrove Crescent, Gym, 1st floor",-79.51913,43.75414151,5350312.04
+7,17,"Firgrove Public School, 270 Firgrove Crescent, Gym, 1st floor",-79.51991,43.75200948,5350312.04
+7,19,"Gulfstream Public School, 20 Gulfstream Road, Gym, 1st floor",-79.54201,43.73908657,5350313
+7,20,"Carmine Stefano Community Centre, 3100 Weston Road, Gym, Basement",-79.53962,43.73370549,5350313
+7,21,"St. Jude Catholic School, 3251 Weston Road, Gym, 1st floor",-79.53926,43.74049307,5350313
+7,22,"Domenico DiLuca Community Centre, 25 Stanley Road, Gym, 1st floor",-79.51584,43.74244518,5350312.03
+7,23,"Stanley Public School, 75 Stanley Road, Gym, 1st floor",-79.51783,43.74183978,5350312.03
+7,25,"Weston Towers, 3101 Weston Road, Recreation Room, 1st floor",-79.53723,43.73332084,5350293
+7,26,"Riverside Court, 3077 Weston Road, Lobby, 1st floor",-79.53698,43.7323762,5350293
+7,27,"Chalkfarm Public School, 100 Chalkfarm Drive, Gym, 1st floor",-79.5144,43.72711502,5350292
+7,29,"Beverly Hills United Church, 65 Mayall Avenue, Sanctuary, 2nd floor",-79.51854,43.72730831,5350292
+7,31,"St. Basil the Great College School, 20 Starview Lane, Gym, 1st floor",-79.534,43.72723246,5350293
+8,1,"Blacksmith Public School, 45 Blacksmith Crescent, Gym, 1st floor",-79.52681,43.77117255,5350316.01
+8,2,"2999 Jane Street, Lobby, 1st floor",-79.51617,43.7543465,5350312.05
+8,3,"Antica Towers, 5000 Jane Street, Lobby, 1st floor",-79.52249,43.77372683,5350316.03
+8,5,"Shoreham Public School, 31 Shoreham Drive, Gym, 1st floor",-79.51739,43.76880814,5350316.04
+8,6,"Edgeley Apartments, 35 Shoreham Drive, Recreation Room, 12th floor",-79.5186,43.76868768,5350316.04
+8,7,"York University - Central Square, 4700 Keele Street, Bear Pit, 1st floor",-79.50234,43.77341869,5350311.06
+8,8,"Yorkwoods Apartments, 500 Murray Ross Parkway, Lobby, 1st floor",-79.50576,43.76418897,5350311.06
+8,9,"Forest Valley, 345 Driftwood Avenue, Party Room, 1st floor",-79.51221,43.76761279,5350316.04
+8,10,"Driftwood Community Centre, 4401 Jane Street, Gym, Basement",-79.51878,43.76546443,5350316.06
+8,11,"St. Augustine Catholic School, 98 Shoreham Drive, Gym, 1st floor",-79.52507,43.76824512,5350316.01
+8,12,"Gosford Public School, 30 Gosford Boulevard, Gym, 1st floor",-79.52133,43.76432708,5350316.01
+8,13,"Driftwood Public School, 265 Driftwood Avenue, Gym 2, 1st floor",-79.51514,43.7625643,5350316.05
+8,14,"1 Four Winds Drive, Lobby, 1st floor",-79.49201,43.76461823,5350311.05
+8,15,"9 Four Winds Drive, Lobby, 1st floor",-79.49353,43.76473713,5350311.05
+8,16,"19 Four Winds Drive, Lobby, 1st floor",-79.49488,43.7644174,5350311.05
+8,17,"Four Winds, 31 Four Winds Drive, Lobby, 1st floor",-79.49761,43.7638181,5350311.05
+8,18,"455 Sentinel Road, Lobby, 1st floor",-79.50014,43.76292579,5350311.05
+8,20,"James Cardinal McGuigan School, 1440 Finch Avenue West, Gym, 1st floor",-79.4938,43.76329817,5350311.05
+8,21,"Leisureworld Caregiving Centre, 22 Norfinch Drive, Activity Room, 1st floor",-79.52618,43.75681819,5350316.01
+8,24,"15 Tobermory Drive, Recreation Room, 1st floor",-79.50888,43.76045674,5350316.06
+8,25,"Bristol House, 10 Tobermory Drive, Party Room, 1st floor",-79.50903,43.75978787,5350316.06
+8,26,"Recreation Centre, 15 San Romano Way, Theatre, Interior",-79.51601,43.75910845,5350316.05
+8,29,"Topcliff Public School, 65 Topcliff Avenue, Gym B, 1st floor",-79.51066,43.75569326,5350312.02
+8,30,"C.W. Jefferys Collegiate Institute, 340 Sentinel Road, Cafetorium, 1st floor",-79.50009,43.75768505,5350311.03
+8,31,"Derrydown Public School, 120 Derrydown Road, Gym, 1st floor",-79.49371,43.75869853,5350311.02
+8,32,"Alban Park North, 11 Catford Road, Lobby, 1st floor",-79.49134,43.75871247,5350311.02
+8,33,"Casa Verde Health Centre, 3595 Keele Street, Wicker Lounge, 1st floor",-79.48577,43.75113197,5350311.06
+8,34,"Metro Place Condos, 1070  Sheppard Avenue West, Back Lobby, 1st floor",-79.46419,43.75064938,5350311.06
+8,35,"Elia Middle School, 215 Sentinel Road, Cafetorium, Basement",-79.49846,43.75380792,5350311.02
+8,36,"Lamberton Public School, 33 Lamberton Blvd., Gym, 1st floor",-79.50283,43.75366289,5350311.03
+8,38,"Yorkwoods Public School, 25 Yorkwoods Gate, Gym, 1st floor",-79.51389,43.75066844,5350312.05
+8,39,"2801 Jane Street, Lobby, 1st floor",-79.51517,43.75022539,5350312.05
+8,40,"South Gate Towers, 2775 Jane Street, Lobby, 1st floor",-79.51462,43.74866447,5350312.05
+8,41,"Northwood Apartments, 3680 Keele Street, Lobby, 1st floor",-79.48954,43.75375737,5350311.02
+9,1,"Oakdale Park Middle School, 315 Grandravine Drive, Gym, Basement",-79.512,43.74747367,5350312.06
+9,2,"St. Jerome Catholic School, 111 Sharpecroft Blvd., Gym, 1st floor",-79.48855,43.748843,5350311.04
+9,3,"DeHaviland Court, 3390 Keele Street, Lobby, 1st floor",-79.48847,43.74694936,5350311.04
+9,4,"Sheppard Public School, 1430 Sheppard Avenue West, Gym, 1st floor",-79.48826,43.74543295,5350311.04
+9,5,"Northwood Community Centre, 15 Clubhouse Court, Banquet Hall, 1st floor",-79.5,43.74553425,5350312.07
+9,6,"Blessed Margherita Catholic School, 108 Spenvalley Drive, Gym, 1st floor",-79.50792,43.74368106,5350312.07
+9,7,"Arleta Manor, 7 - 11 Arleta Avenue, Recreation Room, 1st floor",-79.50132,43.74242235,5350312.07
+9,8,"St. Jane Frances Catholic School, 2745 Jane Street, Gym, 1st floor",-79.51317,43.74215675,5350312.06
+9,9,"Fairway Downs, 2645 Jane Street, Party Room, 1st floor",-79.51132,43.7377481,5350294.02
+9,10,"Calico Public School, 35 Calico Drive, Gym, 1st floor",-79.5036,43.73791477,5350294.02
+9,11,"St. Martha Catholic School, 1865 Sheppard Avenue West, Gym, 1st floor",-79.50233,43.7410766,5350294.02
+9,12,"Rameses Shrine, 3100 Keele Street, Arabian Room, 1st floor",-79.48601,43.73988719,5350295
+9,13,"Downsview Public School, 2829 Keele Street, Gym, 1st floor",-79.48244,43.73112244,5350291.01
+9,14,"Blaydon Public School, 25 Blaydon Avenue, Gym, 1st floor",-79.48626,43.73536582,5350295
+9,15,"Roding Community Centre, 600 Roding Street, Gym, 1st floor",-79.49203,43.72835052,5350291.02
+9,16,"Beverley Heights Middle School, 26 Troutbrooke Drive, Gym, 1st floor",-79.50478,43.73303319,5350294.01
+9,18,"Tumpane Public School, 48 Tumpane Street, Gym, 1st floor",-79.50226,43.72660387,5350291.02
+9,19,"St. Raphael Catholic School, 3 Gade Drive, Gym, 1st floor",-79.48849,43.72856993,5350291.01
+9,21,"Ancaster Community Centre, 41 Ancaster Road, Gym, 1st floor",-79.4657,43.7325347,5350289
+9,22,"Muki Baum Treatment Centre, 111 Anthony Road, Gym, 1st floor",-79.46795,43.72791018,5350289
+9,24,"L.I.U.N.A. Local 183 Union Hall, 1263 Wilson Avenue, Hall, 1st floor",-79.49159,43.72428412,5350290
+9,25,"Downsview Acres, 2195 Jane Street, Recreation Room, 1st floor",-79.50793,43.72221347,5350291.02
+9,27,"Highview Public School, 22 Highview Avenue, Gym, Basement",-79.49723,43.72195964,5350290
+10,1,"Garden View Terrace, 1875 Steeles Avenue West, Lobby, 1st floor",-79.46772,43.78710247,5350310.02
+10,2,"Rockford Public School, 60 Rockford Road, Gym, 1st floor",-79.4523,43.78623395,5350317.03
+10,3,"Primrose, 1121 Steeles Avenue West, Multi-Purpose Room, 1st floor",-79.44959,43.79017666,5350317.02
+10,4,"West Don Apartments, 6250 Bathurst Street, Recreation Room, 1st floor",-79.4462,43.79164818,5350317.02
+10,5,"Village Gate Apartments, 775 Steeles Avenue West, Lobby, 1st floor",-79.44349,43.79180281,5350320.01
+10,6,"Fisherville Junior High School, 425 Patricia Avenue, Gym, 1st floor",-79.44101,43.78457409,5350320.01
+10,10,"Valencia Towers, 6030 Bathurst Street, Lobby, 1st floor",-79.44759,43.78782263,5350317.02
+10,13,"Kensington Place Retirement Res., 866 Sheppard Avenue West, Library",-79.45369,43.75255348,5350297.01
+10,16,"Antibes Community Centre, 140 Antibes Drive, Gym, Basement",-79.44698,43.78116358,5350317.04
+10,17,,-79.44731,43.7794124,5350317.04
+10,18,"Antibes Court, 100 Antibes Drive, Assembly Room, 1st floor",-79.44702,43.78048852,5350317.04
+10,19,"Cheltenham Long Term Care, 5935 Bathurst Street, Lounge, 1st floor",-79.44452,43.78190912,5350320.01
+10,20,"80 Antibes Drive, Multi-Purpose Room, 1st floor",-79.44817,43.78032833,5350317.04
+10,21,"Hemisphere II, 131 Torresdale Avenue, Assembly Room, 1st floor",-79.45272,43.778008,5350317.04
+10,22,"The Hemispheres I, 133 Torresdale Avenue, Assembly Room, 1st floor",-79.4518,43.77861286,5350317.04
+10,23,"Herbert H. Carnegie Centre, 580 Finch Avenue West, Skaters Lounge, 1st floor",-79.45006,43.77336529,5350317.05
+10,24,"The Savoy, 10 Torresdale Avenue, Party Room B 1, Basement",-79.45219,43.77274485,5350317.05
+10,25,"Northview Heights Secondary School, 550 Finch Avenue West, Gym, 1st floor",-79.44633,43.77443781,5350317.05
+10,27,"Somerset Apartments, 605 Finch Avenue West, Lobby, 1st floor",-79.45271,43.77133702,5350309
+10,28,"Wilmington Elementary School, 330 Wilmington Avenue, Gym, 1st floor",-79.46072,43.7685104,5350310.02
+10,29,"Charles H. Best Middle School, 285 Wilmington Avenue, Cafeteria, 1st floor",-79.45863,43.76745385,5350310.01
+10,31,"Irving W. Chapley Community Centre, 205 Wilmington Avenue, Meeting Room, 1st floor",-79.45575,43.76135937,5350310.01
+10,32,"Revivaltime Tabernacle, 4340 Dufferin Street, Lobby, 1st floor",-79.46645,43.76269797,5350311.06
+10,33,"William Lyon MacKenzie Collegiate, 20 Tillplain Road, Gym, 1st floor",-79.4619,43.75347956,5350297.01
+10,34,"B'nai Brith Canada, 15 Hove Street, Auditorium, 1st floor",-79.44123,43.75597034,5350297.01
+10,35,"View Point Towers, 35 Canyon Avenue, Lobby, 1st floor",-79.43692,43.75799771,5350297.01
+10,37,Valleyview Residence,-79.44622,43.7707579,5350309
+10,38,"Earl Bales Community Centre, 4169 Bathurst Street, Banquet Hall, 1st floor",-79.43189,43.75259016,5350298
+10,39,"St. Robert Catholic School, 70 Bainbridge Avenue, Gym, 1st floor",-79.44415,43.74966613,5350297.02
+10,40,"Dublin Heights Public School, 100 Bainbridge Avenue, Gym, 1st floor",-79.44773,43.74910529,5350297.02
+10,41,"Clanton Park Synagogue, 11 Lowesmoor Avenue, Social Hall, 1st floor",-79.44442,43.74567228,5350297.02
+10,42,"Summit Heights Public School, 139 Armour Blvd., Gym, 1st floor",-79.43004,43.74133037,5350298
+10,44,"Faywood Arts-Based School, 95 Faywood Blvd., Gym, 1st floor",-79.4467,43.73986363,5350288
+10,45,"Yeshiva Bnei Tzion of Bobov School, 44 Champlain Blvd., Gym, 1st floor",-79.44401,43.7327056,5350288
+10,46,"B'Nai Brith Seniors Building, 4300 Bathurst Street, Recreation Room, 1st floor",-79.43823,43.75289099,5350297.02
+10,47,"B'nai Brith Upper Canada Lodge, 4266 Bathurst Street, Auditorium, 1st floor",-79.43803,43.75187435,5350297.02
+10,48,"Sheppard Place, 4455 Bathurst Street, Recreation Room, 1st floor",-79.43864,43.75834746,5350297.01
+10,49,"Forest Square Apartments, 6200 Bathurst Street, Lobby, 1st floor",-79.44689,43.79108718,5350317.02
+11,1,"Pelmo Community Centre, 171 Pellatt Avenue, Meeting Room, 1st floor",-79.51952,43.71427297,5350282
+11,2,"Pelmo Park Public School, 180 Gary Drive, Gym, 1st floor",-79.51812,43.71206532,5350282
+11,3,Leisureworld Lawrence,-79.51017,43.70128318,5350175.01
+11,4,"Country Club Towers A, 2460 Weston Road, Lobby, 1st floor",-79.53415,43.70787181,5350175.02
+11,5,"H. J. Alexander Community School, 30 King Street, Gym, 1st floor",-79.52055,43.70250241,5350175.02
+11,7,"Weston Memorial Jr. Public School, 200 John Street, Gym, 1st floor",-79.50933,43.70598674,5350176
+11,9,"C.R. Marchant Middle School, 1 Ralph Street, Gym, 1st floor",-79.51294,43.70173006,5350176
+11,10,"Weston Library, 2 King Street, Auditorium, Basement",-79.52058,43.70182041,5350175.02
+11,11,"Eagle Manor, 1901 Weston Road, Recreation Room, 2nd floor",-79.51599,43.70058906,5350175.02
+11,12,"5 Bellevue Crescent, Recreation Room, 1st floor",-79.51523,43.69914009,5350175.01
+11,13,"River Ridge, 1 Hickory Tree Road, Party Room, Basement",-79.5144,43.69813919,5350175.01
+11,14,"Trinity Temple, 46 Denison Road East, Church Hall, 1st floor",-79.50454,43.69734317,5350281.01
+11,15,"Our Lady of Victory Residence, 200 Dora Spencer Road, Activity Room, 1st floor",-79.50507,43.69176061,5350174
+11,16,"York Humber High School, 100 Emmett Avenue, Gym, 1st floor",-79.50523,43.688012,5350174
+11,18,"West Park Long Term Care Centre, 82 Buttonwood Avenue, 3rd Floor Spiritual Room , 3rd floor",-79.50897,43.68929681,5350174
+11,19,"The Winston House, 75 Emmett Avenue, Lobby, 1st floor",-79.50484,43.68717944,5350174
+11,20,"Emmett House, 85 Emmett Avenue, Party Room, 1st floor",-79.50647,43.68714367,5350174
+11,21,"West Park Healthcare Centre, 82 Buttonwood Avenue, Auditorium, 1st floor",-79.50897,43.68929681,5350174
+11,22,"Bala Avenue Community School, 6 Bala Avenue, Gym, Basement",-79.49902,43.6894708,5350173
+11,23,"Trimbee Court, 30 Denarda Street, Gym, 1st floor",-79.4925,43.68924906,5350173
+11,24,"Our Lady of Victory Catholic School, 70 Guestville Avenue, Gym, 1st floor",-79.49032,43.68332971,5350157
+11,25,"Roselands Junior Public School, 990 Jane Street, Gym, 1st floor",-79.49906,43.68123537,5350154
+11,26,"Lambton Square, 270 Scarlett Road, Party Room, 1st floor",-79.50687,43.67727014,5350154
+11,27,"Lambton Square, 260 Scarlett Road, Board Room, 1st floor",-79.50763,43.67661713,5350154
+11,28,"Lambton Square, 240 Scarlett Road, Party Room, 1st floor",-79.50818,43.67563988,5350154
+11,29,"Lambton Square, 250 Scarlett Road, Party Room, 1st floor",-79.5069,43.67587274,5350154
+11,30,"Outlook Manor, 55 Outlook Avenue, Recreation Room, Basement",-79.49624,43.67844684,5350156.01
+11,31,"Frank Oke Secondary School, 500 Alliance Avenue, Gym, 1st floor",-79.48876,43.677521,5350156.02
+11,32,"Beech Hall, 10 A Humber Blvd., McEachern Hall, 1st floor",-79.48149,43.68208361,5350156.02
+11,33,"Santa Maria Catholic School, 25 Avon Avenue, Gym, 1st floor",-79.47768,43.68098187,5350155
+11,34,"Mount Dennis Apartments, 101 Humber Blvd., Recreation Room, 1st floor",-79.48202,43.67980256,5350155
+11,36,"Rockcliffe Middle School, 400 Rockcliffe Blvd., Gym, 1st floor",-79.48844,43.67402476,5350156.01
+11,38,"Central King Seniors Residence, 15 King Street, Activity Room, 1st floor",-79.51983,43.70190827,5350175.02
+11,40,"George Syme Public School, 69 Pritchard Avenue, Gym, 1st floor",-79.49113,43.66925997,5350153
+11,41,"Lambton Park Community School, 50 Bernice Crescent, Gym, 1st floor",-79.49831,43.66758456,5350153
+11,42,"George Bell Arena, 215 Ryding Avenue, Malcom Kerr Room, 1st floor",-79.47753,43.66861508,5350106
+12,1,"Falstaff Community Centre, 50 Falstaff  Avenue, Multi-Purpose Room, 1st floor",-79.50384,43.71673023,5350283.02
+12,2,"Nelson A. Boylen Collegiate, 155 Falstaff  Avenue, Gym, 1st floor",-79.49548,43.71713612,5350283.02
+12,3,"St. Fidelis Catholic School, 9 Bannerman Street, Gym, 1st floor",-79.48495,43.7172961,5350284
+12,4,"Casa Abruzzo, 338 Falstaff Avenue, Rec. Room, 1st floor",-79.48286,43.72050679,5350284
+12,5,"North Park Nursing Home, 450 Rustic Road, Library, 1st floor",-79.48222,43.71760837,5350284
+12,6,"St Fidelis Catholic Church, 33 Connie St, Gym, 1st floor",-79.47303,43.72286072,5350285
+12,7,"St. Francis Xavier Catholic School, 53 Gracefield Avenue, Gym, Basement",-79.48341,43.7108581,5350284
+12,8,"Chaminade College Catholic School, 490 Queen's Drive, Gym, 1st floor",-79.49606,43.71009955,5350283.01
+12,9,"Upwood Park Co-op, 300 Queens Drive, Rec. Centre, 1st floor",-79.50178,43.7082812,5350283.01
+12,10,"Central Park Lodge, 303 Queens Drive, Lobby, 1st floor",-79.50218,43.70749097,5350283.01
+12,12,"Christian Horizons, 265 Queen's Drive, Dining Area, 1st floor",-79.50431,43.70718524,5350283.01
+12,13,"Amesbury Middle School, 201 Gracefield Avenue, Gym, 1st floor",-79.49402,43.70870633,5350283.01
+12,14,"Amesbury Community Centre, 1507 Lawrence Avenue West, Gym, 2nd floor",-79.48262,43.70717469,5350280
+12,15,"Maple Leaf Drive Seniors, 10 Maple Leaf Drive, Activity Room, 1st floor",-79.50484,43.70951754,5350283.02
+12,17,"George Anderson Public School, 30 George Anderson Drive, Gym, 1st floor",-79.47895,43.70546212,5350280
+12,18,"Lawrence Park, 1577 Lawrence Avenue West, Lobby, 1st floor",-79.48947,43.70541807,5350280
+12,19,"Brookhaven Public School, 70 Brookhaven Drive, Gym, 1st floor",-79.4957,43.70251489,5350281.01
+12,20,"St. Bernard Catholic School, 12 Duckworth Street, Gym, 1st floor",-79.50061,43.70251481,5350281.01
+12,23,"Willow Glen, 25 Martha Eaton Way, Party Room, 1st  floor",-79.48904,43.69811165,5350281.02
+12,24,"Maple Creek, 10 Martha Eaton Way, Party Room, Basement",-79.4899,43.69731857,5350281.02
+12,25,"Eaton Valley, 15 Martha Eaton Way, Party Room, Basement",-79.48847,43.69656251,5350281.02
+12,26,"Centennial Recreation Centre, 2694 Eglinton Avenue West, Gym, 1st floor",-79.47698,43.69007765,5350172
+12,27,"Harold & Grace Baker Centre, 1 Northwestern Avenue, Main Floor, 1st floor",-79.46979,43.69794532,5350171
+12,28,"Greenborough Community Church, 2000 Keele Street, Basement Room, Basement",-79.47573,43.69741944,5350172
+12,29,"Charles E. Webster Public School, 1900 Keele Street, Gym, 1st floor",-79.4751,43.69344303,5350172
+12,30,"Vila Gaspar, 33 Gabian Way, Party Room, 1st floor",-79.46886,43.69311972,5350171
+12,31,"Plaut Manor, 2480 Eglinton Avenue West, Rec. Room, 1st floor",-79.46941,43.69169847,5350171
+12,33,"Keelesdale Jr. Public School, 200 Bicknell Avenue, Gym, 1st floor",-79.47695,43.68696568,5350158
+12,34,"Kane Middle School, 300 Kane Avenue, Gym, 1st floor",-79.46942,43.68725801,5350159.01
+12,35,"St. Matthew Catholic School, 18 Lavender Road, Gym, 1st floor",-79.46795,43.68067882,5350159.01
+12,36,"Silverthorn Place, 600 Rogers Road, Recreation Room, 1st floor",-79.47267,43.68226072,5350158
+13,1,"3725 Dundas Street West, Rec. Room, 1st floor",-79.4988,43.66537021,5350151
+13,2,"Royal Canadian Legion Branch 266, 3591 Dundas Street West, Tommy Bonnar Hall, 2nd floor",-79.49288,43.66544536,5350152
+13,3,"King George Public School, 25 Rexford Road, Gym, 1st floor",-79.48689,43.66317127,5350152
+13,4,"Runnymede Healthcare Centre, 625 Runnymede Road, Lobby, 1st floor",-79.48113,43.66418224,5350105
+13,5,"West Toronto Baptist Church, 3049 Dundas Street West, Fellowship Hall, 1st floor",-79.4712,43.6653012,5350101
+13,7,"Annette Recreation Centre, 333 Annette Street, Gymnasium 1, 1st floor",-79.47414,43.66121304,5350103
+13,8,"James Culnan Catholic School, 605 Willard Avenue, Gym, 1st floor",-79.48559,43.6611157,5350152
+13,9,"Humbercrest Public School, 14 St. Marks Road, Gym, 1st floor",-79.49106,43.66046123,5350152
+13,10,"Warren Park Jr. Public School, 135 Varsity Road, Gym, 1st floor",-79.49944,43.66285134,5350151
+13,12,"Runnymede United Church, 432 Runnymede Road, Memorial Hall, Basement",-79.47921,43.65681015,5350104
+13,13,"Ursula Franklin Academy, 146 Glendonwynne Rd, Gym, Basement",-79.47443,43.65652234,5350103
+13,14,"St. John's Church, 288 Humberside Avenue, Main Room, 1st floor",-79.4692,43.66064871,5350101
+13,15,"Annette Street Library, 145 Annette Street, Auditorium, Basement",-79.46644,43.66331255,5350101
+13,16,"Keele Street Public School, 99 Mountview Avenue, School Gym, Basement",-79.4616,43.65751606,5350102.03
+13,17,"255 Glenlake Avenue, Lobby, 1st floor",-79.4646,43.65754069,5350102.03
+13,18,"Park Place, 299 Glenlake Avenue, Lobby, 1st floor",-79.4654,43.65692465,5350102.02
+13,19,"95 High Park Avenue, Lobby, 1st floor",-79.46641,43.65690835,5350102.02
+13,20,"100 High Park Avenue, Rec. Room, 1st floor",-79.46738,43.65656783,5350102.02
+13,21,"55 Oakmount Road, Lobby, 1st floor",-79.46315,43.65676313,5350102.03
+13,22,"111 Pacific Avenue, Lobby, 1st floor",-79.46478,43.65715733,5350102.03
+13,23,"60 Mountview Avenue, Lobby, 1st floor",-79.46243,43.65687804,5350102.03
+13,24,"45 Oakmount Road, Lobby, 1st floor",-79.46299,43.65641055,5350102.03
+13,25,"66 Pacific Avenue, Lobby, 1st floor",-79.46471,43.6556459,5350102.02
+13,26,"Parkside Apartments, 65 High Park Avenue, Lobby, 1st floor",-79.46601,43.65599582,5350102.02
+13,27,"Grenadier Square High Park, 77 Quebec Avenue, Lobby, 1st floor",-79.4673,43.65539807,5350102.02
+13,28,"22 Oakmount Road, Lobby, 1st floor",-79.46354,43.65517605,5350102.03
+13,29,"40 High Park Avenue, Lobby, 1st floor",-79.46637,43.6547198,5350102.02
+13,30,"35 High Park Avenue, Lobby, 1st floor",-79.46528,43.65472641,5350102.02
+13,31,"High Park Green, 100 Quebec Avenue, Lobby, 1st floor",-79.46824,43.6556663,5350103
+13,32,"High Park Green, 50 Quebec Avenue, Meeting Room, 1st floor",-79.46808,43.654449,5350103
+13,33,"The Grenadier Retirement Residence, 2100 Bloor Street West, 1st Floor Lounge, 2nd floor (referred to as '1st floor')",-79.471,43.65261214,5350103
+13,34,"St. Pius X Catholic School, 71 Jane Street, Gym, 1st floor",-79.48472,43.6512858,5350104
+13,36,"Swansea Town Hall, 95 Lavinia Avenue, Rousseau Room, 1st floor",-79.47788,43.64765837,5350050.02
+13,37,"Morningside High Park Church, 4 Morningside Avenue, Auditorium, 1st floor",-79.47304,43.64635765,5350050.02
+13,38,"Swansea Jr.Sr. Public School, 207 Windermere Avenue, Gym, 1st floor",-79.47709,43.64346596,5350050.02
+13,39,"35 Ormskirk Avenue, Lounge B1, Basement",-79.4749,43.63918938,5350050.01
+13,40,"Windermere By The Lake, 15 Windermere Ave, Party Room",-79.46893,43.636943,5350050.02
+13,41,"Grenadier Gardens, 45 Southport Street, Lobby, 1st floor",-79.47259,43.63911007,5350050.01
+13,42,"The Southport, 60 Southport Street, Party Room, Basement",-79.47384,43.63879408,5350050.01
+13,43,"South Kingsway Village Rec Ctr, 20 Southport Street, Party Room, 1st floor",-79.47215,43.63740477,5350050.01
+13,44,"Park Lake Residences, 1900-1910 Lake Shore Blvd West, Party Room, First floor",-79.46606,43.63640691,
+13,45,"Southampton, 1 Ripley Avenue, Board Room, 1st floor",-79.47419,43.6368174,5350050.01
+14,1,"Lucy McCormick Sr Public School, 2717 Dundas Street West, Gym, Basement",-79.46018,43.66464119,5350100
+14,2,"Indian Road Crescent Public School, 285 Indian Road Crescent, Gym, 1st floor",-79.46008,43.66253731,5350100
+14,3,"Vilnius Manor, 1700 Bloor Street West, Rec Room- Third Floor, 3rd floor",-79.45843,43.65540421,5350099
+14,4,"The Crossways Mall, 2340 Dundas Street West, Mall corridor, 1st floor",-79.45227,43.65672386,5350099
+14,5,"St. Joan of Arc Church, 1701 Bloor St. West, Gym, 1st floor",-79.45792,43.65488995,5350051
+14,6,"High Park Baptist Church, 9 Hewitt Avenue, Lobby, 1st floor",-79.45185,43.65223678,5350051
+14,7,"Howard Public School Jr., 30 Marmaduke Street, Gym, 1st floor",-79.452,43.6503073,5350051
+14,8,"St. Vincent de Paul Catholic School, 116 Fermanagh Avenue, Gym, 1st floor",-79.44793,43.64683784,5350052
+14,10,"Garden Avenue Public School, 225 Garden Avenue, Gym, 1st floor",-79.44913,43.64320868,5350049
+14,11,"High Park Public Library, 228 Roncesvalles Avenue, Community Room, 1st floor",-79.44897,43.64514343,5350049
+14,12,"Parkdale Public Library, 1303 Queen Street West, Auditorium, Basement",-79.43265,43.64115089,5350005
+14,13,"Parkdale Public School, 75 Lansdowne Avenue, Large Gym, 1st floor",-79.43747,43.64340418,5350047.02
+14,15,"Copernicus Lodge, 66 Roncesvalles Avenue, Main Floor Lounge, 1st floor",-79.44731,43.64019946,5350049
+14,16,"May Robinson Apartments, 20 West Lodge Avenue, Auditorium, 1st floor",-79.43636,43.64219007,5350047.02
+14,19,"Elm Grove Living Centre, 35 Elm Grove Avenue, 1st Floor Training Room, Basement",-79.43075,43.64033384,5350005
+14,20,"Masaryk-Cowan Community Centre, 220 Cowan Avenue, Gym, 1st floor",-79.43323,43.64072471,5350005
+14,21,"245 Dunn Avenue, Rec. Room, 1st floor",-79.43378,43.64022464,5350005
+14,22,"Holy Family Catholic School, 141 Close Avenue, Gym, 1st floor",-79.43491,43.6387588,5350005
+14,23,"White Eagle Residence, 138 Dowling Avenue, Meeting Room, 1st floor",-79.43922,43.63718222,5350004
+14,24,"Parkdale Activity Recreation Centre, 1497-1499 Queen Street West, 203 B, 2nd floor",-79.44034,43.6396551,5350004
+14,25,"Springhurst Manor, 1447 King Street West, Recreation Room, 1st floor",-79.43766,43.63667366,5350004
+14,26,"Queen Victoria Public School, 100 Close Avenue, Gym, 1st floor",-79.43474,43.63626752,5350007.01
+14,27,"Parkdale Collegiate Institute, 209 Jameson Avenue, Cafeteria, 1st floor",-79.43607,43.63966609,5350005
+14,28,"Toronto Rehabilitation Institute, 130 Dunn Avenue, Patients Library, 1st floor",-79.43309,43.63500813,5350007.01
+14,29,"Parkdale United Church, 1355 King St. West, Church Hall, Basement",-79.43285,43.63755442,5350007.01
+14,31,"85 Spencer Avenue, Rec Room, 1st floor",-79.43015,43.63733867,5350007.02
+14,32,"102 Tyndall Avenue, Rec Room, 1st floor",-79.42898,43.63669048,5350007.02
+14,33,"Norwood Nursing Home, 122 Tyndall Avenue, Activity Room, 1st floor",-79.42933,43.63755174,5350007.02
+14,34,"St. Vincent de Paul Catholic Church, 263 Roncesvalles Ave, Hall, Basement",-79.44894,43.64686052,5350052
+14,35,"Lakeside Long Term Care Centre, 150 Dunn Ave, Lobby, 1st floor",-79.43298,43.63581767,5350006
+15,1,"Yorkdale Secondary School, 38 Orfus Road, Gym - North End, 1st floor",-79.46063,43.71993015,5350286
+15,2,"Lawrence Heights Community Centre, 5 Replin Rd, Gym, 1st floor",-79.44236,43.7179975,5350287.01
+15,3,"Sir Sandford Fleming Academy, 50 Ameer Avenue, Gym, 1st floor",-79.44136,43.7289815,5350287.02
+15,4,"Baycrest Terrace, 55 Ameer Avenue, Main Lobby, 1st floor",-79.44084,43.72875488,5350287.02
+15,5,"Reuben Cipin Residence, 2 Neptune Drive, Social Hall",-79.43308,43.73112439,5350287.02
+15,6,"The Empress House, 3636 Bathurst Street, Recreation Room, 1st floor",-79.43318,43.73252456,5350287.02
+15,7,"Apotex Centre, 3560 Bathurst Street, Loftus Hall, 1st floor",-79.43415,43.7300642,5350287.02
+15,8,"Bais Yaakov Elementary School, 15 Saranac Blvd, Lobby, 1st floor",-79.43252,43.72199174,5350287.01
+15,9,"Flemington Public School, 10 Flemington Road, Gym, 1st floor",-79.44425,43.72013384,5350287.01
+15,10,"Casa Del Zotto, 3010 Dufferin Street, Common Room, 1st floor",-79.455,43.71187089,5350279.02
+15,11,"Joyce Public School, 26 Joyce Parkway, Gym, 1st floor",-79.46376,43.70978399,5350279.02
+15,12,"Regina Mundi Catholic School, 70 Playfair Avenue, Gym, 1st floor",-79.45959,43.7098237,5350279.02
+15,17,"Caboto Terrace, 3050 Dufferin Street, Library/Common Room, 1st floor",-79.45516,43.71315687,5350279.02
+15,18,"3000 Dufferin Street, Rec. Room, Basement",-79.45503,43.71109548,5350279.02
+15,19,"Villa Colombo, 40 Playfair Avenue, Fountain Area, 1st floor",-79.45614,43.71051076,5350279.02
+15,20,"Fieldstone Day School, 2999 Dufferin Street, Gym, 1st floor",-79.45339,43.71188195,5350279.01
+15,22,"Glen Park Public School, 101 Englemount Avenue, Gym, 1st floor",-79.43639,43.71318084,5350278
+15,23,"Sts. Cosmas & Damian School, 111 Danesbury Avenue, Gym, 1st floor",-79.44557,43.70659865,5350279.01
+15,24,"Viewmount Community Centre, 169 Viewmount Avenue, Multipurpose Room, 1st floor",-79.43724,43.70750173,5350278
+15,25,"Roselawn Marlee Apartments, 855 Roselawn Avenue, Rec. Room, 1st floor",-79.44148,43.70188803,5350169.02
+15,26,"The Allenway, 360 Ridelle Avenue, Ping Pong Room, 24th Floor",-79.43998,43.7049416,5350169.02
+15,27,"The Castlefield, 377 Ridelle Avenue, Lobby, 1st floor",-79.44013,43.70388233,5350169.02
+15,28,"Ridley Towers, 370 Ridelle Avenue, Lobby, 1st floor",-79.44075,43.70463744,5350169.02
+15,29,"Briar Hill Towers, 155 Marlee Avenue, Party Room, 1st floor",-79.44161,43.70472433,5350169.02
+15,30,"Fernwood Apartments, 145 Marlee Avenue, Lobby, 1st floor",-79.44103,43.70326335,5350169.02
+15,31,"The Ascot, 135 Marlee Avenue, Lobby, 1st floor",-79.44082,43.70218805,5350169.02
+15,34,"Fairbank Middle Public School, 2335 Dufferin Street, Gym, 1st floor",-79.44942,43.69436249,5350162
+15,35,"Doug Saunders Apartments, 1775 Eglinton Avenue West, Recreation Room, 1st floor",-79.44878,43.69581234,5350168
+15,36,"Maria A. Shchuka Library, 1745 Eglinton Avenue West, Room A, 1st floor",-79.44725,43.69603932,5350168
+15,37,"St. Thomas Aquinas School, 636 Glenholme Avenue, Gym, 1st floor",-79.44575,43.69589829,5350168
+15,38,"Lewis Garnsworthy Residence, 2353 Dufferin Street, Lounge, 1st floor",-79.44961,43.69519624,5350162
+15,39,"Fairbank Community Centre, 2213 Dufferin Street, Multi-Purpose Room, Basement",-79.448,43.69129015,5350162
+15,40,"D'Arcy McGee Catholic School, 20 Bansley Avenue, Room 131 - Music Room, 1st floor",-79.44291,43.69226421,5350162
+15,41,"Vaughan Road Academy, 529 Vaughan Road, Foyer, 1st floor",-79.43671,43.69103029,5350168
+15,42,"Saranac Apartments, 3174 Bathurst Street, Recreation Room, 1st floor",-79.43094,43.72192008,5350287.01
+15,43,"Bathurst Place, 3036 Bathurst Street, Recreation Room, 1st floor",-79.42992,43.71855327,5350278
+15,44,"Shermount Condominiums, 650 Lawrence Avenue West, Party Room, 1st floor",-79.44185,43.71729398,5350287.01
+16,1,"Armour Heights Public School, 148 Wilson Avenue, Gym, 1st floor",-79.41953,43.74091864,5350275
+16,2,"Terrace Gardens Residence, 3705 Bathurst Street, Lobby, 1st floor",-79.43314,43.73531177,5350276.01
+16,3,"St. Margaret Catholic School, 85 Carmichael Avenue, Gym, 1st floor",-79.42663,43.73583786,5350276.01
+16,4,"Armour Heights Community Centre, 2140 Avenue Road, Gym, 1st floor",-79.42192,43.73945443,5350276.01
+16,5,"Loretto Abbey, 101 Mason Blvd., Dining Room, 1st floor",-79.41066,43.74130492,5350275
+16,6,"The Four Thousand, 4000 Yonge Street, Lobby, 1st floor",-79.40681,43.74253209,5350275
+16,8,"Church of St. Timothy, 100 Old Orchard Grove, Auditorium, 2nd floor",-79.40916,43.73433856,5350141.02
+16,9,"Fairlawn Avenue United Church, 28 Fairlawn Avenue, Gymnasium, Basement",-79.40493,43.73099782,5350141.02
+16,10,"John Wanless Public School, 245 Fairlawn Avenue, Gym, 1st floor",-79.41101,43.72859748,5350141.02
+16,11,"Melrose Community Church, 375 Melrose Avenue, Hall, 1st floor",-79.41967,43.72942866,5350276.02
+16,12,"Ledbury Park Public School, 95 Falkirk Street, Gym, 1st floor",-79.42733,43.72739907,5350276.02
+16,13,"Lawrence Park Condominiums, 481 Rosewell Ave (Building B2), Party Room, 1st floor",-79.41237,43.72152981,5350139
+16,14,"Lawrence Park Collegiate Institute, 125 Chatsworth Drive, North Gym, 1st floor",-79.41044,43.7222313,5350139
+16,15,"Blessed Sacrament Catholic School, 24 Bedford Park Ave, Gym, 1st floor",-79.404,43.72749021,5350141.01
+16,16,"Glenview Presbyterian Church, 1 Glenview Avenue, Parlour, 1st floor",-79.40183,43.72013884,5350139
+16,17,"Glenview Senior Public School, 401 Rosewell Avenue, Gym, 1st floor",-79.40953,43.71998504,5350139
+16,19,"Shaarei Shomayim Congregation, 470 Glencairn Avenue, Brotherhood Hall, Basement",-79.427,43.71310835,5350277
+16,21,"St. Clement's Anglican Church, 59 Briar Hill Avenue, Canon Nicholson Hall, 1st floor",-79.40211,43.71295114,5350135
+16,22,"Allenby Jr. Public School, 391 St. Clements Avenue, Gym, 1st floor",-79.41279,43.70944423,5350134
+16,24,"Forest Hill Place, 645 Castlefield Avenue, Meeting Room, 1st floor",-79.42524,43.70625327,5350133
+16,25,"Dorothy Klein Seniors Residence, 668 Roselawn Avenue, Rec Room, 1st floor",-79.42474,43.70577455,5350133
+16,26,"North Preparatory School, 1100 Spadina Road, Gym, Basement",-79.42039,43.70549092,5350133
+16,27,"Marshall McLuhan Secondary School, 1107 Avenue Road, Gym, 1st floor",-79.40974,43.70760884,5350135
+16,28,"North Toronto Community Centre, 200 Eglinton Ave West, Multi Purpose Room, 1st floor",-79.40463,43.70611443,5350135
+16,29,"Northern District Library, 40 Orchard View Blvd., Program Room, 2nd floor",-79.40007,43.70827849,5350135
+16,30,"500 Duplex Avenue, Lobby, 1st floor",-79.40147,43.70976751,5350135
+16,32,"Berkshire House, 411 Duplex Avenue, Lobby, 1st floor",-79.40026,43.7073386,5350135
+16,33,"Marjory Carton Apartments, 193 Wilson Avenue, Recreation Room, 1st floor",-79.42268,43.73929758,5350276.01
+17,1,"F.H. Miller Jr. Public School, 300 Caledonia Road, Gym, First floor",-79.4589,43.68401436,5350160
+17,2,"St. Hilda's Anglican Church, 2353 Dufferin Street, Meeting Room, 1st floor",-79.44961,43.69519624,5350162
+17,3,"St. John Bosco Catholic School, 75 Holmesdale Road, Room 103, 1st floor",-79.45056,43.68872437,5350161
+17,5,"Rawlinson Community School, 231 Glenholme Avenue, Gym, First floor",-79.44005,43.68398565,5350163
+17,6,"St. Clare Catholic School, 124 Northcliffe Blvd., Gym, Basement",-79.44155,43.67942005,5350163
+17,7,"Stella Maris Catholic School, 31 Ascot Avenue, Gym, First floor",-79.44522,43.67965933,5350112
+17,10,"St. Nicholas of Bari School, 363 Rogers Road, Gym, First floor",-79.4605,43.68283296,5350160
+17,12,"Church of St. Mark & Calvary, 21 Blackthorn Avenue, Hall, Basement",-79.45852,43.67508416,5350107
+17,13,"Joseph Piccininni Community Centre, 1369 St. Clair Avenue West, Gym, First floor",-79.4514,43.67533938,5350110
+17,14,"Oakwood Collegiate, 991 St. Clair Ave West, Gym, 1st floor",-79.43638,43.67866447,5350113
+17,15,"Dufferin/St. Clair Library, 1625 Dufferin Street, Program Room, 1st floor",-79.4424,43.67700529,5350113
+17,16,"Loretto College Catholic School, 151 Rosemount Avenue, Atrium, Basement",-79.44325,43.6757453,5350110
+17,17,"Pope Paul Catholic School, 270 Laughton Avenue, Music Room, First floor",-79.4578,43.67402149,5350108
+17,19,"Davenport-Perth Centre, 1900 Davenport Road, Perth Hall, First floor",-79.45486,43.6709286,5350108
+17,20,"Pelham Park Gardens, 61 Pelham Park Gardens, Rec. Room, First floor",-79.4578,43.6692683,5350108
+17,21,"St. Josaphat Catholic School, 55 Pelham Avenue, Cafetorium, First floor",-79.45535,43.66768225,5350108
+17,22,"St. Mary of the Angels School, 1477 Dufferin Street, Gym, First floor",-79.4403,43.67212745,5350109
+17,25,"Carleton Village Public School, 315 Osler St, Gym, Second floor",-79.46003,43.67236139,5350108
+18,1,"St. Rita Catholic School, 178 Edwin Avenue, Gym, 1st floor",-79.45645,43.66614335,5350098
+18,3,"Pauline Public School, 100 Pauline Avenue, Gym, 1st floor",-79.43915,43.66249769,5350097.01
+18,4,"Wallace-Emerson Community Centre, 1260 Dufferin Street, Gym, 1st floor",-79.43927,43.66732359,5350097.02
+18,5,"Dovercourt Public School, 228 Bartlett Avenue, Gym, 1st floor (level from north gym doors)",-79.43578,43.66674419,5350096
+18,6,"St. Luigi Catholic School, 2 Ruskin Avenue, Gym, 1st floor",-79.45147,43.66288416,5350098
+18,7,"Perth Avenue Co-Op, 120 Perth Avenue, Rec. Room, 1st floor",-79.44963,43.65738978,5350098
+18,8,"Rankin Apartments, 55 Rankin Crescent, Rec. Room, 1st floor",-79.44639,43.65828651,5350098
+18,9,"Tamil Co-Op Homes, 20 Wade Avenue, Meeting Hall, 3rd floor",-79.44411,43.65922849,5350097.01
+18,10,"St. Sebastian Catholic School, 717 Brock Avenue, Gym, 1st floor",-79.43993,43.66277473,5350097.01
+18,11,"New Horizons Tower, 1140 Bloor Street West, Lounge, 1st floor",-79.43602,43.65994327,5350097.01
+18,12,"St. Anthony Catholic School, 130 Shanly St, Gym, 1st Floor",-79.43497,43.6637121,5350096
+18,14,"Portuguese Speaking Presb. Church, 100 Hepbourne Street, Basement Hall, Basement",-79.42874,43.65915487,5350054
+18,15,"St. Mary Secondary School, 66 Dufferin Park Avenue, Gym, 1st floor",-79.43216,43.65780218,5350054
+18,16,"St. Helen Catholic School, 1196 College Street, Gym, 1st floor",-79.43616,43.65209316,5350054
+18,17,"Aboriginal Education Centre, 90 Croatia Street, Room 103 B, 1st floor",-79.43814,43.65817111,5350054
+18,19,"Bill McMurray Residence, 180 Sheridan Avenue, Rec. Room, Basement",-79.4347,43.65162058,5350045
+18,20,"St. Anne's Place, 661 Dufferin Street, Lobby, 1st floor",-79.43139,43.65048954,5350045
+18,22,"Terra Nova, 1289 Dundas Street West, Multi Room, 1st floor",-79.42542,43.6492214,5350044
+18,23,"McCormick Recreation Centre, 66 Sheridan Avenue, Gym, 1st floor",-79.43345,43.64735264,5350046
+18,24,"Shirley Street Public School, 38 Shirley Street, Gym, 1st floor",-79.43673,43.64853281,5350046
+18,25,"Fairview Nursing Home, 14 Cross Street, Activity Room, 1st floor",-79.42844,43.64802897,5350044
+18,26,"Alexander Muir/Gladstone School, 108 Gladstone Avenue, Seniors Lunch Room, 1st floor (level with north entrance)",-79.42885,43.64602983,5350044
+19,1,"Essex Public School, 50 Essex Street, Gym, 1st floor",-79.42227,43.66826233,5350094
+19,3,"The Salvation Army, 789 Dovercourt Road, Basement Hall, Basement",-79.42944,43.66246007,5350095
+19,4,"Dewson Street Public School, 65 Concord Avenue, Gym, 1st floor",-79.42459,43.65655765,5350055
+19,5,"Bob Abate Recreation Centre, 485 Montrose Avenue, Gym, Basement",-79.42068,43.66292891,5350056
+19,6,"Harbord Collegiate Institute, 286 Harbord Street, Foyer, 1st floor",-79.41427,43.6612981,5350057
+19,7,"Malibu, 600 Fleet Street, Multi Purpose Room, 1st floor",-79.40008,43.63670623,5350008
+19,8,"College Street United Church, 452 College Street West, Multi-Purpose Room, 1st floor",-79.40815,43.65667639,5350058
+19,9,"Clinton Street Public School, 460 Manning Avenue, Art Room, 1st floor",-79.41406,43.65765466,5350058
+19,10,"Leonardo Court, 72 Clinton Street, Recreation Room, 1st floor",-79.41496,43.65569799,5350058
+19,11,"Montrose Public School, 301 Montrose Avenue, Gym, 1st floor",-79.41885,43.65869017,5350056
+19,12,"College/Shaw Library, 766 College Street, Large Community Room, Basement",-79.42016,43.65521044,5350056
+19,13,"Ossington/Old Orchard Public School, 380 Ossington Avenue, Gym, 1st floor",-79.4226,43.65271625,5350042
+19,14,"St. Luke Catholic School, 319 Ossington Avenue, Gym, 1st floor",-79.42102,43.65163995,5350042
+19,15,"Toy Factory Lofts, 43 Hanna Avenue, Boardroom",-79.41919,43.63916284,5350008
+19,16,"St. Francis of Assisi School, 80 Clinton Street, Gym, 1st floor",-79.41463,43.65620845,5350058
+19,17,"Charles G. Fraser Public School, 79 Manning Avenue, Gym, Basement",-79.40949,43.64853867,5350040
+19,18,"St. Matthias Anglican Church, 45 Bellwoods Avenue, Parish Hall, 1st floor",-79.41115,43.64780897,5350040
+19,19,"Trinity Community Recreation Centre, 155 Crawford Street, Gym, 1st floor",-79.41538,43.64644386,5350043
+19,20,"Bellwoods Park House, 300 Shaw Street, Lounge, Basement",-79.4189,43.65047077,5350042
+19,21,"Maynard Nursing Home, 28 Halton Street, Hairdressing Room, Basement",-79.41915,43.64894695,5350043
+19,22,"Senhor Santo Cristo Catholic School, 30 Humbert Street, Gym, 1st floor",-79.4209,43.64605656,5350043
+19,23,"Centre for Addiction/Mental Health, 1001 Queen Street West, Training Room A, 1st floor",-79.41809,43.64403339,5350009
+19,24,"Givins/Shaw Public School, 49 Givins Avenue, Gym, 1st floor",-79.41759,43.64641624,5350043
+19,25,"St. Mary Catholic School, 20 Portugal Square, Gym, 1st floor",-79.40464,43.64585239,5350010.02
+19,26,"DNA, 1005 King Street West, Party Room, 10th floor",-79.41441,43.64124238,5350010.01
+19,27,"The Summit, 701 King Street West, Party Room P1, Basement",-79.40382,43.64300009,5350010.02
+19,28,"Citysphere, 801 King Street West, Multi Purpose Room, 13th floor",-79.40707,43.6427421,5350010.02
+19,29,"Niagara Community Centre, 700 Wellington St. W, Fieldhouse, 1st floor",-79.40804,43.64175704,5350010.02
+19,30,"Municipal Licensing & Standards, 45 Strachan Avenue, Training Room, 1st floor",-79.41066,43.63965593,5350008
+19,31,"Atlantis Aquarius, 231 Fort York Blvd, Lobby, 1st floor",-79.40608,43.63697945,5350008
+19,32,"The Meeting Place, 588 Queen Street West, Lobby, 1st floor",-79.40428,43.64743305,5350040
+19,33,"Niagara Street Public School, 222 Niagara Street, Gym, Basement",-79.40826,43.64394604,5350010.02
+19,35,"Battery Park at Liberty Village, 50 Lynn Williams St, Party Room",-79.41519,43.63964356,5350008
+19,36,"Zip Condo, 80 Western Battery Rd, Party Room",-79.41465,43.6396649,5350008
+20,1,"St. Albans Boys and Girls Club, 843 Palmerston Avenue, Gym, First floor",-79.41568,43.67141857,5350093
+20,2,"250 Davenport Road, Basement Rec Room, Basement",-79.39826,43.67485056,5350091.02
+20,3,"Church of the Messiah, 240 Avenue Road, Main Hall, First floor",-79.39792,43.67694242,5350091.02
+20,4,"Leisureworld Caregiving Centre, 225 St. George St, Lobby, 1st Floor",-79.40146,43.6725377,5350091.01
+20,6,"The Annex Retirement Residence, 123 Spadina Road, Lobby, 1st Floor",-79.4055,43.67175042,5350091.01
+20,7,"Walmer Road Baptist Church, 188 Lowther Avenue, Meeting Room 3, 2nd floor",-79.40727,43.6683721,5350092
+20,8,"Vermont Square, 914 Bathurst Street, Lounge, Basement",-79.4128,43.66831541,5350093
+20,9,"Palmerston Avenue Public School, 734 Palmerston Avenue, Library, First floor",-79.41521,43.66815349,5350093
+20,10,"Ukrainian Cultural Centre, 83-85 Christie Street, Main Hall, First floor",-79.41901,43.66575408,5350093
+20,11,"The O'Neill Centre, 33 Christie Street, Family Room, Basement",-79.4186,43.66478654,5350093
+20,12,"Native Canadian Centre, 16 Spadina Road, Auditorium, First floor",-79.40505,43.66815836,5350092
+20,13,"O.I.S.E., 252 Bloor Street West, Room 2-211, Second floor",-79.39868,43.66844431,5350091.01
+20,14,"N2, 15 Fort York Blvd, Basketball Court, Basketball court",-79.39396,43.64008873,5350012.01
+20,15,"Centre for Addiction/Mental Health , 250 College Street, Room 801, Eighth floor",-79.39912,43.65858395,5350061
+20,16,"Hart House, 7 Hart House Circle, Reading room, First floor",-79.39457,43.66372057,5350061
+20,17,"Senator Croll Apartments, 341 Bloor Street West, Recreation Room, Second floor",-79.40078,43.66702315,5350061
+20,18,"Miles Nadal Jewish Community Centre, 750 Spadina Avenue, Jacob's Lounge, First floor",-79.40407,43.66621517,5350060
+20,19,"Tranzac Club, 292 Brunswick Avenue, Tiki Room, First floor",-79.40756,43.66523442,5350060
+20,20,"Spadina Towers, 666 Spadina Avenue, Lobby, 1st Floor",-79.40305,43.66400293,5350060
+20,21,"St. Vladimir Institute, 620 Spadina Avenue, Auditorium, Basement",-79.40224,43.66194935,5350059
+20,22,"King Edward Public School, 112 Lippincott Street, Gym, First floor",-79.40741,43.6582527,5350059
+20,23,"Kensington Manor, 34 Oxford Street, Recreation Room, First floor",-79.40179,43.65690551,5350038
+20,24,"Cecil Community Centre, 58 Cecil Street, Auditorium, First floor",-79.39859,43.65646764,5350037
+20,25,"Kensington Gardens South, 25 Brunswick Avenue, Family Visiting Room, 1st Floor",-79.4041,43.65823813,5350059
+20,26,"One Park Lane, 280 Simcoe Street, Boardroom, 1st Floor",-79.38982,43.65539262,5350037
+20,27,"Mon Sheong Home for the Aged, 36 D'Arcy Street, Foyer, 1st Floor",-79.39336,43.65525812,5350037
+20,28,"Scadding Court Community Centre, 707 Dundas Street West, Room 4, First floor",-79.4049,43.65179429,5350039
+20,29,"Alexandra Park, 91 Augusta Avenue, Recreation Room, First floor",-79.4004,43.65072107,5350039
+20,30,"Alexandra Park Community Centre, 105 Grange Court, Gym, First floor",-79.39888,43.65153613,5350039
+20,31,"Ogden Public School, 33 Phoebe Street, Gym, First floor",-79.39513,43.6500222,5350036
+20,32,"University Settlement Rec Centre, 23 Grange Road, Lobby, Second floor",-79.39147,43.65205191,5350036
+20,34,"Beverley Manor, 168 John Street, Recreation Room, First floor",-79.3915,43.65024026,5350036
+20,35,"Metro Hall, 55 John Street, Room 308, Third floor",-79.38893,43.64616238,5350011
+20,36,"Portland Place, 163 Portland Street, Skills Room, 1st Floor",-79.40091,43.64727044,5350011
+20,37,"Queen's Quay Yachting, 275 Queen's Quay West, Classroom, First floor",-79.38677,43.63861883,5350012.02
+20,38,"Maple Leaf Quay, 370 Queen's Quay West, Suite 302, 2nd Floor",-79.39036,43.63820465,5350012.02
+20,39,"Beverley Junior Public School, 64 Baldwin St, Gym, First floor",-79.39571,43.65577382,5350037
+20,40,"Harbourfront Community Centre, 627 Queen's Quay West, Gym, Lower level",-79.39777,43.6354141,5350012.01
+20,41,"Queen's Harbour, 600 Queen's Quay West, Party Room, 1st Floor",-79.39752,43.63681289,5350012.01
+20,42,"Atrium On Queen's Quay, 650 Queen's Quay West, Party Room, 1st Floor",-79.39884,43.63571043,5350008
+20,43,"Scott Mission, 502 Spadina Avenue, Main Floor, First floor",-79.40081,43.65869418,5350059
+20,44,"The Matrix, 361-373 Front Street West, Club Vista - Shared Facility, 2nd Floor",-79.39164,43.6430971,5350012.02
+20,46,"The Optima, 81 Navy Wharf Court, Party Room, 2nd Floor",-79.39129,43.64145539,5350012.02
+20,48,"The Riviera Condominiums, 228-230 Queen's Quay West, Meeting Room 2nd Floor, 2nd Floor",-79.38362,43.63981815,5350012.02
+20,49,"Waterclub Condominiums, 8 York Quay, Party Room, 3rd Floor",-79.38082,43.64049484,5350012.02
+20,51,"The Icon, 270 Wellington Street West, Party Room/Cyber Lounge, 1st Floor",-79.39128,43.64500876,5350011
+20,52,"Harbour View Estates, 11 Mariner Terrace, Super Club Gym, 1st Floor",-79.39107,43.63993374,5350012.02
+20,53,"Kensington Gardens North, 45 Brunswick Avenue, Multi Purpose Room, 1st Floor",-79.40431,43.65879246,5350059
+20,54,"Infinity Condominiums, 51 Lower Simcoe Street, Party Room",-79.38281,43.64208147,5350012.02
+20,55,"Element Condominium, 20 Blue Jay's Way, Party Room, 22nd Floor",-79.39167,43.64380587,5350011
+20,56,"The Montage and Neo, 25 Telegram Mews/4K Spadina Ave, Party Room",-79.39372,43.64116625,5350012.01
+20,57,"Boutique Condo, 21 Nelson Street, Party Room 16th Floor, 16th Floor",-79.38804,43.64887901,5350011
+20,58,"Luna, 8 Telegram Mews, Party Room, 2nd Floor",-79.39492,43.64050175,5350012.01
+20,59,"Panorama, 38 Dan Leckie Way, Lounge, 7th Floor",-79.39831,43.63742505,5350012.01
+20,60,,-79.40116,43.6430636,5350011
+21,1,"Beth Sholom Synagogue, 1445 Eglinton Avenue West, Assembly Hall, 3rd floor",-79.43771,43.69809586,5350168
+21,2,"West Preparatory Public School, 70 Ridge Hill Drive, Gym, 1st floor (level with east entrance)",-79.43304,43.70275231,5350132
+21,3,"Forest Hill Collegiate Institute, 730 Eglinton Avenue West, Gym, 1st floor, level with entrance door 5C",-79.42135,43.70306685,5350133
+21,5,"Pine Villa Retirement Residence, 1035 Eglinton Avenue West, Lounge, 1st floor",-79.43227,43.69929591,5350166
+21,6,"Cedarvale Community School, 145 Ava Road, Gym, 1st floor",-79.43033,43.69613887,5350166
+21,7,"Glen Gardens Apartments, 989 Eglinton Avenue West, Activity Room, 1st floor",-79.43031,43.69972426,5350166
+21,8,"Beth Tzedec Synagogue, 1700 Bathurst Street, Lobby, 1st floor",-79.42442,43.6954813,5350166
+21,9,"Arlington Middle School, 501 Arlington Avenue, Cafetorium, 1st floor",-79.43295,43.69229533,5350167.02
+21,10,"Lower Village Gate, 18 Lower Village Gate, Party Room, 1st floor",-79.41507,43.68716869,5350131
+21,11,"Holy Rosary Church Parish Hall, 356 St. Clair Avenue West, Gym, 1st floor",-79.41389,43.684314,5350118
+21,12,"Park Towers, 400 Walmer Road, West Tower Party Salon, 1st floor",-79.41318,43.68529114,5350167.01
+21,13,"Cedarvale Terrace Nursing Home, 429 Walmer Road, Rec. Room, Basement",-79.41238,43.68545497,5350167.01
+21,15,"Rose of Sharon, 17 Maplewood Avenue, Lobby, 1st floor",-79.42165,43.68583606,5350167.02
+21,16,"Louise Towers, 130 Vaughan Road, Recreation Room, 9th Floor",-79.422,43.68477131,5350165
+21,18,"Humewood Community School, 15 Cherrywood Avenue, Gym, 1st floor",-79.42802,43.68664368,5350165
+21,19,"St. Alphonsus Catholic School, 60 Atlas Avenue, Gym, 1st floor",-79.43221,43.68292227,5350164
+21,21,"St. Matthews United Church, 729 St. Clair Avenue West, Narthex (Entrance Hall), 1st floor",-79.42748,43.6811414,5350114
+21,22,"St. Michael and All Angels Church, 611 St. Clair Avenue West, Sanctuary, 1st floor",-79.42285,43.68186664,5350116
+21,23,"Wychwood Library, 1431 Bathurst Street, Program Room, 1st floor",-79.41758,43.68208971,5350118
+21,24,"Tower Hill West, 355 St. Clair Avenue West, Lobby, 1st floor",-79.41279,43.68390083,5350118
+21,25,"Hillcrest Community Centre, 1339 Bathurst Street, Gym, 1st floor",-79.4165,43.67920594,5350118
+21,26,"Hellenic Home, 33 Winona Drive, Estia, Interior",-79.43062,43.67641744,5350114
+21,27,"St. Bruno Catholic School, 402 Melita Crescent, Gym, 1st floor",-79.42707,43.67324853,5350115
+21,28,"Christie Gardens, 600 Melita Crescent, Auditorium, 1st floor",-79.42269,43.67318983,5350115
+21,29,"Castleview Wychwood Towers, 351 Christie Street, Auditorium, 1st floor",-79.42117,43.67338942,5350116
+21,30,"Habayit Shelanu Seniors Residence, 155 Kendal Avenue, Common Room, 1st floor",-79.40991,43.67621938,5350117
+21,31,"St. Matthew's Bracondale House, 707 St. Clair Avenue W., Dining Room, 1st floor",-79.42661,43.68122303,5350114
+21,33,"Tichester Gardens, 31 Tichester Road, Recreation Room, 1st floor",-79.41886,43.6853017,5350167.01
+21,35,"Forest Hill Public Library, 700 Eglinton Avenue West, Meeting Room 3, 1st floor (Public health side of building)",-79.42081,43.70223878,5350133
+21,36,"Na-Me-Res Sagatay, 26 Vaughan Road, Gathering Room, 1st floor",-79.41887,43.68183412,5350116
+22,1,"Northern Secondary School, 851 Mount Pleasant Road, Gym, First floor",-79.39017,43.71054569,5350137
+22,3,"Moore Place, 801 Mount Pleasant Road, Rec. Room, Interior",-79.38985,43.7088453,5350137
+22,4,"North Toronto Collegiate Institute, 17 Broadway Ave, Commons Area, 1st floor",-79.39723,43.709702,5350136.02
+22,5,"The Briton House, 720 Mount Pleasant Road, Recital Hall, 1st Floor",-79.38982,43.70653696,5350128.02
+22,6,"Eglinton Junior Public School, 223 Eglinton Avenue East, Gym, First floor",-79.39085,43.70791234,5350128.02
+22,7,"Montgomery Place, 130 Eglinton Avenue East, Rec. Room, First floor",-79.39458,43.70803251,5350136.02
+22,8,"The Dunfield Retirement Residence, 77 Dunfield Avenue, Reception, Interior",-79.39494,43.70678056,5350128.02
+22,9,"Glebe Road United Church, 20 Glebe Road East, Larkman Room, First floor",-79.39628,43.70157481,5350128.02
+22,10,"Unity Church of Truth, 173 Eglinton Avenue West, Gathering Room, First floor",-79.40439,43.70521053,5350129
+22,11,"Oriole Park Jr. Public School, 80 Braemar Avenue, Gym, First floor",-79.4097,43.70258014,5350129
+22,14,"Manor Road United Church, 240 Manor Road East, Nichol Hall, First floor",-79.38548,43.70523546,5350127
+22,15,"Maurice Cody Community Centre, 181 Cleveland Street, Gym, First floor",-79.37835,43.70488925,5350127
+22,16,"Hodgson Senior Public School, 282 Davisville Avenue, Gym, First floor",-79.3848,43.70110359,5350126
+22,17,"Isabel & Arthur Meighen Manor, 155 Millwood Road, Main Lounge, 1st Floor",-79.39254,43.69999242,5350128.03
+22,18,"33 Davisville Avenue, Lobby, 1st floor",-79.39492,43.69839519,5350128.03
+22,19,"77 Davisville Avenue, Lobby, 1st floor",-79.39375,43.69844854,5350128.03
+22,20,"111 Davisville Avenue, Lobby, 1st floor",-79.39221,43.69877881,5350128.03
+22,21,"Janet McGee Manor, 71 Merton Street, Rec Room, First floor",-79.39413,43.69632945,5350128.04
+22,22,"Davisville Village, 200 Balliol Street, Lobby, 1st floor",-79.39009,43.6992174,5350128.03
+22,23,"221 Balliol Street, Lobby, 1st Floor",-79.38938,43.6984389,5350128.04
+22,24,"225 Davisville Avenue, Lobby, 1st floor",-79.38822,43.69957104,5350128.03
+22,25,"George Barker Manor, 384 Mount Pleasant Road, Rec Room, First floor",-79.38695,43.69835818,5350128.04
+22,26,"Yorkminster Park Baptist Church, 1585 Yonge Street, Gym, Basement",-79.39423,43.69052674,5350124
+22,27,"Christ Church Deer Park, 1570 Yonge Street, Elliot Hall, Second floor",-79.39581,43.69027983,5350122
+22,30,"Grace Church-on-the-Hill, 300 Lonsdale Road, Parish Hall, Basement",-79.40973,43.68951554,5350130
+22,32,"First Unitarian Congregation, 175 St. Clair Avenue West, Shaw Hall, First floor",-79.40243,43.68612114,5350119
+22,33,"Calvin Presbyterian Church, 26 Delisle Avenue, Geneva Room, Second floor",-79.39597,43.68929582,5350122
+22,34,"Granite Place, 61-63 St. Clair Avenue West, Lobby, 1st Floor",-79.39755,43.68658053,5350121
+22,35,Bradgate Arms,-79.4007,43.68577701,5350121
+22,36,"Brown Public School, 454 Avenue Road, Gym, Interior",-79.40132,43.6849215,5350119
+22,37,"Balmoral Retirement Home, 155 Balmoral Avenue, Auditorium, Basement",-79.40004,43.68424578,5350121
+22,38,"The Claremont Retirement Residence, 305 Balliol St, Library, 1st Floor",-79.38695,43.69896923,5350128.04
+22,39,"YWCA of Greater Toronto, 80 Woodlawn Avenue East, Front Lounge, First floor",-79.38971,43.68479084,5350124
+22,40,"Bretton Place, 44 Jackes Avenue, Party Room, Exterior",-79.39118,43.68579439,5350124
+22,41,"Davisville Public School, 43 Millwood Road, Staff room, First floor",-79.3949,43.69928502,5350128.03
+22,42,"Toronto Records & Archives Centre, 255 Spadina Road, Atrium, First floor",-79.40716,43.6769002,5350117
+22,43,"Cottingham Jr. Public School, 85 Birch Avenue, Gym, First floor",-79.39561,43.68038802,5350120
+22,44,"Carriage Hill Apartments, 80 St. Clair Avenue East, Lobby, Basement",-79.39052,43.68915536,5350124
+22,45,"Quantum 2 - North Tower, 2191 Yonge Street, Lobby",-79.39738,43.70565044,5350128.02
+22,46,"Quantum - South Tower, 2181 Yonge St, Party Room",-79.39726,43.70529303,5350128.02
+23,1,"Pleasant Public School, 288 Pleasant Avenue, Gym, First floor",-79.43468,43.78993827,5350320.02
+23,2,"Spectrum II, 28 Harrison Garden Blvd., Party Room, 1st Floor",-79.40883,43.7568419,5350300
+23,3,"Dalemont, 205 Hilda Avenue, Party Room, 1st Floor",-79.42823,43.79525682,5350320.02
+23,4,"Sonata, 7 Lorraine Drive, Party Room, 1st floor",-79.41714,43.77874892,5350308.01
+23,5,"Newtonbrook Secondary School, 155 Hilda Avenue, Gym 2, First floor",-79.42625,43.79355774,5350320.02
+23,6,"Pulse, 5500 Yonge St, Card Room",-79.41583,43.77806998,5350308.01
+23,7,"Goulding Community Centre, 45 Goulding Avenue, Gym, First floor",-79.42214,43.79091189,5350319
+23,8,"Meridian, 15-25 Greenview Ave, Card Room",-79.41814,43.77974602,5350318
+23,9,"The Continental, 503-509 Beecroft Rd, Party Room",-79.41777,43.77824035,5350308.01
+23,10,"R.J. Lang Public School, 227 Drewry Avenue, Gym, First floor",-79.42651,43.78349398,5350318
+23,11,"St. Antoine Daniel Catholic School, 160 Finch Avenue West, Gym, First floor",-79.42985,43.77701943,5350318
+23,12,"Yorkview Public School, 130 Yorkview Drive, Gym, First floor",-79.43557,43.77258221,5350308.02
+23,14,"Skyview-On-Yonge, 5444 Yonge Street, Rec Room, Basement",-79.41576,43.7763817,5350308.01
+23,15,"The Galleria, 77 Finch Avenue East, Hospitality Room Bldg. C, 1st Floor",-79.4111,43.78018949,5350307.07
+23,16,"Finch Public School, 277 Finch Avenue East, Gym, First floor",-79.39498,43.78384169,5350306.01
+23,17,"Beth Tikvah Synagogue, 3080 Bayview Avenue, Main Foyer, First floor",-79.39117,43.779223,5350306.01
+23,18,"Mitchell Field Community Centre, 89 Church Avenue, Gym, First floor",-79.40854,43.77465308,5350307.07
+23,19,"McKee Public School, 35 Church Avenue, Gym, First floor",-79.41106,43.77411646,5350307.07
+23,20,"Triomphe I and II, 5 Northtown Way, Lobby-Drawing Room, 2nd Floor",-79.41383,43.77512293,5350307.06
+23,21,"St. Edward The Confessor Church, 75 Churchill Avenue, Hall, First floor",-79.41913,43.77170001,5350308.01
+23,22,"Churchill Public School, 188 Churchill Avenue, Gym, First floor",-79.42704,43.7707622,5350308.01
+23,23,"Grand Triomphe, 10 Northtown Way, 2nd Floor Party Room, 2nd Floor",-79.41324,43.77583479,5350307.06
+23,24,"Beecroft Manor, 35 Park Home Avenue, Recreation Room, 9th Floor",-79.41553,43.76813294,5350308.01
+23,25,"North York Civic Centre, 5100 Yonge Street, Committee Room 1, Lower Level",-79.4129,43.76781434,5350308.01
+23,26,"The Radiance, 23 & 33 Sheppard Ave E, Party Room, 2nd floor",-79.409,43.760906,5350300
+23,27,"Earl Haig Secondary School, 100 Princess Avenue, Gym, Basement",-79.40737,43.76954792,5350307.07
+23,28,"Residences of Avondale, 16 & 18 Harrison Garden Blvd, Multi Purpose Room, 1st Floor",-79.40904,43.75771406,5350300
+23,29,Willowdale Baptist Church,-79.41431,43.77834999,5350307.05
+23,30,"Hollywood Public School, 360 Hollywood Avenue, Gym, First floor",-79.39183,43.77052711,5350306.02
+23,31,"St. Elizabeth of Hungary Church, 432 Sheppard Avenue East, Hall, Basement",-79.39128,43.76653837,5350306.02
+23,32,"Spring Garden Baptist Church, 112 Spring Garden Avenue, Multi Purpose Room, Basement",-79.40623,43.76535992,5350307.07
+23,33,"Hollywood Plaza, 18 Hollywood Avenue, Party Room, 1st Floor",-79.41103,43.76654178,5350307.04
+23,34,"Willowdale Lawn Bowling Club, 150 Beecroft Road, Meeting Room, First floor",-79.4154,43.76531988,5350299.01
+23,35,"Residence of Upper Madison, 100 Upper Madison Avenue, Party Room, 1st Floor",-79.41274,43.7642352,5350299.02
+23,36,"The Atrium, 33 Elmhurst Avenue, Party Room, 1st Floor",-79.41282,43.76241633,5350299.02
+23,37,"Platinum Towers, 23 Hollywood Ave, Party Room, 1st Floor",-79.41091,43.76566593,5350307.04
+23,38,"Lansing Residence, 10 Senlac Road, Main Lobby, Main Floor",-79.42341,43.75945563,5350299.01
+23,39,"St. Edward Catholic School, 21 Eddfield Avenue, Gym, First floor",-79.42833,43.76092576,5350299.01
+23,40,"Cardinal Carter Academy, 36 Greenfield Avenue, Lobby, First floor",-79.40976,43.76410361,5350307.04
+23,41,"Atrium II, 65 Spring Garden Avenue, Jade Room, 1st Floor",-79.40913,43.76446398,5350307.04
+23,42,"Rodeo Walk, 30 Greenfield Avenue, Party Room, 2nd Floor",-79.41054,43.76418478,5350307.04
+23,43,"Cosmo Condominiums, 35 Bales Avenue, Party Room, 1st Floor",-79.40834,43.76024356,5350300
+23,44,"Spectrum I, 30 Harrison Garden Blvd, Party Room, 1st Floor",-79.40838,43.75630117,5350300
+23,45,"Skymark at Avondale, 78 Harrison Garden Blvd, Party Room, 1st Floor",-79.40712,43.75605737,5350300
+23,46,"Avondale Public School, 171 Avondale Avenue, Gym, First floor",-79.40016,43.76021944,5350300
+23,47,"Lansing United Church, 49 Bogert Avenue, Gym, First floor",-79.41312,43.76002326,5350299.01
+23,48,"Cameron Public School, 211 Cameron Avenue, Gym, First floor",-79.42125,43.7543693,5350299.01
+23,49,"The Mansions of Avondale, 55 Harrison Garden Blvd., Entertainment Room, 1st Floor",-79.40713,43.75682124,5350300
+23,50,"The Kempford, 5430 Yonge Street, Rec. Room, 1st Floor",-79.41522,43.77597126,5350308.01
+23,51,"Platinum XO, 18 Spring Garden Ave, Party Room",-79.41044,43.76482083,5350307.04
+23,52,"Carrington Tower, 10 Tangreen Court, Party Room, 1st Floor",-79.42716,43.79589115,5350320.02
+23,53,"Symphony Square, 23 Lorraine Drive, Party Room, 1st Floor",-79.41667,43.7780601,5350308.01
+23,54,"Manhattan Place, 131 Beecroft Road, Board Room, Basement",-79.41373,43.76432027,5350299.02
+23,55,"Grand Triomphe II, 500 Doris Ave, Party Lounge",-79.41403,43.77632493,5350307.06
+23,56,"DELETE FOR 2014- The Monet, 60 Byng Ave, Party Room",-79.41275,43.77736468,5350307.05
+24,1,"Salvation Army North York Temple, 25 Centre Avenue, Main Lobby, First floor",-79.41598,43.79178351,5350321.02
+24,2,"Wedgewood Place, 6061 Yonge Street, Lobby, 1st floor",-79.41773,43.79025465,5350321.02
+24,3,"Lillian Public School, 1059 Lillian Street, Gym, First floor",-79.4104,43.79782998,5350321.01
+24,4,"Brebeuf College School, 211 Steeles Ave East, Gym, Lower level",-79.40304,43.80152478,5350321.01
+24,5,"Gates of Bayview, 4003 Bayview Avenue, Pool Lounge, First floor",-79.39286,43.802225,5350323.02
+24,6,"Steelesview Public School, 105 Bestview Drive, Gym, First floor",-79.38564,43.8026747,5350323.02
+24,7,"The Gibson Long Term Care Centre, 1925 Steeles Ave East, Rec Room, First floor",-79.37389,43.80766418,5350323.02
+24,10,"Vantage Recreation Centre, 4001-4005 Don Mills Road, Party room, Basement",-79.359,43.80993811,5350324.06
+24,11,"The Gibson Retirement Residence, 1955 Steeles Avenue East, 4th Floor Lounge, 4th Floor",-79.37317,43.80807916,5350323.02
+24,12,"Arbor Glen Public School, 55 Freshmeadow Drive, Gym, 1st floor",-79.35571,43.809495,5350324.06
+24,13,"Highland Junior High School, 201 Cliffwood Road, Room 101, First floor",-79.35545,43.80686899,5350324.06
+24,14,"Cliffwood Manor, 4000 Don Mills Road, Craft Room, First floor",-79.36148,43.81038658,5350324.05
+24,15,"Cliffwood Public School, 140 Cliffwood  Road, Gym, First floor",-79.36007,43.8063007,5350324.05
+24,16,"A.Y. Jackson Secondary School, 50 Francine Drive, Gym, First floor",-79.36656,43.80526991,5350324.02
+24,17,"Amica at Bayview Gardens, 19 Rean Dr, Lobby, 1st floor",-79.3824,43.7672318,5350305.04
+24,18,"St. Joseph's Convent, 3377 Bayview Ave, Boardroom, First floor",-79.39208,43.79714553,5350323.02
+24,20,"Willowdale Pentecostal Church, 288 Cummer Avenue, Gym, First floor",-79.40336,43.79032133,5350321.02
+24,21,"J.D. Griffin Adolescent Centre, 24 Silverview Drive, Gym, First floor",-79.41185,43.78631511,5350322.02
+24,22,"Willowdale Manor, 175 Cummer Avenue, Auditorium, 1st floor",-79.40864,43.78786638,5350322.02
+24,23,"Cummer Lodge, 205 Cummer Avenue, Lobby, 1st floor",-79.40751,43.78825844,5350322.02
+24,24,"Cummer Valley Middle School, 70 Maxome Avenue, Gym, First floor",-79.40095,43.78877323,5350322.02
+24,25,"Extendicare Bayview Villa, 550 Cummer Avenue, Activity Room, 1st floor",-79.39092,43.79367262,5350323.02
+24,26,"Lester B. Pearson Elementary School, 7 Snowcrest Avenue, Gym, First floor",-79.38747,43.79232805,5350323.01
+24,27,"Pineway Public School, 110 Pineway Blvd, Gym, First floor",-79.37473,43.79577821,5350324.01
+24,28,"Cresthaven Public School, 46 Cresthaven Drive, Gym, First floor",-79.36436,43.79757335,5350324.02
+24,29,"Luxe, 5791 - 5793 Yonge St, Lobby, 1st floor",-79.4162,43.78406781,5350322.01
+24,30,"Hillmount Public School, 245 McNicoll Avenue, Gym, First floor",-79.35073,43.7994162,5350324.03
+24,31,"Seneca Towers, 1700 Finch Ave. East, Rec Room, 1st floor",-79.35129,43.79389252,5350324.03
+24,32,"Skymark Place Rec. Centre, 55-65 Skymark Drive, Party Room, 1st floor",-79.35201,43.79488431,5350324.03
+24,33,"The Chrysler Towers, 1 Rean Drive, Liberty Club Party Room, 1st Flr, 4th floor",-79.38328,43.76520168,5350305.04
+24,34,"Classic-Excellence, 85-89 Skymark Drive, Party Room, 1st floor",-79.35395,43.79615005,5350324.03
+24,35,"Immanuel Baptist Church, 1100 Finch Avenue East, Rec Room- Fellowship Room, Basement",-79.3563,43.79291244,5350324.02
+24,36,"St. Leonard Catholic School, 100 Ravel Road, Gym, First floor",-79.36734,43.79196044,5350324.02
+24,37,"Blessed Trinity Catholic School, 3205 Bayview Avenue, Gym, First floor",-79.39183,43.78690615,5350323.01
+24,38,"Amica at Bayview, 15 Barberry Place, Home Theatre, 1st floor",-79.38404,43.76641186,5350305.04
+24,39,"Vogue Condominium, 7 Bishop Avenue, Party Room, 1st floor",-79.41431,43.7817373,5350322.01
+24,40,"Palace Gate, 3181 Bayview Avenue, Party Room, LL, 1st floor",-79.39106,43.78586037,5350323.01
+24,41,"Carefree Lodge, 306 Finch Avenue East, Library/Boardroom, 1st floor",-79.39404,43.78502176,5350322.02
+24,42,"North Toronto Christian School, 50 Page Avenue, Gym, 1st floor",-79.38339,43.78279444,5350305.01
+24,43,"All Saints Cultural Centre, 3125 Bayview Avenue, Parlour, 1st floor",-79.39063,43.78161567,5350305.01
+24,44,"Bayview Middle School, 25 Bunty Lane, Gym, First floor",-79.38519,43.77650206,5350305.01
+24,45,"Elkhorn Public School, 10 Elkhorn Drive, Gym, First floor",-79.38007,43.771224,5350305.03
+24,46,"Bayview Village Place, 644 Sheppard Avenue East, Party Room at 644, First floor",-79.38312,43.76967391,5350305.03
+24,47,,-79.38725,43.7688597,5350305.03
+24,50,"Arc, 2885 Bayview Ave, Party Room, 1st floor",-79.38807,43.76861677,5350305.03
+25,1,"Fairmeadow Centre, 17 Fairmeadow Ave, Gym, 1st Floor",-79.39723,43.75474156,5350274.02
+25,2,"Trinity Presbyterian Church, 2737 Bayview Ave, North Hall, 1st Floor",-79.38586,43.76098428,5350273.01
+25,4,"Dunlace Public School, 20 Dunlace Drive, Gym, 1st Floor",-79.37036,43.76246803,5350273.01
+25,5,"Windfields Jr High School, 375 Banbury Rd, Gym, 1st Floor",-79.37099,43.75623394,5350273.02
+25,6,"Harrison Public School, 81 Harrison Road, Gym, 1st Floor",-79.37731,43.75737707,5350273.01
+25,7,"York Mills Collegiate Institute, 490 York Mills Road, Gym, 1st Floor",-79.37353,43.75153765,5350273.02
+25,8,"Owen Public School, 111 Owen Blvd., Gym, 1st Floor",-79.39252,43.74906478,5350274.01
+25,9,"St. John's York Mills Church, 19 Don Ridge Drive, Narthex, 1st Floor",-79.40524,43.74698518,5350274.02
+25,10,"Agricola Finnish Lutheran Church, 25 Old York Mills Road, Gym, Basement",-79.40432,43.74341254,5350266
+25,11,"Banbury Community Centre, 120 Banbury Road, Banquet Hall, 1st Floor",-79.36954,43.74283594,5350267
+25,12,"Denlow Public School, 50 Denlow Blvd, Gym, 1st Floor",-79.36423,43.74584809,5350267
+25,13,"Norman Ingram Public School, 50 Duncairn Road, Gym, 1st Floor",-79.34961,43.73996105,5350268
+25,14,"Don Mills Public Library, 888 Lawrence Ave East, Auditorium, Basement",-79.34748,43.73662818,5350268
+25,15,"Greenview Lodge Retirement Home, 880 Lawrence Ave East, Activity Room, First floor",-79.34876,43.73637066,5350268
+25,17,"The Bob Rumball Centre for the Deaf, 2395 Bayview Ave, Seniors Lounge, 1st Floor",-79.38053,43.73475003,5350264
+25,18,"Four Teddington Park, 4 Teddington Park Avenue, Activity Room, 1st floor",-79.40388,43.73346678,5350142
+25,19,"Joseph Brown Manor, 3179 Yonge Street, Recreation Room, First floor",-79.40206,43.72733677,5350142
+25,20,"St. Leonards Anglican Church, 25 Wanless Avenue, Sanctuary, First floor",-79.40154,43.72629128,5350142
+25,21,"Sanderling Place, 20 Sanderling Place, Recreation Room, First floor",-79.34892,43.73391428,5350263.02
+25,22,"Sunny View Public School, 450 Blythwood Road, Gym, 1st floor",-79.38734,43.71985236,5350265
+25,23,"Park Lane Public School, 60 Park Lane Circle, Gym, 1st Floor",-79.36682,43.72893222,5350264
+25,24,"Overland Learning Centre, 55 Overland Drive, Gym, 1st Floor",-79.34849,43.73180632,5350263.02
+25,25,"Thompson House, 1 Overland Drive, Solarium, 1st floor",-79.34692,43.73245057,5350263.02
+25,26,"Toronto French School, 318 Lawrence Ave East, Lobby, 1st Floor",-79.38326,43.72797286,5350266
+25,27,"Sunnybrook Hospital, 2075 Bayview Avenue, The Annex K-Wing, Ground Floor, 1st floor",-79.37885,43.72150053,5350265
+25,28,"Blythwood Jr. Public School, 2 Strathgowan Crescent, Gym, 1st Floor",-79.38951,43.71994009,5350138
+25,29,"G.H. Locke Branch Library, 3083 Yonge Street, Program Room, 1st Floor",-79.40173,43.72489486,5350138
+25,30,"Blythwood Road Baptist Church, 80 Blythwood Road, Gym, Basement",-79.39808,43.71758409,5350138
+25,31,"The Sherwood, 2567 Yonge Street, Rec. Room, 1st floor",-79.3994,43.71404819,5350137
+25,32,"John Fisher Public School Jr., 40 Erskine Avenue, Gym, 1st Floor",-79.39747,43.71193685,5350136.01
+25,33,"Erskine Green, 88 Erskine Avenue, Lobby, Basement",-79.39588,43.71200737,5350136.01
+25,34,"Upper Canada Court, 140 Erskine Avenue, Party Room, Basement",-79.39378,43.71242397,5350136.01
+25,36,"St. Monica Catholic School, 14 Broadway Avenue, Gym, Basement",-79.39763,43.71016786,5350136.01
+25,37,"Algonquin Apartments, 66 Broadway Avenue, Lobby, 1st floor",-79.39537,43.71068202,5350136.01
+25,38,"Hillside Ravines, 38 William Carson Crescent, Party Room, 1st floor",-79.40592,43.75025991,5350274.02
+26,1,"Northlea Elementary & Middle School, 305 Rumsey Road, Library, Basement",-79.37018,43.71463222,5350195
+26,2,"Northlea United Church, 125 Brentcliffe Road, Fellowship Room, 1st Floor",-79.36306,43.71738739,5350195
+26,3,"Dennis R. Timbrell Resource Centre, 29 St. Dennis Drive, Gym, 1st floor",-79.33169,43.71794928,5350260.04
+26,4,"The Courtyards of Concorde, 18 Concorde Place, Upper Lobby, 1st floor",-79.32857,43.7314159,5350263.04
+26,5,"CNIB Centre, 1929 Bayview Ave, Conference Room 118, 1st Floor",-79.37753,43.71733956,5350265
+26,6,"The Pioneer Place, 16 Concorde Place, 9th Floor Lounge, 9th floor",-79.3289,43.73097211,5350263.04
+26,7,"Concorde Park, 5-7 Concorde Place, Party Room, 1st floor",-79.32728,43.73032024,5350263.04
+26,8,"Highgate, 1-3 Concorde Place, Party Room, 1st floor",-79.32757,43.72863037,5350263.04
+26,9,"Wynford Place, 75 Wynford Heights Crescent, Party Room, 1st floor",-79.32617,43.72860876,5350263.04
+26,10,"Wynford North, 65 Wynford Heights Crescent, Lobby, 1st floor",-79.32414,43.72831819,5350263.04
+26,11,"55 Wynford Heights Crescent, Lobby, 1st floor",-79.32505,43.7273105,5350263.04
+26,12,"Wynford South, 45 Wynford Heights Cres., Basement Lobby, 1st floor",-79.32555,43.72699021,5350263.04
+26,13,"Wynford Tower, 35 Wynford Heights Cres., Lobby, 1st floor",-79.32623,43.72631889,5350263.04
+26,14,"The Palisades, 215 Wynford Drive, Recreation Centre, 1st floor",-79.32728,43.72348448,5350260.03
+26,15,"20 Edgecliff Golfway, Lobby, 1st floor",-79.32498,43.71954081,5350260.03
+26,16,"Wynford Recreation Centre, 15 Club Golfway, Party Room, 1st Floor",-79.32559,43.71848993,5350260.03
+26,17,"Shady Golfway, 5 Shady Golfway, Party Room, 1st floor",-79.32598,43.71806706,5350260.03
+26,18,"The Rosewood, 133 & 135 Wynford Dr, Main Lounge",-79.32812,43.72679292,5350263.04
+26,19,"Grenoble Public School, 9 Grenoble Drive, Gym, 1st Floor",-79.33226,43.71528314,5350260.05
+26,20,"Glenyan Manor, 10 Deauville Lane, Common Room ""C"", 1st floor",-79.33167,43.71755371,5350260.04
+26,23,"10 Grenoble Drive, Lobby, 1st floor",-79.33441,43.71642995,5350260.04
+26,24,"7 St. Dennis Drive, Lobby, 1st floor",-79.33623,43.7160161,5350260.04
+26,25,"Trace Manes Centennial Building, 110 Rumsey Road, Seniors Room, 1st Floor",-79.36718,43.70573427,5350196
+26,26,"Suomi Koti Finnish Centre, 795 Eglinton Avenue East, B1 Meeting Room, Basement",-79.36619,43.71301125,5350195
+26,27,"Bessborough Drive Public School, 211 Bessborough Drive, Gym, 1st Floor",-79.37014,43.70722333,5350196
+26,28,"Leaside Public Library, 165 McRae Drive, Auditorium, 1st Floor",-79.36756,43.70646942,5350196
+26,29,"Bennington Heights Public School, 76 Bennington Heights Drive, Gym, 1st Floor",-79.36956,43.69389105,5350186
+26,30,"The Overlea, 12 Thorncliffe Park Drive, Rec. Room, 1st floor",-79.34826,43.7045379,5350194.03
+26,31,"Greek Community of Metro Toronto, 30 Thorncliffe Park Drive, Cafeteria, 1st Floor",-79.34495,43.70296701,5350194.03
+26,32,"Leaside Retirement Residence, 10 William Morgan Drive, #10 Library, 1st floor",-79.34177,43.70937861,5350194.02
+26,33,"Leaside Towers, 85-95 Thorncliffe Park Drive, Party Room, Basement",-79.34123,43.7072324,5350194.02
+26,34,Thorncliffe Park Public School,-79.3432,43.70575573,5350194.03
+26,35,"March of Dimes Canada, 10 Overlea Blvd., Boardroom, 1st floor",-79.35219,43.70348071,5350194.04
+26,36,"Delmanor Wynford Retirement Living, 187 Wynford Dr, Wynford Center, 1st floor",-79.32582,43.72473525,5350263.04
+26,37,"Accolade, 181 Wynford Dr, Party Lounge",-79.32871,43.72507237,5350263.04
+26,38,"Centennial Towers, 65 Thorncliffe Park Drive, Lobby, 1st floor",-79.34027,43.70348756,5350194.01
+26,39,"Rideau Towers, 53 Thorncliffe Park Drive, Lobby, 1st floor",-79.34147,43.70299921,5350194.01
+26,40,"Rideau Towers, 49 Thorncliffe Park Drive, Lobby, 1st floor",-79.34234,43.7019574,5350194.01
+26,41,"Rideau Towers, 47 Thorncliffe Park Drive, Lobby, 1st floor",-79.34268,43.70079233,5350194.01
+26,42,"Rideau Towers, 43 Thorncliffe Park Drive, Lobby, 1st floor",-79.34451,43.70045895,5350194.01
+26,43,"Rideau Towers, 35 Thorncliffe Park Drive, Lobby, 1st floor",-79.34511,43.70197837,5350194.04
+26,44,"Gateway Public School, 55 Gateway Blvd, Gym A, 1st Floor",-79.33101,43.71173481,5350260.01
+26,45,"Glen Valley Recreation Centre, 715-735 Don Mills Road, Party Room, 1st floor",-79.33473,43.71143063,5350260.01
+26,47,"Linkwood Village Rec Centre, 75 Pavane Linkway, Rec Centre, 1st Floor",-79.32395,43.71109883,5350260.01
+26,49,"Nine Twenty One Millwood, 921 Millwood Road, Administration Office, 1st floor",-79.36362,43.70293199,5350196
+26,51,"The Citadel, 701 Don Mills Road, Lobby, 1st floor",-79.33285,43.70832189,5350193
+27,1,"Deer Park Public Library, 40 St. Clair Avenue East, Meeting Room, Second floor",-79.3925,43.68866835,5350124
+27,2,"Eight Park Road, 8 Park Road, Party Room, 1st floor",-79.38493,43.67129405,5350088
+27,3,"Our Lady of Perpetual Help School, 1 1/2 Garfield Avenue, Gym, First floor",-79.38331,43.68730708,5350125
+27,4,"Our Lady of Lourdes Catholic School, 444 Sherbourne St, Gym, First floor",-79.3747,43.66605208,5350066
+27,5,"Jesse Ketchum Public School, 61 Davenport Road, Basement, Basement",-79.39214,43.67299121,5350089
+27,6,"Ramsden Place Apartments, 50 Hillsboro Avenue, Lobby, 1st floor",-79.39363,43.675839,5350090
+27,7,"Belmont House, 55 Belmont Street, Auditorium, 1st Floor",-79.39097,43.67467957,5350090
+27,8,"Rosedale Junior Public School, 22 South Drive, Gym, First floor",-79.38169,43.67766432,5350087
+27,9,"Rosedale United Church, 159 Roxborough Drive, Copp Hall, Second floor",-79.37236,43.68414276,5350086
+27,11,"Kensington Apartments, 21 Dale Avenue, Lobby, 1st floor",-79.37143,43.67347311,5350087
+27,12,"Rosedale Presbyterian Church, 129 Mount Pleasant Road, The Great Hall, First floor",-79.3804,43.67585447,5350087
+27,14,"Fellowship Towers, 877 Yonge Street, B2 Sunshine Room, Basement",-79.38798,43.67425754,5350088
+27,16,"Church of the Redeemer, 162 Bloor Street West, Front Foyer, 1st floor",-79.39401,43.66913765,5350089
+27,17,"McMurrich Place, 18 Davenport Road, Rec Room, Second floor",-79.38873,43.67312407,5350090
+27,18,"Toronto Reference Library, 789 Yonge St, Elizabeth Beaton Auditorium, First floor",-79.38667,43.67188752,5350088
+27,19,"Wellesley Central Residences, 490 Sherbourne Street, 1st Floor Community Room, Main floor",-79.3754,43.66760055,5350064
+27,20,"Rosedale Glen, 278 Bloor Street East, Back Lobby, 1st floor",-79.38046,43.67227395,5350088
+27,21,"The 360 on Bloor, 360 Bloor Street East, Rec Room - 3rd Floor, 1st floor",-79.37813,43.67249167,5350088
+27,22,"Ecole elementaire Sacre-Coeur, 25 Linden Street, Gym, First floor",-79.37715,43.6703075,5350064
+27,23,"Greenwin Square, 77 Huntley Street, Lobby, 1st floor",-79.37873,43.67162309,5350064
+27,24,"Residences on Bloor, 235 Bloor Street East, Party Room, 1st Floor",-79.3809,43.6712768,5350063.02
+27,25,"Toronto Grace Hospital, 650 Church Street, Assembly Room, 1st floor",-79.3832,43.67033457,5350063.01
+27,26,"The Bellagio on Bloor, 300 Bloor Street East, Party Room, 1st Floor",-79.37981,43.67202957,5350088
+27,27,"Manulife Centre, 44 Charles Street West, Party Room 31st floor, Interior/Windows",-79.38825,43.66872483,5350062.01
+27,28,"Bay Charles Apartments, 57 Charles Street W., Main Lobby, Interior/Windows",-79.38953,43.66778089,5350062.02
+27,29,"St. Basil's Church, 50 St. Joseph Street, Parish Hall, Basement",-79.3889,43.66636652,5350062.02
+27,30,"The Polo Club II, 44 St. Joseph Street, Party Room 4th Floor, 4th floor",-79.38711,43.66596752,5350062.01
+27,31,"Polo Club, 1055 Bay Street, Party Room 24th Floor, 24th floor",-79.38753,43.66681503,5350062.01
+27,32,"La Place Marie, 25 St. Mary Street, Lobby, 2nd floor",-79.38715,43.66733894,5350062.01
+27,33,"1001 Bay Street, Party Room, Interior/Windows",-79.38728,43.6655089,5350062.02
+27,34,"Century Plaza, 24 Wellesley Street West, Party Room, 24th floor",-79.38611,43.66484688,5350062.02
+27,35,"519 Church Street Community Centre, 519 Church Street, Common Room, Second floor",-79.38095,43.66656054,5350063.02
+27,36,"Isabella Court, 33 Isabella Street, Lobby, 1st floor",-79.38368,43.66765253,5350063.01
+27,37,"Gloucester Gate Residence, 30 Gloucester Street, Lobby, 1st floor",-79.38397,43.66722202,5350063.01
+27,40,"St. Andrew's United Church, 117 Bloor Street East, Narthex, 2nd floor",-79.38404,43.67016564,5350063.01
+27,41,"Verve, 120 Homewood Avenue, Party Room, 2nd floor",-79.37632,43.66717456,5350064
+27,42,"Plaza One Hundred, 100 Wellesley Street East, Lobby, 1st floor",-79.3792,43.66655433,5350063.02
+27,43,"Wellesley Jarvis, 460 Jarvis Street, Recreation Room, 4th floor",-79.37866,43.66584376,5350063.02
+27,44,"Le College francais, 100 Carlton Street, Gym, First floor",-79.37791,43.66249682,5350063.02
+27,45,"L'Esprit 1, 15 Maitland Place, Lobby, 1st floor",-79.37633,43.66529234,5350066
+27,46,"Celebrity Place, 77 Maitland Place, Boardroom, 1st floor",-79.37686,43.66493112,5350066
+27,47,"40 Homewood Avenue, Meeting Room, Basement",-79.37554,43.66423739,5350066
+27,48,"Carlton Plaza, 140 Carlton Street, Lobby, 1st floor",-79.3752,43.66316366,5350066
+27,49,"Church Street Public School, 83 Alexander Street, Gym, First floor",-79.37918,43.66361701,5350063.02
+27,50,"Village Green, 55 Maitland Street, Lobby, 1st floor",-79.3816,43.66411639,5350063.01
+27,51,"The Cosmopolitan, 25 Maitland Street, Party Room, 1st Floor, 1st Floor",-79.38303,43.66379138,5350063.01
+27,52,"St. Joseph's College, 74 Wellesley Street West, Upper Gym, First floor",-79.38887,43.66444545,5350062.02
+27,53,"YMCA Metro Central, 20 Grosvenor Street, Grosvenor Room, Second floor",-79.38511,43.66306304,5350062.02
+27,54,"Allegro, 909 Bay Street, Party Room, 1st floor",-79.38645,43.66362872,5350062.02
+27,55,"Village Green, 40 Alexander Street, Lobby, 1st floor",-79.38205,43.66356725,5350063.01
+27,56,"Village Green, 50 Alexander Street, Lobby, 1st floor",-79.38115,43.66377203,5350063.01
+27,57,"City Park Co-op, 31 Alexander Street, Lobby, 1st floor",-79.38106,43.66307487,5350063.01
+27,58,"City Park Co-op, 51 Alexander Street, Lobby, 1st floor",-79.381,43.66308583,5350063.01
+27,59,"City Park Co-op, 484 Church Street, Lobby, 1st floor",-79.3804,43.66314779,5350063.01
+27,60,"Murano, 37 Grosvenor St/38 Grenville St, Party Room, 2nd floor",-79.38589,43.66230412,5350062.02
+27,61,"Hazelton Place, 111 Avenue Road, Lobby, 1st floor",-79.39548,43.67320082,5350089
+27,62,"Wellesley Central Place, 160 Wellesley St. East, Place of Worship, 1st floor",-79.37548,43.66700894,5350064
+27,63,"Tobias House, 84 Carlton Street, Meeting Room, 1st floor",-79.3787,43.66224052,5350063.02
+27,64,"77 Carlton Street, Billiard Room, 1st Floor",-79.3782,43.66193295,5350034.01
+27,65,"The Lexington, 45 Carlton Street, Lounge, 2nd floor",-79.38044,43.66138667,5350034.01
+27,66,"The Ellington, 7 Carlton Street, Lobby, 1st floor",-79.38259,43.66110216,5350034.01
+27,67,"Ryerson University, 160 Mutual Street, Pitman Hall, First floor",-79.37693,43.65940486,5350034.02
+27,68,"Maple Leaf Apartments, 40 Gerrard Street East, Lobby, 1st floor",-79.38048,43.65984475,5350034.01
+27,69,"Collegeview Apartments, 423 Yonge Street, Recreation Room, 20th floor, Twentieth Floor",-79.38231,43.66027214,5350034.01
+27,70,"One City Hall, 111 Elizabeth Street, Party Room, 1st floor",-79.38468,43.65484413,5350035
+27,71,"The Met, 21 Carlton Street, Party Room",-79.38193,43.66110237,5350034.01
+27,72,"Encore at the Met, 25 Carlton St, Party Room, 2nd floor",-79.38163,43.66115344,5350034.01
+27,73,"The Liberties, 717 Bay Street, Party Room, 2nd Fl, 2nd Floor",-79.38492,43.65927134,5350035
+27,74,"The 500 on Sherbourne, 500 Sherbourne Street, Lobby, 1st floor",-79.37558,43.66798482,5350064
+27,75,"Horizon on Bay, 633 Bay Street, Party Room, 1st floor",-79.38366,43.6568586,5350035
+27,76,"Casa Residenza Condominio, 33 Charles Street East, Lobby, Lobby",-79.38435,43.66861619,5350063.01
+27,77,"Residences of College Park I & II, 761-763 Bay St, Party Room, 2nd floor",-79.38478,43.65950178,5350035
+27,79,"X The Condominium, 110 Charles Street East, Lobby",-79.38056,43.67008442,5350063.02
+27,80,"145 Mutual Street, Lobby, First floor",-79.37634,43.65910237,5350034.02
+27,81,"John Innes Community Centre, 150 Sherbourne Street, Gym, First floor",-79.3704,43.65539613,5350033
+27,82,"261 Jarvis Street, Rec Room 3rd floor, Third Floor",-79.3746,43.657929,5350032
+27,83,"The Merchandise Building, 155 Dalhousie Street, Baskeball Court, 2nd floor",-79.37677,43.6575162,5350034.02
+27,84,"Metta Housing Co-op, 99 Dalhousie Street, 12th Floor Meeting Room, 12th floor",-79.37628,43.65641239,5350034.02
+27,85,"Metropolitan United Church, 56 Queen Street East, Narthex, First floor",-79.37666,43.6538629,5350034.02
+27,87,"Seaton House, 339 George Street, Long term 1st floor lobby, First floor",-79.37427,43.65995605,5350032
+28,1,"Rose Avenue Public School, 675 Ontario Street, Gym, Basement",-79.37251,43.67017366,5350065
+28,2,"The Hamilton, 375 Bleecker Street, Lobby, First floor",-79.37482,43.67061622,5350065
+28,3,"The Quebec, 730 Ontario Street, Lobby, 1st floor",-79.37395,43.67093825,5350065
+28,4,"The Toronto, 77 Howard Street, Lobby, 1st floor",-79.37281,43.67086582,5350065
+28,7,,-79.36081,43.65027001,5350017
+28,8,"The St. John's, 700 Ontario Street, Lobby, 1st floor",-79.37358,43.67015171,5350065
+28,9,"Wellesley Community Centre, 495 Sherbourne Street, Gym, First floor",-79.37448,43.66780544,5350065
+28,13,"501 Adelaide St. East, Amenity Room, First floor",-79.36534,43.65256728,5350016
+28,14,"The Ottawa, 650 Parliament Street, Lobby, 1st floor",-79.37066,43.66961181,5350065
+28,15,"The Halifax, 280 Wellesley Street East, Lobby, 1st floor",-79.37045,43.66842633,5350065
+28,20,"Winchester Square Apartments, 55 Bleecker Street, Auditorium, First floor",-79.37227,43.66443042,5350066
+28,21,"Bleecker Street Co-op, 85 Bleecker Street, Community Room, 1st floor",-79.37255,43.66504843,5350066
+28,22,"Fudger House, 439 Sherbourne Street, Lower Level Auditorium, 1st floor",-79.37369,43.66627962,5350066
+28,23,"Rekai Centre, 345 Sherbourne Street, Lobby, 1st floor",-79.37243,43.66270718,5350032
+28,24,"Parliament St. Public Library, 269 Gerrard St East, Main Floor, First floor",-79.36796,43.66183832,5350032
+28,25,"Sprucecourt Jr Public School, 70 Spruce Street, Gym, First floor",-79.36383,43.66449459,5350068
+28,26,"220 Oak Street, Rec. Room, First floor",-79.35682,43.6628971,5350031
+28,27,"Oak Street Housing Co-op, 120 Cornwall Street, Conference Room, Basement",-79.357,43.66242481,5350031
+28,28,"Regent Park South Community Centre, 203 Sackville Green, Gym, First floor",-79.36222,43.65844288,5350030
+28,29,"Lord Dufferin Public School, 350 Parliament Street, Gym, First floor",-79.36696,43.66083312,5350032
+28,30,"William Dennison Apartments, 310 Dundas Street East, Recreation Room, First floor",-79.37069,43.6586471,5350032
+28,31,"Dan Harrison Complex, 251 Sherbourne Street, Conference Room, Interior",-79.37092,43.6592994,5350032
+28,33,"London on The Esplanade, 1 Scott Street, Lobby, 2nd floor",-79.37522,43.64683295,5350013
+28,34,"155 Sherbourne Street, Lobby, First floor",-79.36952,43.65559228,5350033
+28,35,"Moss Park Apartments, 295 Shuter Street, Lobby Lounge, First floor",-79.36532,43.65674535,5350033
+28,36,"Edna Dixon Apartments, 540 Queen Street East, Lounge, 1st floor",-79.35765,43.657351,5350030
+28,37,"Dixon Hall, 58 Sumach Street, Great Hall, First floor",-79.35894,43.65620119,5350016
+28,38,"The Richmond, 313-323 Richmond Street East, Lounge-Main Floor, 1st floor",-79.36801,43.65340408,5350016
+28,39,"Muriel Collins Housing Co-op, 79 Richmond St. East, Party Room, First floor",-79.37451,43.65247634,5350015
+28,40,"Empire Plaza, 33 University Avenue, 7th Floor Party Room, 7th floor",-79.38358,43.64623253,5350014
+28,41,"The Metropole, 7 King Street East, 5th Floor Lounge, 5th floor",-79.3771,43.6491763,5350015
+28,42,"St. Lawrence Market North, 92 Front Street East, St. Lawrence Market North, First floor",-79.37199,43.64944394,5350015
+28,43,"Market Square, 80 Front St. E /35 Church St, Party Room B-3, Basement",-79.37295,43.64949761,5350015
+28,44,"25 The Esplanade, Party Room 33rd Floor, 33rd floor",-79.37521,43.64615362,5350013
+28,45,"Old York Tower, 85 The Esplanade, Community Room, 1st floor",-79.37296,43.64732129,5350013
+28,46,"Times Square, 109 Front Street East, Party Room-2nd Floor, 2nd floor",-79.37088,43.64941226,5350017
+28,47,"St. Michael Catholic School, 50 George Street South, Gym, First floor",-79.36962,43.64787799,5350017
+28,48,"St. Lawrence Community Centre, 230 The Esplanade, Gym B, First floor",-79.36498,43.64980612,5350017
+28,49,"Yorktown on the Park, 222 The Esplanade, Party Room, 1st floor",-79.36566,43.64974816,5350017
+28,50,"St. Lawrence on the Park, 65 Scadding Avenue, Party Room, 1st floor",-79.36522,43.64888251,5350017
+28,51,"15 Scadding Avenue, Lobby - Ground floor, Ground floor",-79.36679,43.64859827,5350017
+28,52,"King's Court, 230 King St. East, Party Room, 2nd floor",-79.36809,43.65153952,5350016
+28,53,"18 Yonge, 18 Yonge St, Party Room, 6th Floor, 6th floor",-79.37648,43.64454121,5350013
+28,54,"33 Harbour Square, Boardroom, 1st floor",-79.377,43.64068163,5350013
+28,55,"Harbourside, 55-65 Harbour Square, Tiffany Room 7th Fl, 7th floor",-79.37849,43.64006533,5350013
+28,56,"Number One York Quay, 77-99 Harbour Square, Boardroom 10th Fl, 10th floor",-79.37889,43.64000027,5350013
+28,57,"The Rectory, 102 Lakeshore Avenue, CafÚ, Exterior/Windows",-79.35632,43.62738502,5350002
+28,59,"World Trade Tower, 10 Queen's Quay West, New Yorker Party Room, 2nd floor",-79.37581,43.64192098,5350013
+28,60,"The Pinnacle, 12-16 Yonge Street, Shared Facility Space",-79.3764,43.64325869,5350013
+28,61,"Spire, 33 Lombard Street, Multi Purpose Room",-79.37576,43.65152928,5350015
+28,63,"Residences of Maple Leaf Square, 55-65 Bremner Blvd, Party Room - South Tower",-79.3805,43.64294513,5350013
+28,64,"Vu, 112 George Street, Lobby, 1st floor",-79.37164,43.65194577,5350016
+29,1,"Bennington Heights Public School, 76 Bennington Heights Drive, Gym, First floor",-79.36956,43.69389105,5350186
+29,3,"Royal Canadian Legion, 1083 Pape Avenue, Hall, 2nd floor",-79.34957,43.69259144,5350184.02
+29,4,"Diefenbaker Elementary School, 175 Plains Road, Gym, First floor",-79.33215,43.69506812,5350187
+29,5,"Cosburn Middle School, 520 Cosburn Ave, Gym, First floor",-79.33093,43.69376011,5350187
+29,6,"S. Walter Stewart Library, 170 Memorial Park Ave., Auditorium, Basement",-79.32972,43.69214688,5350183
+29,7,"Ecole elementaire La Mosaique, 80 Queensdale Avenue, Gym, First floor",-79.33054,43.68733905,5350183
+29,8,"Holy Cross Catholic School, 299A Donlands Ave, Gym, First floor",-79.34068,43.68999615,5350183
+29,9,"Blair Court Apartments, 266 Donlands Avenue, Rec Room, 1st floor",-79.34191,43.68965629,5350184.01
+29,10,"Bethany Baptist Church, 1041 Pape Avenue, Main Floor Gym, First floor",-79.34847,43.68921874,5350184.01
+29,12,"Westminster Presbyterian Church, 154 Floyd Avenue, Lounge, Basement",-79.34917,43.68754688,5350185.01
+29,13,"Centennial College, 951 Carlaw Avenue, Lobby, First floor",-79.34886,43.68465985,5350185.01
+29,14,"The Estonian House, 958 Broadview Avenue, The Gallery, 2nd floor",-79.35785,43.68185665,5350085
+29,15,"Cambridge Tower, 33 Eastmount Avenue, Lobby, 1st floor",-79.36129,43.67900366,5350085
+29,16,"Broadview Manor, 80 Danforth Avenue, Rec. Room, First floor",-79.35976,43.67633044,5350085
+29,19,"Jackman Avenue Public School, 79 Jackman Avenue, Gym, First floor",-79.35394,43.6806588,5350084
+29,20,"St. Irene Greek Orthodox Church, 66 Gough Avenue, Conference Room, First floor",-79.34669,43.67916629,5350084
+29,21,"Nisbet Lodge, 740 Pape Avenue, Lobby, Interior/Exterior",-79.34586,43.68055107,5350084
+29,22,"Calvary Church, 746 Pape Avenue, Hall, Second floor",-79.34581,43.68063664,5350084
+29,23,"Wilkinson Jr. Public School, 53 Donlands Avenue, Gym, Basement",-79.33749,43.68205022,5350083
+29,24,"Greenwood Towers, 145 Strathmore Blvd., Rec. Room, Basement",-79.33402,43.68159949,5350083
+29,25,"William Burgess Public School, 100 Torrens Avenue, Gym, 2nd floor",-79.34765,43.69194569,5350184.02
+30,1,"Riverdale Public Library, 370 Broadview Avenue, Community Room, 1st Floor",-79.35318,43.66581483,5350069
+30,3,"Montcrest Apartments, 655 Broadview Avenue, Lobby, 1st floor",-79.35611,43.67394559,5350070
+30,4,"Montcrest Apartments, 10 Hogarth Avenue, Lobby, 1st floor",-79.35545,43.67396262,5350070
+30,5,"Frankland Community School Jr., 816 Logan Avenue, Gym, 1st Floor",-79.34994,43.67714593,5350071
+30,6,"Riverdale Presbyterian Church, 662 Pape Ave, Hall, Basement",-79.34479,43.67780811,5350071
+30,9,"St. Patrick Secondary School, 49 Felstead Ave, Cafeteria, 3rd Floor (but from street level it's the 1st floor)",-79.32801,43.67845892,5350075
+30,10,Monarch Park Collegiate,-79.32278,43.67882635,5350075
+30,11,"Fred J. Beavis Apartments, 100 Unity Rd, Rec Room, 1st Floor",-79.33049,43.677803,5350075
+30,12,"Blake Street Jr. Public School, 21 Boultbee Avenue, Gym, 1st floor",-79.33848,43.67181495,5350072.01
+30,13,"Eastview Community Centre, 86 Blake Street, Gym, 1st Floor",-79.33993,43.67504249,5350072.01
+30,14,"Francis Beavis Manor, 369 Pape Avenue, Rec. Room, Basement",-79.34071,43.66981173,5350072.01
+30,16,"Withrow Avenue Jr Public School, 25 Bain Avenue, Library, 1st Floor",-79.35213,43.67046905,5350069
+30,17,"Metropolitan Community Church, 115 Simpson Avenue, Social Hall, 2nd Floor",-79.34787,43.66692961,5350069
+30,18,"Bridgepoint Health, 14 St. Matthews Road, Auditorium, 1st floor",-79.35543,43.66597815,5350069
+30,20,"Ray McCleary Towers, 444 Logan Avenue, Rec. Room, 1st Floor",-79.34485,43.66536278,5350029
+30,21,"Matty Eckler Community Centre, 953 Gerrard Street East, Gym, 2nd Floor",-79.3394,43.66806225,5350028
+30,22,"Riverdale Collegiate Institute, 1094 Gerrard Street East, Atrium, 2nd Floor",-79.33486,43.67005628,5350073
+30,23,"Roden Junior Public School, 151 Hiawatha Road, Library, 1st Floor",-79.32308,43.67388186,5350074
+30,24,"Glen Rhodes United Church, 1470 Gerrard Street East, Sanctuary, 2nd Floor",-79.32075,43.67278514,5350074
+30,25,"Leslieville Public School, 254 Leslie Street, Gym, 1st floor",-79.33241,43.66732935,5350027
+30,26,"Avondale Retirement Residence, 1238 Queen Street East, Lobby, 1st floor",-79.32974,43.66358053,5350027
+30,27,"St. Joseph's Place, 67 Curzon Street, Bingo Room, 1st Floor",-79.33197,43.66524926,5350027
+30,28,"Heritage Nursing Home, 1195 Queen Street East, Lobby, 1st floor",-79.33143,43.66278806,5350019
+30,29,"Bruce Jr. Public School, 51 Larchmount Avenue, Gym, 1st floor",-79.33334,43.6610444,5350019
+30,30,"Woodgreen Community Housing, 1070 Queen Street East, Lounge A, 1st Floor",-79.33678,43.66206609,5350028
+30,32,"Morse Street Public School, 180 Carlaw Avenue, Gym, 1st Floor",-79.34017,43.6601755,5350018
+30,33,"Jimmie Simpson Recreation Centre, 870 Queen Street East, Gym, 1st Floor",-79.34533,43.66045212,5350028
+30,34,"Queen Alexandra Public School, 181 Broadview Avenue, Gym, 1st Floor",-79.35052,43.66118468,5350029
+31,1,"Presteign Heights Elementary School, 2570 St. Clair Avenue East, Gym, 1st Floor",-79.3172,43.70555194,5350193
+31,2,"Canadian Macedonian Place, 850 O'Connor Drive, Board Room, 1st Floor",-79.31228,43.70706077,5350192
+31,3,"Victoria Park Elementary School, 145 Tiago Avenue, Gym, 1st Floor",-79.29815,43.71269778,5350191
+31,4,"Gordon A. Brown Middle School, 2800 St. Clair Avenue East, Gym, 1st Floor",-79.30536,43.70787791,5350191
+31,5,"St. Clair O'Connor Community, 2701 St. Clair Ave East, Meeting Room, 1st floor",-79.31186,43.70544886,5350189
+31,7,"Gower Park Place, 10 Gower Street, Community Room, 1st Floor",-79.298,43.70266658,5350190.02
+31,8,"George Webster Elementary School, 2 Cedarcrest Blvd., Gym, 1st Floor",-79.29949,43.70196453,5350189
+31,9,"East York Acres, 9 Haldon Avenue, Rec. Room, 1st Floor",-79.31153,43.69853309,5350181.02
+31,10,"Canadian Martyrs Catholic School, 520 Plains Road, Gym, Basement",-79.31934,43.69820851,5350188
+31,11,"The Trillium, 1501 Woodbine Avenue, Lobby, 1st floor",-79.31804,43.6999169,5350181.02
+31,12,"East York Collegiate Institute, 650 Cosburn Avenue, Foyer, 1st Floor",-79.32736,43.69451732,5350188
+31,13,"East York Civic Centre, 850 Coxwell Avenue, Foyer/Council Chamber, 1st Floor",-79.3279,43.69098772,5350183
+31,14,"Toronto East General Hospital, 825 Coxwell Ave, G5 Garden Rm., G5 Garden Room, 5th floor",-79.32495,43.689832,5350182
+31,15,"D.A. Morrison Middle School, 271 Gledhill Avenue, Gym, 1st Floor",-79.3117,43.69540506,5350181.02
+31,16,"Park Vista, 8 Park Vista, Lobby, Lobby",-79.29749,43.69854793,5350189
+31,17,"Cedarview Towers, 75 Halsey Avenue, Lobby, 1st floor",-79.29781,43.69915447,5350189
+31,19,"Dawes Road Public Library, 416 Dawes Road, Meeting Room, 1st Floor",-79.29723,43.70121089,5350189
+31,20,"True Davidson Acres, 200 Dawes Road, Great Hall Entrance, 1st floor",-79.29827,43.69584522,5350189
+31,21,"Agnes McPhail Building, 444 Lumsden Avenue, West Tower Rec Room - Mezzanine, 2nd floor",-79.3026,43.69575034,5350180
+31,22,"195 Barrington Avenue, Lobby, 1st floor",-79.30294,43.69488771,5350180
+31,24,"Secord Square, 2 Secord Avenue, Lobby, 1st floor",-79.3016,43.69312986,5350180
+31,25,"Secord Community Centre, 91 Barrington Avenue, Multi Purpose Room, 1st Floor",-79.30157,43.6917807,5350180
+31,26,"Terry Fox Recreation Centre, 2 Gledhill Avenue, Gym, Basement",-79.30952,43.68766207,5350181.01
+31,27,"St. Brigid Catholic School, 50 Woodmount Avenue, Gym, 1st Floor",-79.3169,43.68695754,5350081
+31,28,"Kimbourne Park United Church, 200 Wolverleigh Blvd, Hall, Basement",-79.32252,43.68569159,5350081
+31,29,"Hope United Church, 2550 Danforth Avenue, Lower Auditorium, Basement",-79.3022,43.6882697,5350080.01
+31,30,"William J. McCordic School, 45 Balfour Avenue, Gym, Basement",-79.29899,43.69064043,5350080.02
+31,31,"Granada Apartments, 90 Eastdale Avenue, Lobby, 1st floor",-79.30125,43.69461104,5350180
+31,32,"Goodland Gardens Apartments, 75 Eastdale Avenue, Lobby, 1st floor",-79.30035,43.69516704,5350180
+31,33,"Faith Presbyterian Community Church, 140 Dawes Road, Hall, Basement",-79.29763,43.69378703,5350180
+31,34,"The Town Hall, 5 Massey Square, Town Hall, 1st floor",-79.29276,43.69627452,5350190.01
+31,36,"Massey Square - Party Room, 5 Massey Square, Party Room, Basement",-79.29276,43.69627452,5350190.01
+32,1,"Tobias House, 695 Coxwell Avenue, Rec Room 6th floor, 6th Floor",-79.32331,43.68324317,5350076
+32,2,"Danforth/Coxwell Library, 1675 Danforth Ave, 2nd Floor Program Room, Second floor",-79.32136,43.68364498,5350076
+32,3,"Woodbine Acres, 133 Merrill Avenue East, Party Room, First floor",-79.312,43.68299519,5350076
+32,4,"Danforth Mennonite Church, 2174 Danforth Avenue, Basement Hall, Basement",-79.31044,43.68660908,5350080.01
+32,5,"Main Square Community Centre, 245 Main Street, Lobby, First floor",-79.30018,43.68735404,5350080.02
+32,7,"Kinsmen Manor, 2287 Gerrard Street East, Rec. Room, Basement",-79.29544,43.68476161,5350079
+32,8,"Kimberley Public School, 50 Swanwick Ave, Gym, First floor",-79.29913,43.68262856,5350079
+32,9,"Grant African Methodist Church, 2029 Gerrard Street East, Hall, Basement",-79.30844,43.68169003,5350078
+32,12,"Fairmount Park Community Centre, 1749 Gerrard St East, Multi Purpose Room, First floor",-79.31512,43.67665502,5350077
+32,13,"The Cecilia Murphy Building, 11 Coatsworth Crescent, Tea Room, 1st floor",-79.3211,43.6791497,5350076
+32,14,"Ecole Georges-Etienne-Cartier, 250 Gainsborough Road, Gym, First floor",-79.31948,43.67791247,5350077
+32,15,"Unitarian Congregation, 79 Hiawatha Road, Cappucino Room 2nd Floor, Second floor",-79.32209,43.67091163,5350026
+32,16,"Toronto Formosan Presb. Church, 31 Eastwood Road, Basement Hall, Basement",-79.31814,43.67293284,5350025
+32,18,"Norway Public School, 390 Kingston Road, Gym, First floor",-79.30667,43.67628763,5350078
+32,19,"Liberty Place, 500 Kingston Road, Atrium, 1st Floor",-79.30274,43.67799467,5350078
+32,20,"Versa Care Nursing Home, 77 Main Street, Main Lobby, 1st Floor",-79.29879,43.68159723,5350079
+32,21,"St. John Catholic School, 780 Kingston Road, Gym, First floor",-79.29457,43.68023297,5350079
+32,22,"Glen Stewart Acres, 828 Kingston Road, Rec. Room, First floor",-79.29211,43.68052407,5350079
+32,23,"Adam Beck Community Centre, 79 Lawlor Avenue, Gym, First floor",-79.28885,43.6828607,5350079
+32,24,"Kingston Road United Church, 975 Kingston Road, Mitchell Hall, First floor",-79.28657,43.68022177,5350022
+32,25,"Beaches Recreation Centre, 6 Williamson Road, Gym, First floor",-79.29881,43.67393961,5350023
+32,26,"Beach Arms Retirement Residence, 505 Kingston Road, Activity Lounge, Basement",-79.30234,43.67725589,5350024
+32,27,"Beaches Lions Centennial Apartments, 50 Norway Avenue, Rec Room, 1st floor",-79.30476,43.67425261,5350024
+32,28,"St. John The Baptist Norway Church, 470 Woodbine Ave, Van Lane Room, Basement",-79.3086,43.67501306,5350025
+32,29,"S. H. Armstrong Community Centre, 56 Woodfield Rd, Multi - Purpose Rm, Basement",-79.32284,43.66595839,5350026
+32,31,"Toronto United Mennonite Church, 1774 Queen Street East, Sanctuary, First floor",-79.31068,43.66793336,5350024
+32,33,"Kew Beach Jr Public School, 101 Kippendavie Avenue, Gym, 1st floor",-79.30273,43.66847283,5350021
+32,34,"Waverley Road Baptist Church, 129 Waverley Road, Main Floor Hall, 1st floor",-79.30116,43.67103017,5350024
+32,35,"Beach United Church, 140 Wineva Avenue, Auditorium, Second floor",-79.29634,43.67149826,5350023
+32,36,"Balmy Beach Community School, 14 Pine Avenue, Gym, First floor",-79.28983,43.67644451,5350022
+32,37,"St. Aidan's Anglican Church, 70 Silver Birch Avenue, Memorial Hall, 1st floor",-79.28522,43.67232699,5350021
+33,1,"Appian Centre-The Prestige School, 44 Appian Drive, Gym, 1st floor",-79.37138,43.78577623,5350304.03
+33,2,"Crestview Public School, 101 Seneca Hill Drive, Gym - West, 1st floor",-79.35985,43.78844079,5350304.06
+33,3,"Crestview Place, 177 Linus Road, Rec Centre-Table Tennis Room, 1st Floor",-79.35748,43.79123528,5350304.06
+33,6,"High Point, 3300 Don Mills Road, Party Room, 1st Floor",-79.35514,43.791525,5350304.06
+33,8,"Skymark Recreation Centre, 1555 Finch Avenue East, Rec. Centre, Basement.",-79.35207,43.79256097,5350304.05
+33,9,"Seneca Hill Public School, 625 Seneca Hill Drive, Gym, 1st floor",-79.3503,43.79087903,5350304.05
+33,10,"Cherokee Public School, 390 Cherokee Blvd, Gym, 1st floor",-79.33862,43.79877136,5350302.03
+33,11,"Our Lady of Mount Carmel School, 270 Cherokee Blvd, Seminar Room 116, 1st floor",-79.33681,43.79662254,5350302.03
+33,12,"Warren Court, 3000 Victoria Park Avenue, Lobby, 1st Floor",-79.33205,43.79232678,5350302.02
+33,13,"Ernest Public School, 150 Cherokee Blvd, Gym, 1st floor",-79.33739,43.79142408,5350302.02
+33,14,"Don Valley Junior High School, 3100 Don Mills Road, Gym, 1st floor",-79.35497,43.78954151,5350304.06
+33,15,"St. Matthias Catholic School, 101 Van Horne Avenue, Gym, 1st floor",-79.35946,43.78489883,5350304.02
+33,16,"Majorca Towers, 201 Van Horne Avenue, Lobby, 1st Floor",-79.35371,43.78640442,5350304.01
+33,17,"Kingslake Public School, 90 Kingslake Road, Gym, 1st floor",-79.34573,43.78481911,5350303
+33,18,"Pleasant View Jr High School, 175 Brian Drive, Gym, 1st floor",-79.33391,43.78749636,5350302.02
+33,21,"Blessed Kateri Tekakwitha School, 70 Margaret Avenue, Gym, 1st floor",-79.33805,43.78582832,5350302.02
+33,23,Oriole Community Resource Centre,-79.35128,43.78180951,5350303
+33,24,"Lescon Public School, 34 Lescon Road, South Gym, 1st floor",-79.3575,43.78085209,5350304.02
+33,25,"Dallington Public School, 18 Dallington Drive, Upper Gym, 1st floor",-79.35476,43.77713673,5350304.02
+33,26,"Seniors Health Centre, 2 Buchan Court, Solarium, 3rd floor, 3rd Floor",-79.35945,43.77307421,5350304.02
+33,27,"St. Timothy Catholic School, 25 Rochelle Crescent, Gym, 1st floor",-79.35137,43.77516177,5350304.04
+33,31,"Muirhead Public School, 25 Muirhead Road, Gym, 1st floor",-79.33745,43.77889263,5350302.01
+33,32,"Crossroads, 5 Old Sheppard Avenue, Party Room, Basement",-79.33673,43.77729969,5350302.01
+33,33,"Crossroads, 10 Muirhead Road, Party Room, Basement",-79.33853,43.77809516,5350302.01
+33,34,"Brian Public School, 95 Brian Drive, Gym, 1st floor",-79.33181,43.78172812,5350302.01
+33,35,"St. Gerald Catholic School, 200 Old Sheppard Avenue, Gym, 1st floor",-79.32638,43.78072188,5350302.01
+33,36,"Crossroads, 1900 Sheppard Ave. East, Party Room, Basement",-79.33593,43.77632301,5350302.01
+33,37,"Forest Manor Public School, 25 Forest Manor Road, Gym, 1st floor",-79.34307,43.77105134,5350301.03
+33,38,"Poplar Grove, 125 Parkway Forest Drive, Party Room, Basement",-79.34253,43.77531521,5350301.04
+33,39,"Elm Grove, 80 Forest Manor Road, Lobby, 1st Floor",-79.34462,43.77495162,5350301.03
+33,40,"Pine Grove, 110 Parkway Forest Drive, Party Room, Basement",-79.34295,43.7741359,5350301.03
+33,41,"121 Parkway Forest Drive, Multi Purpose Room, 1st floor",-79.34071,43.77537608,5350301.04
+33,45,"York Gardens, 5 Parkway Forest Drive, Rec. Room, Basement",-79.34577,43.76890708,5350301.04
+33,46,"St. Matthew The Apostle Church, 80 George Henry Blvd, Narthex, 1st floor",-79.35109,43.77363807,5350301.01
+33,47,"Shaughnessy Public School, 30 Shaughnessy Blvd, Gym, 1st floor",-79.35169,43.7703919,5350301.01
+34,1,"Rene Gordon Elementary School, 20 Karen Road, Gym, 1st Floor",-79.34038,43.7616523,5350269.02
+34,2,"Operating Engineers Local 793, 2020 Don Mills Road, Recreation Room, 1st Floor",-79.34784,43.76279275,5350269.01
+34,3,"George S. Henry Academy, 200 Graydon Hall Drive, Small Gym, 1st Floor",-79.33992,43.76436857,5350269.01
+34,9,"Donview Middle School, 20 Evermede Drive, Room 111, 1st floor",-79.33144,43.76419632,5350272.02
+34,10,"Fenside Public School, 131 Fenside Drive, Gym, 1st Floor",-79.32913,43.76458912,5350272.02
+34,11,"Roywood Public School, 11 Roywood Drive, Gym, 1st Floor",-79.32178,43.76473268,5350272.02
+34,12,"Rayoak Place Retirement Residence, 1340 York Mills Road, Activity Room, 1st floor",-79.32018,43.76312119,5350272.02
+34,13,"York Valley, 1350 York Mills Road, Party Room, Basement",-79.31933,43.76282355,5350272.02
+34,14,"1338 York Mills Rd, Party Room, Basement",-79.3208,43.76302772,5350272.02
+34,15,Brookbanks Public Library,-79.3259,43.75954992,5350270.01
+34,16,"O'Connor Court - Building 1, 1800 O'Connor Drive, Multi-Program Room, 1st floor",-79.30486,43.72047322,5350261
+34,17,"The York Mills, 1202 York Mills Road, Lobby, 1st floor",-79.33505,43.76061743,5350272.01
+34,18,"Three Valleys Public School, 76 Three Valleys Drive, Gym, 1st Floor",-79.33762,43.75082148,5350269.02
+34,19,"Don Mills Middle School, 17 The Donway East, Gym, 1st Floor",-79.34044,43.73686137,5350263.03
+34,21,"Cassandra Public School, 45 Cassandra Blvd, Gym, 1st Floor",-79.3289,43.74843361,5350270.02
+34,22,"Ranchdale Public School, 60 Ranchdale Crescent, Gym, 1st Floor",-79.32329,43.7524666,5350271.02
+34,23,"Annunciation Catholic School, 65 Avonwick Gate, Gym, 1st Floor",-79.32127,43.75335949,5350271.02
+34,24,Victoria Park Secondary School,-79.32147,43.75606794,5350270.01
+34,25,,-79.31623,43.75439119,5350270.01
+34,26,"O'Connor Gate - Building 2, 1800 O'Connor Drive, CafÚ, 1st floor",-79.30486,43.72047322,5350261
+34,27,"Sagebrush Towers, 100 Rowena Drive, Lobby, 1st floor",-79.31437,43.75172382,5350271.02
+34,28,"Rowena Apartments, 105 Rowena Drive, Lobby, 1st floor",-79.31416,43.75081312,5350271.02
+34,29,"Broadlands Public School, 106 Broadlands Blvd, Gym, 1st Floor",-79.31663,43.74591128,5350271.01
+34,30,"St. Catherine Catholic School, 30 Roanoke Road, Gym, 1st Floor",-79.32474,43.74234387,5350271.01
+34,31,"Greenland Public School, 15 Greenland Road, Gym, 1st floor",-79.33854,43.73361563,5350263.03
+34,32,"Donway Place, 8 The Donway East, Lobby, 1st floor",-79.34046,43.73472101,5350263.03
+34,34,Victoria Village Public School,-79.31419,43.73596802,5350262.02
+34,35,Victoria Village Public Library,-79.3129,43.73597993,5350262.02
+34,37,"Emmanuel Lutheran Manor, 1684 Victoria Park Avenue, Common Room, 1st Floor",-79.3066,43.73288928,5350262.01
+34,38,"Sloane Public School, 110 Sloane Avenue, Gym, 1st Floor",-79.31034,43.73122083,5350262.02
+34,39,"Golden Gate Apartments, 1780 Eglinton Avenue East, Party Room, 1st floor",-79.305,43.72538779,5350262.01
+34,40,"O'Connor Public School, 1665 O'Connor Drive, Gym, 1st Floor",-79.30416,43.71651592,5350261
+34,41,"Sunrise Towers, 1420 Victoria Park Avenue, Rec. Room, Basement",-79.30246,43.7214718,5350261
+34,42,"Sunrise Apartments, 45 Sunrise Avenue, Rec. Room, 1st floor",-79.30336,43.71839685,5350261
+34,43,"Concordia, 25 Sunrise Avenue, Party Room, 1st floor",-79.30226,43.71910053,5350261
+34,44,"Victoria Towne Recreation Centre, 22 Sunrise Avenue, Hall, 1st floor",-79.30206,43.71967862,5350261
+34,45,"Centennial Apartments, 5 Wakunda Place, Rec. Room, 1st floor",-79.30467,43.71556526,5350261
+34,46,"Oasis Condominium, 1700 Eglinton Avenue E, Multi-Purpose Room, 1st floor",-79.31186,43.72658194,5350262.01
+35,1,"Clairlea Public School, 25 Rosalind Crescent, Gym, 1st Floor",-79.29619,43.71659858,5350348
+35,2,"W.A. Porter Collegiate Institute, 40 Fairfax Crescent, Gym 3, 1st floor",-79.28727,43.71660206,5350348
+35,3,"Houses of Providence, 3276 St. Clair Avenue E., Houses Conference Room 3rd floor, 1st floor",-79.2852,43.71396799,5350348
+35,4,"Westminster Presbyterian Church, 835 Birchmount Road, Thiessen Hall, 1st Floor",-79.27741,43.7293378,5350346.02
+35,5,"St. Maria Goretti Catholic School, 21 Kenmark Blvd., Gym, Basement",-79.26593,43.72984392,5350346.01
+35,6,"Gus Harris Place, 120 Town Haven Place, Rec. Room, 1st Floor",-79.25928,43.73324522,5350344.01
+35,7,"Walter Perry Junior Public School, 45 Falmouth Avenue, Gym, 1st floor",-79.25125,43.73346473,5350344.01
+35,8,"Big Fortune Tower Rec Centre, 330 McCowan Road, Rec Centre, 1st floor",-79.23859,43.73731014,5350355.04
+35,9,"Robert Service Sr. Public School, 945 Danforth Road, Gym, 1st Floor",-79.25118,43.72903376,5350344.02
+35,10,"Gordonridge Community Centre, 20 Gordonridge Place, Meeting Room, 1st Floor",-79.25228,43.72712344,5350344.02
+35,11,"Greystone Walk, 3-5 Greystone Walk Drive, Party Room, 1st floor",-79.25177,43.72449554,5350344.02
+35,12,"1 Greystone Walk Drive, Party  Room, First floor",-79.25231,43.72334243,5350344.02
+35,13,"Corvette Jr Public School, 30 Corvette Avenue, Gym, 1st Floor",-79.26216,43.72649371,5350346.01
+35,14,"General Brock Public School, 140 Chestnut Crescent, Gym, 1st Floor",-79.27487,43.71841709,5350347
+35,15,"Norman Cook Jr Public School, 725 Danforth Road, Gym, 1st Floor",-79.2578,43.71904773,5350345
+35,16,"J.G. Workman Public School, 487 Birchmount Road, Gym, 1st Floor",-79.26713,43.70719986,5350343
+35,17,"Kingsway Arms, 2881 Eglinton Avenue East, CafÚ, First floor",-79.23961,43.73806609,5350355.04
+35,18,"Danforth Gardens Public School, 20 Santamonica Blvd., Gym, Basement",-79.27098,43.70846416,5350342
+35,20,"Woodland Acres Seniors Apartments, 682 Warden Avenue, Auditorium, First floor",-79.27905,43.70596191,5350341.04
+35,23,"West Scar. Neighbourhood Centre, 313 Pharmacy Avenue, Activity Room, 1st Floor",-79.28468,43.70141636,5350340
+35,24,Warden Avenue Junior Public School,-79.27729,43.70004636,5350341.04
+35,25,"Woodland Acres South, 40 Firvalley Court, Rec Room, First floor",-79.27952,43.70358894,5350341.04
+35,26,"Oakridge Community Centre, 63 Pharmacy Avenue, Social Hall B, 1st Floor",-79.28394,43.69444113,5350341.04
+35,27,"Dentonia Place, 10 Teesdale Place, Lobby, First floor",-79.2862,43.69652675,5350341.03
+35,28,"Dentonia Court, 20 Teesdale Place, Lobby, First floor",-79.28748,43.69597262,5350341.03
+35,29,"Teesdale Place, 30 Teesdale Place, Breakfast Club, First floor",-79.28779,43.69700383,5350341.03
+35,30,"Teesdale Place, 40 Teesdale Place, Seniors Room, First floor",-79.28644,43.69720767,5350341.03
+35,31,"Cambridge Place, 30 Denton Avenue, Lobby, First floor",-79.2877,43.69397801,5350341.04
+35,32,"757 Victoria Park Avenue, Lobby, First floor",-79.28829,43.69241898,5350341.02
+35,33,"Chester Village, 3555 Danforth Avenue, Lobby, First floor",-79.27474,43.69378688,5350341.02
+35,34,"Byng Towers, 3330 Danforth Avenue, Rec. Room, 1st Floor",-79.27861,43.69373042,5350341.02
+35,35,"Trilogy Long Term Care, 340 McCowan Road, Four Seasons Room, First floor",-79.23866,43.73822195,5350355.04
+35,36,Albert Campbell Public Library,-79.26935,43.70806479,5350342
+35,37,"Our Lady of Fatima Catholic School, 3176 St. Clair Ave. East, Atrium, Main floor",-79.29362,43.71016854,5350348
+35,38,,-79.27708,43.70557661,5350342
+36,1,"Cedar Drive Jr. Public School, 21 Gatesview Avenue, Gym B, 1st floor",-79.21505,43.74586142,5350331.03
+36,5,"Prominence Point, 90 Dale Avenue, Party Room, 1st floor",-79.20461,43.75168876,5350331.01
+36,8,"3380 Eglinton Avenue East, Lobby, 1st floor",-79.21462,43.74484134,5350331.03
+36,9,"Guildwood Terrace, 3233 Eglinton Ave East, Party Room, 1st floor",-79.21301,43.74371056,5350331.04
+36,10,"Fallingbrook Presbyterian Church, 35 Wood Glen Road, Friendship Hall, Basement",-79.27568,43.68418462,5350339
+36,11,"Markham Glen, 180 Markham Road, Seniors Room, 1st floor",-79.21937,43.74171439,5350332
+36,12,"Scarborough Court, 148 Markham Road, Hair Salon, 1st floor",-79.21868,43.74090614,5350332
+36,13,"St. Boniface Catholic School, 20 Markanna Drive, Gym, 1st floor",-79.21998,43.74092885,5350332
+36,14,"Mason Road Junior Public School, 78 Mason Road, Gym, 1st floor",-79.22569,43.73926339,5350332
+36,15,"Adanac Apartments, 140 Adanac Drive, Rec. Room, 1st floor",-79.22696,43.74067313,5350332
+36,16,"H. A. Halbert Junior Public School, 31 McCowan Road, Gym, 1st floor",-79.23174,43.7276582,5350333
+36,17,"Anson Park Public School, 30 MacDuff Crescent, Gym, 1st floor",-79.24129,43.72621818,5350335
+36,18,"St. George's Manor, 17 Brimley Road, Rec Room, 1st floor",-79.23911,43.72046817,5350335
+36,20,"John A. Leslie Public School, 459 Midland Avenue, Gym, 1st floor",-79.24886,43.71413049,5350335
+36,22,"Retirement Suites by the Lake, 2121 Kingston Rd, Library, Main level",-79.25411,43.70066507,5350337
+36,23,"Highway Gospel Church, 530 Midland Ave, Auditorium, 1st floor",-79.2512,43.71738078,5350336
+36,24,"Craiglee Nursing Home, 102 Craiglee Drive, Activity Room, 1st floor",-79.25307,43.7069108,5350336
+36,25,"St. Crispin's Anglican Church, 77 Craiglee Drive, Lobby, 1st floor",-79.25436,43.70606226,5350336
+36,26,"Birch Cliff Heights Public School, 120 Highview Avenue, Gym, Basement",-79.25982,43.70174999,5350336
+36,27,"Birchmount Community Centre, 93 Birchmount Road, Birchcliff Room, 1st floor",-79.26311,43.69563261,5350338
+36,28,"Taylor Branch Public Library, 1440 Kingston Road, Multi-Purpose, 1st floor",-79.27131,43.68783929,5350338
+36,29,"Blantyre Public School, 290 Blantyre Avenue, Gym, 1st floor",-79.28387,43.68510867,5350339
+36,30,"Painted Post Towers, 1080 Kingston Road, Rec. Room, 1st floor",-79.28313,43.68141357,5350339
+36,31,"Courcelette Public School, 100 Fallingbrook Road, Gym, 1st floor",-79.27857,43.67932742,5350339
+36,32,"Royal Canadian Legion Branch 13, 1577 Kingston Road, Banquet Hall, 1st floor",-79.26696,43.68999021,5350338
+36,33,"Birchmount Residence, 1673 Kingston Road, Small Dining Room, 1st floor",-79.26399,43.69152342,5350338
+36,34,"McClain Park Apartments, 10 Glen Everest Road, Rec Room, 1st floor",-79.25478,43.69933101,5350338
+36,35,"Cliffside Public School, 27 East Haven Drive, Gym, 1st floor",-79.25054,43.70489071,5350337
+36,36,"Leisureworld Midland Garden, 130 Midland Avenue, Library, 1st floor",-79.24777,43.70833698,5350337
+36,37,"Chine Drive Public School, 51 Chine Drive, Gym, 1st floor",-79.2418,43.70999119,5350334
+36,38,"Cardinal Newman High School, 100 Brimley Road South, Gym, 1st floor",-79.24007,43.71493086,5350334
+36,39,"St. Agatha Catholic School, 49 Cathedral Bluffs Drive, Gym, 1st floor",-79.22982,43.72364881,5350333
+36,40,"Bliss Carman Sr Public School, 10 Bellamy Rd South, Gym, 1st floor",-79.22561,43.73265756,5350333
+36,41,"Momiji Seniors Centre, 3555 Kingston Road, Day Lounge, 2nd floor",-79.21533,43.73937013,5350331.04
+36,42,"George P. Mackie Public School, 60 Heathfield Drive, Gym, 1st floor",-79.212,43.73933591,5350331.04
+37,1,"Edgewood Public School, 230 Birkdale Road, Gym, 1st Floor",-79.26582,43.76631407,5350369
+37,2,"Birkdale Community Centre, 1299 Ellesmere Road, Main Hall, 1st Floor",-79.26393,43.76834629,5350369
+37,3,"Donwood Park P.S. - Highbrook, 39 Highbrook Drive, Room 100, 1st Floor",-79.26241,43.75769259,5350369
+37,4,"Brock Tower, 5 Brockley Drive, Lobby, 1st floor",-79.26263,43.7534829,5350369
+37,5,"Scarborough Fair, 2550 Lawrence Avenue East, Party Room, 2nd floor",-79.26646,43.75159744,5350370.02
+37,6,"Dorset Park Baptist Church, 1428 Kennedy Road, Gym, 1st Floor",-79.28133,43.76452602,5350370.02
+37,7,"Kennedy Lodge Nursing Home, 1400 Kennedy Road, Library, 1st floor",-79.28064,43.76267935,5350370.02
+37,8,"Ellesmere-Statton Public School, 739 Ellesmere Road, Gym, 1st floor",-79.28758,43.76363221,5350370.02
+37,9,"Manhattan Park Jr. Public School, 90 Manhattan Drive, Gym, 1st floor",-79.2953,43.75336261,5350371
+37,10,"Buchanan Public School, 4 Bucannan Road, Gym, 1st Floor",-79.2999,43.75153421,5350371
+37,11,"Maryvale Public School, 1325 Pharmacy Avenue, Gym, 1st Floor",-79.30791,43.75467972,5350372
+37,12,"Wexford Collegiate Institute, 1176 Pharmacy Avenue, Gyms 1 & 2, 1st Floor",-79.3068,43.74616817,5350371
+37,13,"The Wexford, 1860 Lawrence Avenue East, Meeting Room, 1st floor",-79.30308,43.74407061,5350371
+37,14,"Dorset Park Jr Public School, 28 Blaisdale Road, Gym, 1st Floor",-79.27987,43.75022355,5350370.03
+37,15,"Hunter's Glen Jr. Public School, 16 Haileybury Drive, Gym, 1st Floor",-79.26013,43.74572086,5350353.02
+37,16,"Charles Gordon Public School, 25 Marcos Blvd., Gym, 1st floor",-79.26096,43.74646451,5350353.02
+37,17,"The Birches, 101 Prudential Drive, Party Room (Basement), Basement",-79.26665,43.74886819,5350352
+37,19,"Hellenic Home, 2411 Lawrence Avenue East, Celebration Room, 1st floor",-79.27437,43.74930098,5350352
+37,20,"Lord Roberts Jr Public School, 165 Lord Roberts Drive, Gym, 1st Floor",-79.26366,43.74143502,5350353.03
+37,21,"General Crerar Public School, 30 McGregor Road, Gym, 1st floor",-79.27958,43.74569537,5350352
+37,22,"Aldebrain Towers, 2155 Lawrence Avenue East, Lobby, 1st floor",-79.28544,43.7470833,5350350
+37,23,"Salvation Army Flag Crest, 2015 Lawrence Avenue East, Lounge, 2nd floor",-79.29498,43.74495924,5350350
+37,24,"George Peck Public School, 1 Wayne Avenue, Gym, 1st Floor",-79.29364,43.73826708,5350350
+37,25,"Precious Blood Catholic School, 1035 Pharmacy Avenue, Gym, 1st floor",-79.30224,43.73936503,5350350
+37,26,"Wexford Public School, 1050 Pharmacy Avenue, Gym, 1st Floor",-79.30373,43.74019895,5350349
+37,28,"Wilmar Heights United Church, 963 Pharmacy Avenue, Apps Room, 1st Floor",-79.30082,43.73463419,5350350
+37,30,"Ionview Public School, 90 Ionview Road, Gym, 1st Floor",-79.2747,43.7376215,5350351.01
+37,32,"Jack Goodlad Community Centre, 929 Kennedy Road, Hall, 1st floor",-79.27104,43.74231184,5350351.02
+37,34,"Rainbow Village, 2460-2472 Eglinton Avenue East, Rainbow Lounge, 3rd floor",-79.26105,43.73446495,5350353.03
+37,35,"Jean Vanier Catholic School, 959 Midland Avenue, Gym, 1st Floor",-79.25842,43.73794853,5350353.04
+37,36,"Glen Ravine Jr Public School, 11 Gadsby Drive, Gym, 1st Floor",-79.25406,43.73823323,5350353.04
+38,1,"Omni, 115 Omni Drive, Party Room, 1st floor",-79.26138,43.77173637,5350368.01
+38,2,"Consilium Club, 68 & 88 Corporate Drive, Party Room, 2nd floor",-79.24979,43.78096473,5350363.06
+38,3,"Hillsborough Shared Facilities, 18 Lee Centre Drive, Common Room, 1st floor",-79.24856,43.78107138,5350363.06
+38,4,"May Tower 1 & 2, 1 Lee Centre Drive, May Tower Shared Facilities, 2nd floor",-79.2455,43.78115667,5350363.06
+38,5,"Woburn Junior Public School, 40 Dormington Drive, Gym, 1st floor",-79.227,43.7795114,5350363.07
+38,6,"Woburn Collegiate Institute, 2222 Ellesmere Road, Gym 3&4, 1st floor",-79.22846,43.77817372,5350363.07
+38,7,"Blue Danube House, 1680 Ellesmere Road, Party Room, 1st floor",-79.24982,43.77290984,5350363.06
+38,8,"Ellipse I & II, 38 Lee Centre Drive, 5th Floor Party Room, 5th floor",-79.24639,43.78188903,5350363.06
+38,9,"Scarborough Civic Centre, 150 Borough Drive, Foyer, 1st floor",-79.25724,43.77288495,5350368.01
+38,10,"Village Apartments, 50 Tuxedo Court, Rec Room, 16th floor",-79.23182,43.78085859,5350363.07
+38,12,"Bellmere Jr. Public School, 470 Brimorton Drive, Gym, 1st floor",-79.23515,43.77197789,5350367.01
+38,13,"North Bendale Jr. Public School, 29 Aveline Crescent, Gym, 1st floor",-79.24764,43.77046232,5350367.02
+38,14,"St. Andrews Public School, 60 Brimorton Drive, Gym, 1st floor",-79.2548,43.76665386,5350368.02
+38,15,"Bendale Jr. Public School, 61 Benshire Drive, Gym, 1st floor",-79.24488,43.76257573,5350367.02
+38,16,"St. Richard Catholic School, 960 Bellamy Road North, Gym (east half), 1st floor",-79.24029,43.76838155,5350367.02
+38,18,"Churchill Heights Public School, 749 Brimorton Drive, Gym, 1st floor",-79.2244,43.77299772,5350365
+38,19,"St. Barbara Catholic School, 25 Janray Drive, Gym, 1st floor",-79.21876,43.7623208,5350365
+38,21,"William Tredway Jr Public School, 112 Sedgemount Drive, Gym, 1st floor",-79.23511,43.76493366,5350366
+38,22,"St. Rose of Lima Catholic School, 3220 Lawrence Avenue East, Gym, 1st floor",-79.24056,43.757491,5350366
+38,23,"Jack Goodlad Residences, 3010 Lawrence Avenue East, Rec. Room, 1st floor",-79.24996,43.75594214,5350368.02
+38,24,"Brimley Acres, 2950 Lawrence Avenue East, Rec. Room, Basement",-79.25059,43.75523277,5350368.02
+38,25,"Bendale Acres, 2920 Lawrence Avenue East, Lobby/Bistro, 1st floor",-79.25216,43.75489511,5350368.02
+38,26,"Rockcliffe Long-Term Care, 3015 Lawrence Avenue East, Lounge, 1st floor.",-79.24795,43.75467523,5350354
+38,28,"Bendale Public Library, 1515 Danforth Road, Basement Hall, Basement",-79.24403,43.75108241,5350354
+38,29,"Cedarbrook Community Centre, 91 Eastpark Blvd., Ballroom, 2nd floor",-79.22742,43.75566251,5350356
+38,30,"Cedarbrook Lodge, 520 Markham Road, Activity Room, 1st floor.",-79.22492,43.75487641,5350356
+38,31,"Cedarbrook Jr. Public School, 56 Nelson Street, Gym (Front), 1st floor",-79.2302,43.747302,5350356
+38,32,"St. Nicholas Catholic School, 33 Amarillo Drive, Gym, 1st floor",-79.23286,43.7476524,5350355.02
+38,33,"McCowan Road Jr. Public School, 425 McCowan Road, Gym, 1st floor",-79.23934,43.7436382,5350355.02
+38,35,"Pringdale Gardens Jr Public School, 1325 Danforth Road, Gym, 1st floor",-79.24442,43.7420195,5350355.03
+38,36,"St. David's Village, 1290 Danforth Road, Multipurpose Room, 1st floor",-79.24577,43.74106949,5350355.03
+38,38,"McCowan Place, 121 Trudelle Street, Party Room, 1st floor",-79.23807,43.74036162,5350355.02
+38,39,"Knob Hill Jr. Public School, 25 Seminole Avenue, Gym, 1st floor",-79.24979,43.74530089,5350354
+38,40,"15 Torrance Road, Party Room, 1st floor",-79.23514,43.74066403,5350355.02
+39,1,"St. Henry Catholic School, 100 Bamburgh Circle, Gym, 1st floor",-79.32832,43.8136517,5350376.09
+39,3,"Bridlewoode Place, 55 Bamburgh Circle, Recreation Centre, Basement",-79.32645,43.81470219,5350376.09
+39,6,"Monteray, 175 Bamburgh Circle, Party Room, 1st floor",-79.32474,43.81232289,5350376.04
+39,7,"Skypark Recreation Centre, 255 Bamburgh Circle, Party Room P1, Basement",-79.32216,43.81354588,5350376.13
+39,8,"Terry Fox Public School, 185 Wintermute Blvd, Gym, 1st floor",-79.31869,43.81590797,5350376.14
+39,9,L'Amoreaux Community Centre,-79.30489,43.81265554,5350376.05
+39,10,"Kennedy Public School, 20 Elmfield Crescent, Gym, 1st floor",-79.30818,43.81884453,5350376.05
+39,11,St. Maximilian Kolbe Catholic School,-79.31661,43.80935915,5350376.14
+39,12,"David Lewis Public School, 130 Fundy Bay Blvd, Gym, 1st floor",-79.31789,43.80920532,5350376.14
+39,13,"Sir Samuel B. Steele Public School, 131 Huntsmill Blvd, Gym, 1st floor",-79.32745,43.80665932,5350376.04
+39,14,"Sir Ernest MacMillan Public School, 149 Huntsmill Blvd, Gym, 1st floor",-79.3282,43.80688488,5350376.04
+39,15,"Tendercare Living Centre, 1020 McNicoll Avenue, Rec Room, 1st floor",-79.33601,43.80577174,5350376.04
+39,16,"Chester Le Jr Public School, 201 Chester Le Blvd, Gym, 1st floor",-79.3311,43.79859632,5350376.11
+39,17,"Beverly Glen Jr. Public School, 85 Beverly Glen Blvd, Gym, 1st floor",-79.32307,43.79866171,5350376.12
+39,18,Royalcrest Condominiums,-79.32593,43.79512671,5350376.12
+39,20,"Bridletowne Place, 3131 Bridletowne Circle, Agincourt Room, 1st floor",-79.32042,43.79888915,5350376.12
+39,21,"3151 Bridletowne Circle, Hearth Room, 1st floor",-79.31985,43.79756755,5350376.12
+39,22,"L'Amoreaux Collegiate Institute, 2501 Bridletowne Circle, Gym 4, 1st Floor",-79.31808,43.80292638,5350376.08
+39,23,"Brookmill Boulevard Public School, 25 Brookmill Blvd, Gym, 1st floor",-79.31487,43.801229,5350376.08
+39,24,"Skygarden, 2330-2350 Bridletowne Circle, Recreation Centre, Basement",-79.31704,43.8007128,5350376.08
+39,26,"Glenhurst Apartments, 100 Echo Point, Glenhurst Room, 1st floor",-79.31538,43.79852392,5350376.08
+39,27,"The Newhaven, 2050 Bridletowne Circle, Rec Room, LL, Basement",-79.3133,43.79780199,5350376.08
+39,28,"Villa Elegance, 3088 Kennedy Road, Lobby, Main floor",-79.30174,43.81089054,5350376.05
+39,29,"Woodland's On The Park, 25-45 Silver Springs Blvd, Main Lobby, 1st Floor",-79.3052,43.80066175,5350376.02
+39,30,"Silver Springs Public School, 222 Silver Springs Blvd, Gym, 1st Floor",-79.30238,43.80443812,5350376.02
+39,31,"St. Sylvester Catholic School, 260 Silver Springs Blvd, Gym, 1st floor",-79.30225,43.805367,5350376.02
+39,32,"Mon Sheong Court, 2020 McNicoll Avenue, Activities Room, 1st floor",-79.30154,43.81253228,5350376.06
+39,33,"Mon Sheong Scarborough LTC, 2030 McNicoll Avenue, Worship Hall, 1st floor",-79.30021,43.81306824,5350376.06
+39,34,"Highland Heights Jr Public School, 35 Glendower Circuit, Gym, 1st floor",-79.30027,43.79442852,5350376.01
+39,35,"Lynnwood Heights Jr Public School, 50 Southlawn Drive, Gym, 1st floor",-79.29051,43.79659257,5350376.01
+39,36,"Chelmsford, 4091 Sheppard Avenue East, Laundry Room, Main Level in 4091 Sheppard",-79.28441,43.78364935,5350377.01
+40,1,"Mary Ward LINC & ESL School, 44 Kelvinway Drive, Gym, 1st floor",-79.32412,43.79184587,5350375.05
+40,2,"Corinthian Tower, 2550 Pharmacy Avenue, Waiting Room, 1st floor",-79.32621,43.79333863,5350375.01
+40,3,"Sir John A. Macdonald C.I., 2300 Pharmacy Ave, Gym 3 & 4, 1st floor",-79.32367,43.78708597,5350375.01
+40,4,"St. Aidan Catholic Church, 3501 Finch Ave E, Hall, 1st floor",-79.31021,43.79745774,5350375.04
+40,5,"St. Paul's L'Amoreaux Church, 3333 Finch Avenue East, Boundy Room, 1st floor",-79.31681,43.79609331,5350375.05
+40,6,"Springdale Place, 10 Stonehill Court, Party Room, Basement",-79.31397,43.79490781,5350375.04
+40,7,"Oakwood Estates, 1250 Bridletowne Circle, Party Room, 1st Floor",-79.31232,43.79448172,5350375.04
+40,10,"Timberbank Jr Public School, 170 Timberbank Blvd., Gym, 1st floor",-79.30729,43.79147987,5350375.04
+40,11,"Wesley Chapel, 2385 Warden Ave, Fellowship Hall, Basement",-79.31046,43.78599144,5350375.04
+40,12,"Fairglen Junior Public School, 2200 Pharmacy Avenue, Gym, 1st floor",-79.32224,43.78494498,5350375.01
+40,13,"2743 Victoria Park Avenue, Rec. Room, 1st Floor",-79.32449,43.77905163,5350375.01
+40,14,"Wishing Well Manor, 2008 Pharmacy Avenue, Rec. Room, 1st Floor",-79.31914,43.77670164,5350375.01
+40,15,"Bridlewood Jr. Public School, 60 Bridlewood Blvd., Gym, 1st Floor",-79.3151,43.78080488,5350375.02
+40,16,"Holy Spirit Catholic School, 3530 Sheppard Avenue East, Gym, 1st Floor",-79.3031,43.78121636,5350375.03
+40,18,Stephen Leacock  C.C.,-79.30247,43.78687182,5350375.03
+40,19,"Tam O'Shanter Jr Public School, 21 King Henrys Blvd, Gym, 1st Floor",-79.29766,43.78508025,5350376.15
+40,20,"Shepherd Manor, 125 Bonis Avenue, Social Room, 1st Floor",-79.29424,43.78380164,5350376.16
+40,21,"Shepherd Lodge, 3760 Sheppard Ave E, Shepherd Lodge Library, 1st floor",-79.29466,43.78206412,5350376.16
+40,22,"The Greens at Tams, 168 Bonis Avenue, Card Room, 1st Floor",-79.29386,43.78652196,5350376.15
+40,23,"Tam O'Shanter, 228 Bonis Avenue, Party Room, Basement",-79.29102,43.78672994,5350376.15
+40,24,"The Camargue, 2365 Kennedy Road, Lounge, 1st Floor",-79.28851,43.78532774,5350377.01
+40,25,"Inglewood Heights Jr Public School, 45 Dempster Street, Gym, 1st Floor",-79.29232,43.77941614,5350374.03
+40,26,"Tam O'Shanter Towers, 3825 Sheppard Avenue East, Rec. Room, 1st Floor",-79.29161,43.78202509,5350374.03
+40,27,"Lynngate Junior Public School, 129 Cass Avenue, Gym, 1st Floor",-79.30072,43.77647762,5350374.02
+40,28,"Vradenburg Jr Public School, 50 Vradenberg Drive, Gym, 1st Floor",-79.30829,43.77435087,5350374.01
+40,29,"Scarsdale House, 3275 Sheppard Avenue East, Lobby, 1st floor",-79.30998,43.7776151,5350374.01
+40,30,"270 Palmdale Drive, Party Room, 1st Floor",-79.31099,43.77657143,5350374.01
+40,31,"St. John's United Church, 2 Nobert Road, Gym, Basement.",-79.31955,43.77165502,5350374.01
+40,32,"Church of St. Andrew, 2333 Victoria Park Avenue, St. Andrews Room, 1st Floor",-79.31798,43.76531375,5350373
+40,33,"Terraview-Willowfield Public School, 95 Pachino Blvd, Gym, 1st Floor",-79.30858,43.76379152,5350372
+40,34,"Mondeo Springs, 8 Mondeo Drive, Party Room, 1st floor",-79.28848,43.76450583,5350370.01
+40,35,"Glamorgan Jr Public School, 51 Antrim Crescent, Gym, 1st Floor",-79.28956,43.77130892,5350370.01
+40,36,"Members in Christ Assemblies, 780 Ellesmere Road, Church Hall, 1st Floor",-79.28636,43.76492173,5350370.01
+40,37,"Leisureworld Caregiving Centre, 1000 Ellesmere Road, Main Lobby, 1st Floor",-79.27775,43.76715334,5350370.01
+40,38,"Sunrise Terrace, 120 Dundalk Drive, Recreation Room, 1st Floor",-79.28711,43.77118748,5350370.01
+40,40,"The Copenhagen, 2 Glamorgan Avenue, Rec. Room, 1st Floor",-79.28346,43.76947728,5350370.01
+40,41,"Dorset Towers, 1950 Kennedy Road, Party Room, Basement",-79.28286,43.76764051,5350370.01
+41,1,Port Royal Public School,-79.28997,43.82464102,5350377.06
+41,2,Prince Of Peace Catholic School,-79.27895,43.82539768,5350378.22
+41,3,,-79.27501,43.82637844,5350378.18
+41,4,The Divine Infant Catholic School,-79.27033,43.82182011,5350378.19
+41,5,Macklin Public School,-79.2677,43.82200053,5350378.19
+41,6,,-79.27398,43.82378021,5350378.18
+41,7,,-79.27448,43.82478184,5350378.18
+41,8,,-79.27691,43.82406005,5350378.2
+41,9,,-79.27499,43.82294373,5350378.2
+41,10,,-79.27603,43.82348864,5350378.2
+41,11,Agnes Macphail Public School,-79.27843,43.81927531,5350378.21
+41,12,St. Rene Goupil Catholic School,-79.28831,43.81935698,5350377.07
+41,13,Milliken Public School,-79.2885,43.81659516,5350377.07
+41,14,"Yee Hong Centre for Geriatric Care, 2311 McNicoll Avenue, Lobby, 1st floor",-79.29049,43.81436799,5350377.07
+41,15,Alexmuir Public School,-79.28562,43.80911794,5350377.04
+41,16,St. Marguerite Bourgeoys Catholic School,-79.2851,43.80823928,5350377.04
+41,17,Our Lady Of Grace Catholic School,-79.2751,43.81212792,5350378.14
+41,18,Brimwood Boulevard Junior Public School,-79.27409,43.8117085,5350378.14
+41,19,Forest Manor,-79.27114,43.80834086,5350378.14
+41,20,Percy Williams Public School,-79.26566,43.8126755,5350378.08
+41,21,Wedgewood Grove,-79.26642,43.80950149,5350378.08
+41,22,,-79.26548,43.80880873,5350378.08
+41,23,,-79.2654,43.80780007,5350378.24
+41,24,Anson S Taylor Junior Public School,-79.26156,43.80430059,5350378.24
+41,25,Ecole Saint-Jean-De-Lalande C S,-79.26409,43.80475864,5350378.24
+41,27,Chartland Junior Public School,-79.27793,43.79962686,5350377.03
+41,28,Msgr.  Fraser College Midland Campus,-79.28572,43.80107778,5350377.01
+41,29,,-79.26713,43.80739646,5350378.23
+41,30,Agincourt Community Centre,-79.27629,43.78841444,5350377.02
+41,31,"North Agincourt Jr Public School, 60 Moran Road, Conference Room, 1st floor",-79.27622,43.79646232,5350377.02
+41,32,St. Ignatius Of Loyola Catholic School,-79.26542,43.80358711,5350378.23
+41,33,,-79.25861,43.78802733,5350378.02
+41,34,C. D. Farquharson Junior Public School,-79.26611,43.78447577,5350378.02
+41,35,St. Timothy Anglican Church,-79.28211,43.78415759,5350377.01
+41,36,Goldhawk Community Centre,-79.27819,43.8240887,5350378.21
+41,37,Yee Hong Centre,-79.25417,43.809122,5350378.24
+41,38,Yee Hong Garden Terrace,-79.25307,43.80993113,5350378.24
+41,39,Yee Hong Garden Terrace,-79.25372,43.81039811,5350378.24
+42,1,"Heritage Park Public School, 80 Old Finch Ave, Gym, 1st floor",-79.20772,43.82135951,5350378.28
+42,2,Fleming Public School,-79.20372,43.81536984,5350378.28
+42,3,St. Bede Catholic School,-79.20655,43.81798752,5350378.28
+42,4,Mary Shadd Public School,-79.21833,43.81440432,5350378.16
+42,5,St. Gabriel Lalemant Catholic School,-79.22673,43.81271225,5350378.06
+42,6,Burrows Hall Community Centre,-79.23437,43.794056,5350378.03
+42,7,Tom Longboat Junior Public School,-79.23163,43.81045478,5350378.06
+42,8,Sacred Heart Catholic School,-79.22015,43.81219262,5350378.16
+42,9,,-79.2207,43.81025629,5350378.16
+42,10,,-79.2222,43.80992596,5350378.16
+42,11,,-79.22113,43.810167,5350378.16
+42,12,"Toronto Jaffray Chinese Alliance Church, 9950 Sheppard Ave East, Fellowship Hall, Basement",-79.16877,43.80916128,5350378.27
+42,13,"Alexander Stirling Public School, 70 Fawcett Trail, Small Gym, 1st floor",-79.20761,43.81166495,5350378.17
+42,14,"Emily Carr Public School, 90 John Tabor Trail, Gym, 1st floor",-79.20694,43.805031,5350378.05
+42,15,St. Columba Catholic School,-79.21183,43.80620207,5350378.05
+42,16,"Grey Owl Junior Public School, 150 Wickson Trail, Conference Room, 1st floor",-79.2133,43.80399791,5350378.12
+42,17,Malvern Recreation Centre,-79.21639,43.80857633,5350378.12
+42,18,Brookside Public School,-79.23315,43.82990315,5350378.25
+42,19,Neilson Hall Apartments,-79.21881,43.80778696,5350378.12
+42,20,,-79.2191,43.80594251,5350378.11
+42,21,,-79.22011,43.80527205,5350378.11
+42,22,"Berner Trail Jr. Public School, 120 Berner Trail, Gym, 1st floor",-79.22136,43.80157071,5350378.11
+42,23,"St. Barnabas Catholic School, 30 Washburn Way, Library",-79.22852,43.79724984,5350378.04
+42,24,"Malvern Junior Public School, 70 Mammoth Hall Trail, IPRC Room, 1st floor",-79.23326,43.79784807,5350378.04
+42,25,,-79.25466,43.79002464,5350378.07
+42,26,,-79.25359,43.78949421,5350378.07
+42,27,Whitehaven Junior Public School,-79.24805,43.78700402,5350378.07
+42,28,St. Elizabeth Seton Catholic School,-79.24671,43.78895985,5350378.07
+42,29,Sts. Peter and Paul Residence,-79.24013,43.78834752,5350378.07
+42,30,Burrows Hall Junior Public School,-79.22882,43.79270657,5350378.03
+42,31,Lucy Maud Montgomery Public School,-79.20937,43.79692541,5350378.03
+42,32,,-79.21799,43.80842472,5350378.12
+42,33,"Thomas L Wells Public School, 69 Nightstar Road, Gym, 1st floor",-79.22598,43.82437932,5350378.25
+43,1,"St. Edmund Campion Catholic School, 30 Highcastle Road, Gym, 1st floor",-79.21609,43.78804029,5350363.02
+43,2,"Highcastle Public School, 370 Military Trail, Gym, 1st floor",-79.2125,43.78677021,5350363.02
+43,4,"Military Trail Public School, 701 Military Trail, Gym (North), 1st floor",-79.19712,43.78912411,5350363.05
+43,5,"Skyview Manor, 100 Mornelle Court, Lobby ""B"", 1st floor",-79.19468,43.78722828,5350363.05
+43,6,"Maple Dale, 3050 Ellesmere Road, Party Room, 1st floor",-79.19757,43.7859764,5350363.05
+43,7,"Curran Hall, 277 Orton Park, Hall, 1st floor",-79.21085,43.77743393,5350364.01
+43,10,"Shoniker Place, 2877 Ellesmere Road, Lounge, Interior",-79.20349,43.78063075,5350364.01
+43,11,"Seven Oaks, 9 Neilson Road, Auditorium, 1st floor",-79.20358,43.78164671,5350364.01
+43,13,"Heather Heights Jr Public School, 80 Slan Avenue, Gym 1, 1st floor",-79.21507,43.77516449,5350364.01
+43,14,"George B. Little Jr. Public School, 125 Orton Park Road, Gym, 1st floor",-79.20811,43.77120802,5350364.01
+43,15,"St. Martin de Porres, 230 Morningside Avenue, Gym, 1st floor",-79.18682,43.76713719,5350358.03
+43,17,"Extendicare Nursing Home, 3830 Lawrence Ave. East, Education Room, 1st floor",-79.21059,43.76359033,5350364.02
+43,18,"Golf Road Jr. Public School, 730 Scarborough Golf Club Rd, Gym, 1st floor",-79.21697,43.76366692,5350365
+43,19,"Robin Gardner Voce, 525 Markham Road, Rec. Room, 2nd floor",-79.22378,43.75597112,5350357.01
+43,20,"Cedarbrae Manor, 65 Greencrest Circuit, Rec. Room, 1st floor",-79.2218,43.75999533,5350357.01
+43,22,"Catalyst Gates, 399 Markham Road, Main Lobby, 1st floor",-79.2208,43.74922265,5350357.01
+43,23,"Cornell Jr. Public School, 61 Holmfirth Terrace, Gym, 1st floor",-79.21804,43.75940118,5350357.01
+43,27,"Willow Park Jr. Public School, 45 Windover Drive, Gym, 1st floor",-79.20958,43.76120671,5350357.02
+43,30,"Galloway Road Public School, 192 Galloway Road, Gym, 1st floor",-79.19684,43.76499342,5350358.03
+43,31,"West Hill Apartments, 4175 Lawrence Avenue East, Assembly Room, 1st floor",-79.18881,43.76723421,5350358.03
+43,32,"Sir Robert L. Borden BT Institute, 200 Poplar Road, Gym 1/2, 1st floor",-79.1909,43.76317387,5350358.03
+43,34,"Eastview Jr. Public School, 20 Waldock Street, Gym, 1st floor",-79.19134,43.75907127,5350358.01
+43,35,"Elizabeth Simcoe Jr. Public School, 166 Sylvan Avenue, Gym, 1st floor",-79.20604,43.73816057,5350331.01
+43,36,"Gates of Guildwood - Rec Centre, 10-20 Guildwood Parkway, Party Room, Basement",-79.205,43.74993211,5350331.01
+43,37,"Guildwood Jr. Public School, 225 Livingston Road, Gym, 1st floor",-79.19999,43.75082968,5350330
+43,38,"Poplar Road Jr. Public School, 66 Dearham Wood, Gym, 1st floor",-79.18748,43.75366906,5350330
+43,39,"Guildwood Villa, 60 Guildwood Parkway, Library, Exterior/Windows",-79.20315,43.74691663,5350331.01
+43,40,"Sir Wilfrid Laurier Collegiate, 145 Guildwood Parkway, Gym, 1st floor",-79.19699,43.74704211,5350330
+43,41,"Livingston Lodge, 65 Livingston Road, Main Lounge, 1st floor",-79.1981,43.74589997,5350330
+43,43,"The Bournemouth, 45 Livingston Road, Rec Room, Basement",-79.19697,43.74300133,5350330
+44,1,John G Diefenbaker Public School,-79.17187,43.80230365,5350362.04
+44,2,,-79.1703,43.80448258,5350362.04
+44,3,,-79.1689,43.80374375,5350362.04
+44,4,,-79.16933,43.80388687,5350362.04
+44,5,Chief Dan George Public School,-79.16384,43.80273093,5350362.01
+44,6,"Rouge Valley Public School, 30 Durnford Road, Meeting Room, 1st floor.",-79.15129,43.79939488,5350362.01
+44,7,"Meadowvale Public School, 761 Meadowvale Road, Gym, 1st floor.",-79.16407,43.79551963,5350362.02
+44,8,"Cardinal Leger Catholic School, 600 Morrish Road, Gym, 1st floor.",-79.17571,43.79310442,5350362.03
+44,9,"Morrish Public School, 61 Canmore Blvd., Room 100, 1st floor",-79.17927,43.79319654,5350362.03
+44,10,"Highland Creek Public School, 1410 Military Trail, Classroom #14, 1st floor",-79.17845,43.78350952,5350362.03
+44,11,"Salvation Army West Hill Citadel, 305 Morrish Road, Y.P. Hall, Basement",-79.17101,43.7856955,5350362.02
+44,12,West Hill Public School,-79.18689,43.77268822,5350359
+44,13,Ehatare Retirement Home,-79.18313,43.77554999,5350359
+44,14,West Hill United Church,-79.17961,43.77419123,5350359
+44,15,"St. Dunstan of Canterbury Church, 56 Lawson Road, Parish Hall, 1st floor",-79.16486,43.78416328,5350361.01
+44,16,"Tony Stacey Centre for Veteran's, 59 Lawson Road, Quiet Room, 1st floor",-79.16332,43.78331054,5350361.01
+44,17,"Centennial Road Public School, 271 Centennial Road, Gym, 1st floor",-79.15003,43.78697089,5350361.02
+44,18,"West Rouge Jr. Public School, 401 Friendship Avenue, Classroom #1, 1st floor",-79.13372,43.79562704,5350802.02
+44,19,"Altamont Long Term Care, 92 Island Road, Gathering Room, 1st floor",-79.14003,43.79885983,5350802.01
+44,20,"West Rouge Community Centre, 270 Rouge Hills Drive, Club Room, 1st floor",-79.12511,43.79209913,5350802.02
+44,21,William G Davis Junior Public School,-79.13448,43.78505504,5350802.01
+44,22,Charlottetown Junior Public School,-79.14221,43.78207885,5350361.02
+44,23,"St. Brendan Catholic School, 186 Centennial Road, Library, 1st floor",-79.14925,43.78255557,5350361.01
+44,24,Morningside Apartments,-79.18535,43.76799274,5350358.02
+44,25,,-79.18414,43.76791097,5350358.02
+44,26,,-79.18206,43.76840333,5350358.02
+44,27,Peter Secor Junior Public School,-79.17977,43.76242742,5350358.01
+44,28,Heron Park Community Complex,-79.17801,43.76932126,5350358.02
+44,29,"St. Malachy Catholic School, 80 Bennett Road, Gym, 1st floor",-79.16664,43.77102904,5350360
+44,30,Port Union Community Centre,-79.14029,43.7796732,5350361.02
+44,31,St. Jean De Brebeuf Catholic School,-79.17404,43.80252245,5350362.04
+44,32,Joseph Howe Public School,-79.1373,43.78581647,5350802.01
+44,33,Eesti Kodu,-79.18265,43.77618216,5350359
+44,34,Extendicare,-79.18898,43.80373894,5350362.04
+44,35,Sir Oliver Mowat Collegiate Institute,-79.14224,43.77931055,5350361.02
