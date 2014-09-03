@@ -330,15 +330,23 @@ There are two data sources for the issue model:
 1. The [elections data](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=834689fe9c18b210VgnVCM1000003dd60f89RCRD&vgnextchannel&%2361;0186e03bb8d1e310VgnVCM10000071d60f89RCRD) from the city tells us how many votes each mayoral candidate received in each of the past three elections
 2. We've collated the positions taken by each of the major mayoral candidates on each of the major issues over those elections. Each position is ranked on a left-right score and taken from public sources (predominantly media). While certainly subjective, there is at least internal consistency.
 
+### Votes
 
-# Neighbourhood characteristics are predictive
+* 2003 Election: 692,085 votes cast for 44 candidates and 38% turnout, split by 1,926 polling subdivisions
+* 2006 Election: 584,484 votes cast for 38 candidates and 39% turnout, split by 1,946 polling subdivisions
+* 2010 Election: 813,984 votes cast for 40 candidates and 50% turnout, split by 1,870 polling subdivisions
 
-Based on 2011 Census data, there are three general components that are modestly correlated with voting over the last three elections. If these hold in 2014, neighbourhoods that are predominantly:
+### Candidate positions
 
-# Core and GOTV areas
+* 2003 Election: positions of four candidates (Miller, Tory, Hall, Nunziata) ranked on 6 issues
+* 2006 Election: positions of three candidates (Miller, Pitfield, and LeDrew) ranked on 5 issues
+* 2010 Election: positions of four candidates (Ford, Smitherman, Pantalone, and Rossi) ranked on 17 issues
+* 2014 Election: positions of five candidates (Ford, Chow, Tory, Stintz, Soknacki) and ‘rest of field’ ranked on 9 issues so far, where positions are public
 
-Based on a combination of issue importance (by ward) and “directional positional alignment” with Tory (e.g., both his and the ward’s average position on topic X are right or left), we have identified two types of areas:
-"Core” areas – highly directionally aligned and average turnout is relatively high (>52.5%)
-“Get-out-the-vote” (GOTV) areas – highly directionally aligned and average turnout is low (<30%)
-Each group has roughly 50 areas (see attached spreadsheet) and contains ~45,000 and 130,000 eligible voters, respectively
-For example, an additional 5% turnout in these GOTV areas, all voting for Tory, would provide 6,500 votes (or ~1% of the average number of votes)
+## Proximity voter theory
+
+Spatial voting theory supposes that candidates and voters have positions in a policy space and that these positions determine the voter's preferences and behaviour.
+
+Given that the Toronto mayoral race is unlikely to focus on any significantly polarizing issues, use of the proximity voting model is reasonable. Further, given that Toronto elections are non-partisan (and therefore focus on evaluations of incumbents or specific policy issues), incorporating specific issues the proximity approach seems appropriate.
+
+We apply a normal distribution around the average position for each area to calculate the likely support for each candidate within that area. This is scaled up or down using the 'voteability' variable, and then all support is normalized to the average number of votes in previous elections – essentially estimating how many votes each candidate would garner.
