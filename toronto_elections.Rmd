@@ -1,6 +1,6 @@
 ---
 title: "Analyzing the 2014 Toronto Mayoral Election"
-author: "Matthew Routley and Matt DesRosiers"
+author: "Matt DesRosiers and Matthew Routley"
 date: "July 7, 2014"
 output:
   html_document:
@@ -33,7 +33,7 @@ Given the privacy of voting and the lack of useful surveys at the municipal leve
 * Voter databases, which identify individual voters, but are small scale
 * In-depth analytical modeling, which is both large-scale and helps to 'identify' voters at a neighbourhood level on average
 
-The goal of this work is to effectively model -- at a neighbourhood level -- which candidates voters are likely to support, specifically in the 2014 Toronto mayoral race.
+In this paper, we describe attempts to effectively model -- at a neighbourhood level -- which candidates voters are likely to support, specifically in the 2014 Toronto mayoral race. All of our data is based upon publicly available sources. So, the resources required are _far_ less than those of polling or creating voter databases. Through these attempts, we explore the limits of such data and how they can best be used for informing candiates' strategies.
 
 # Voters aren’t stuck in their ways
 
@@ -82,14 +82,16 @@ positions_in_active_areas <- tbl_df(merge(active_areas,vote_history)) %>%
 
 To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas[[1]],2)` on the position scale, on average) -- suggesting that it’s not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
 
+These results suggest good opportunities for candidates to "run on the issues", rather than relying on any traditional voting patterns. Unfortunately for this work, these results also introduce significant variation -- and therefore, uncertainty -- into the modeling.
+
 # Proximity voting and calibration
 
 In order to analyze the upcoming election, we use previous election results and apply both the theory of ‘proximity’ voting (see appendix) and a ‘voteability' variable to calibrate to the most recent polls.
 
-'Voteability' includes numerous factors, including:
+'Voteability' covers numerous factors, including:
 
   * How well known is/are the candidate and their positions
-  * How'likeable'/'trustworthy'isthecandidate
+  * How'likeable'/'trustworthy'is the candidate
   * Perceived viability of the candidate winning
   * Whether voters are voting strategically (e.g., choosing the 'lesser of two evils' if their preferred choice is perceived to be unviable)
 
@@ -184,7 +186,7 @@ voteability = list("tory john"=0.304, "chow olivia"=0.504, "ford rob"=0.915,"sok
 output <- election_scenario(preference_sensitivity,voteability)
 ```
 
-This assumes that all issues are equally important to voters. However, calibrating to recent polls[^poll_date] suggests that John Tory’s current ‘voteability’ is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
+This assumes that voters only consider the positions taken by candidates on all of the issues in the campaign. But, of course, this is not true. As described above, the 'voteability' of the candidate is also important to voters. Calibrating to recent polls[^poll_date] suggests that John Tory’s current ‘voteability’ is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
 
 Taking this into account, the election – if held today – might see the following distribution of votes cast for each of candidates.
 
@@ -198,7 +200,7 @@ This distribution of votes gives Chow the lead with `r scenario_candidate(output
 
 # A couple issues have been important
 
-```{r issue_setup,echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE}
+```{r issue_setup, warning=FALSE, cache=TRUE, message=FALSE}
 issues_df <- vote_history  %.%
   group_by(ward, area, candidate, add = FALSE) %.%
   summarize(votes=sum(votes), airport_expansion=mean(`Airport expansion`), finance_budget=mean(`Finance & Budget`), transit=mean(Transit), transportation=mean(Transportation), waste_management=mean(`Waste management`))
@@ -224,8 +226,9 @@ top_coefficients <- max_coefficients_by_ward %.%
   arrange(desc(count))
 ```
 
+So far, we've treated all issues the same and derived an overall right-left score for each voter and candidate. Now, we turn to considering each issue separately.
 
-Over the last three elections, various issues have been influential in the way wards have voted, but two key issues certainly stand out:
+We find that, over the last three elections, various issues have been influential in the way wards have voted, but two key issues certainly stand out:
 
 * `r gsub("_", " ", top_coefficients$variable[1])`: top issue overall; top issue in `r top_coefficients$count[1]` wards; close second in another 6. Voters have typically voted against expansion
 * `r gsub("_", " ", top_coefficients$variable[2])` (roads and bike lanes): Top issue in `r top_coefficients$count[2]` wards; close second in another 6. Votes split depending on ward
@@ -244,7 +247,7 @@ toronto_map +
 
 # If these issues were still important...
 
-```{r issue_model}
+```{r issue_model, echo=FALSE, results='hide', message=FALSE, cache=TRUE, warning=FALSE}
 # Predict votes from position scores --------------------------------------
 names(candidate_positions)[3:7] <- names(issues_df)[3:7]
 predicted_votes <- function(pred_values) {
@@ -272,12 +275,39 @@ results <- results[-1,]
 results$ward <- as.integer(results$ward)
 results <- left_join(results, areas_per_ward, by = "ward")
 results$adj_votes <- results$votes * results$count
-prop.table(tapply(results$adj_votes, results[1:2], sum, na.rm=TRUE),2)
-prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
+issue_results <- prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
 ```
 
 
-If voters placed the same importance on issues as they have over the last three elections (i.e., not weighted equally as above), then strictly based on currently* stated positions, Chow would narrowly beat Tory:
+If voters placed the same importance on issues as they have over the last three elections (i.e., not weighted equally as above), then strictly based on currently* stated positions, Chow would narrowly beat Tory with `r round(issue_results[[1]]*100, 1)` of the votes vs. `r round(issue_results[4]*100,1)`. The distribution of results would be:
+
+```{r issue_map, echo=FALSE, fig.cap="The distribution of votes, based on specific issues.", echo=FALSE, results='hide', message=FALSE}
+issue_map <- function(output) { # Plot the results on a map by ward
+  output <- droplevels(output)
+  data <- as.data.frame(inner_join(geo_2014,output, by=c("ward")))
+  candidate_labels <- sapply(strsplit(levels(data$candidate)," "), "[", 1)
+  candidate_labels <- paste(toupper(substring(candidate_labels, 1, 1)), substring(candidate_labels, 2), sep = "", collapse = " ")
+  levels(data$candidate) <- unlist(strsplit(candidate_labels, split=" "))
+  toronto_map +
+    geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(adj_votes, n = 8)), alpha = 5/6, data=data) +
+    scale_fill_brewer("Votes", labels=c("Low", rep("",6), "High")) + 
+    facet_wrap(~candidate)
+}
+output_major <- results %.%
+  filter(candidate %in% c("tory john", "chow olivia", "ford rob", "soknacki david")) %.%
+  mutate(candidate=as.factor(candidate))
+issue_map(output_major)
+```
+
+# Appendix
+
+## Data
+
+There are two data sources for the issue model:
+
+1. The [elections data](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=834689fe9c18b210VgnVCM1000003dd60f89RCRD&vgnextchannel&%2361;0186e03bb8d1e310VgnVCM10000071d60f89RCRD) from the city tells us how many votes each mayoral candidate received in each of the past three elections
+2. We've collated the positions taken by each of the major mayoral candidates on each of the major issues over those elections. Each position is ranked on a left-right score and taken from public sources (predominantly media). While certainly subjective, there is at least internal consistency.
+
 
 # Neighbourhood characteristics are predictive
 
