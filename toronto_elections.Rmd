@@ -1,7 +1,7 @@
 ---
 title: "Analyzing the 2014 Toronto Mayoral Election"
 author: "Matt DesRosiers and Matthew Routley"
-date: "July 7, 2014"
+date: "September 3, 2014"
 output:
   html_document:
     fig_caption: yes
@@ -186,7 +186,7 @@ voteability = list("tory john"=0.304, "chow olivia"=0.504, "ford rob"=0.915,"sok
 output <- election_scenario(preference_sensitivity,voteability)
 ```
 
-This assumes that voters only consider the positions taken by candidates on all of the issues in the campaign. But, of course, this is not true. As described above, the 'voteability' of the candidate is also important to voters. Calibrating to recent polls[^poll_date] suggests that John Tory’s current ‘voteability’ is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
+This assumes that voters only consider the positions taken by candidates on all of the issues in the campaign. But, of course, this is not true. As described above, the 'voteability' of the candidate is also important to voters. Calibrating to recent polls[^poll_date] suggests that John Tory's current ‘voteability’ is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
 
 Taking this into account, the election – if held today – might see the following distribution of votes cast for each of candidates.
 
@@ -200,7 +200,7 @@ This distribution of votes gives Chow the lead with `r scenario_candidate(output
 
 # A couple issues have been important
 
-```{r issue_setup, warning=FALSE, cache=TRUE, message=FALSE}
+```{r issue_setup, echo=FALSE, warning=FALSE, cache=TRUE, message=FALSE}
 issues_df <- vote_history  %.%
   group_by(ward, area, candidate, add = FALSE) %.%
   summarize(votes=sum(votes), airport_expansion=mean(`Airport expansion`), finance_budget=mean(`Finance & Budget`), transit=mean(Transit), transportation=mean(Transportation), waste_management=mean(`Waste management`))
@@ -232,11 +232,23 @@ We find that, over the last three elections, various issues have been influentia
 
 * `r gsub("_", " ", top_coefficients$variable[1])`: top issue overall; top issue in `r top_coefficients$count[1]` wards; close second in another 6. Voters have typically voted against expansion
 * `r gsub("_", " ", top_coefficients$variable[2])` (roads and bike lanes): Top issue in `r top_coefficients$count[2]` wards; close second in another 6. Votes split depending on ward
-* Finance and budget, transit, waste management, and other issues have been much less important historically
 
-Looking at the distribution of these issues, we can the dominance of the airport expansion. We can also see that tranportation issues are also most important in the north-west of the city.
+Finance and budget, transit, waste management, and other issues have been much less important historically.
 
-```{r top_issue_figure, echo=FALSE, fig.cap="The top issue for voters changes by ward, with airport expansion and transportation dominating.", echo=FALSE, results='hide', message=FALSE}
+```{r issue_map, echo=FALSE, fig.cap="The distribution of right-left scores for each issue.", echo=FALSE, results='hide', message=FALSE}
+names(coefs_melt)[2:3] <- c("coefficient", "beta")
+coefs_melt$ward <- as.integer(coefs_melt$ward)
+data <- as.data.frame(inner_join(geo_2014,coefs_melt, by=c("ward")))
+toronto_map +
+  geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(beta,7)), alpha = 5/6, data=data) +
+  scale_fill_brewer("Position", type="div", labels=c("Left", rep("",5), "Right")) + 
+  facet_wrap(~coefficient)
+```
+
+
+Looking at the distribution of these top issues, shows the dominance of the airport expansion. We can also see that tranportation issues are also most important in the north-west of the city.
+
+```{r top_issue_map, echo=FALSE, fig.cap="The top issue for voters changes by ward, with airport expansion and transportation dominating.", echo=FALSE, results='hide', message=FALSE}
 issue_geo_2014 <- left_join(geo_2014, max_coefficients_by_ward[,1:2], by = "ward")
 names(issue_geo_2014)[13] <- "top_issue"
 toronto_map +
@@ -281,7 +293,7 @@ issue_results <- prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRU
 
 If voters placed the same importance on issues as they have over the last three elections (i.e., not weighted equally as above), then strictly based on currently* stated positions, Chow would narrowly beat Tory with `r round(issue_results[[1]]*100, 1)` of the votes vs. `r round(issue_results[4]*100,1)`. The distribution of results would be:
 
-```{r issue_map, echo=FALSE, fig.cap="The distribution of votes, based on specific issues.", echo=FALSE, results='hide', message=FALSE}
+```{r issue_votes_map, echo=FALSE, fig.cap="The distribution of votes, based on specific issues.", echo=FALSE, results='hide', message=FALSE}
 issue_map <- function(output) { # Plot the results on a map by ward
   output <- droplevels(output)
   data <- as.data.frame(inner_join(geo_2014,output, by=c("ward")))
@@ -298,6 +310,16 @@ output_major <- results %.%
   mutate(candidate=as.factor(candidate))
 issue_map(output_major)
 ```
+
+# Limitations of this approach
+
+we think this modelling is interesting and has certainly helped clarify our thinking about both this election and the general problem of modeling elections. But, there are at least two major concerns that we have with it:
+
+1.  Because it is a linear model, it assumes linear changes in support (i.e., tends towards the extremes). Non-linear models might be more appropriate, but there are many to choose from and we haven't yet looked at their strengths and weaknesses in the context of voting preference.
+2.	Voters writ large appear to readily change their positions from election to election, with the 2010 election seeming particularly different. This is mainly because we don't know individual preferences, which adds significant noise to the model estimates. More data on voter preferences would be really helpful here, but we aren't aware of any public sources for Toronto voters.
+
+These concerns don't invalidate the approach. But they led us to moving on to something completely different, where we use an agent-based approach to simulate entire elections. We are actively working on this now and hope to share our progress soon. 
+
 
 # Appendix
 
