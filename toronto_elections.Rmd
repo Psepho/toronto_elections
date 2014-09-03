@@ -29,13 +29,13 @@ Campaigns have limited resources -– both time and financial –- that should b
 
 Given the privacy of voting and the lack of useful surveys at the municipal level, there are few options for identifying voter preferences:
 
-* City-wide polling, which is large-scale but does nothing to identify voters
+* City-wide polling, which is large-scale, but does not identify voters
 * Voter databases, which identify individual voters, but are small scale
 * In-depth analytical modeling, which is both large-scale and helps to 'identify' voters at a neighbourhood level on average
 
-In this paper, we describe attempts to effectively model -- at a neighbourhood level -- which candidates voters are likely to support, specifically in the 2014 Toronto mayoral race. All of our data is based upon publicly available sources. So, the resources required are _far_ less than those of polling or creating voter databases. Through these attempts, we explore the limits of such data and how they can best be used for informing candiates' strategies.
+In this paper, we describe attempts to effectively model -- at a neighbourhood level -- which candidates voters are likely to support in the 2014 Toronto mayoral race. All of our data is based upon publicly available sources. So, the resources required are _far_ less than those of polling or creating voter databases. Through these attempts, we explore the limits of such data and how they can best be used for informing candiates' strategies.
 
-# Voters aren’t stuck in their ways
+# Voters aren't stuck in their ways
 
 ```{r setup_historical_maps, echo=FALSE, results='hide', cache=TRUE}
 history <- vote_history %.%
@@ -46,7 +46,7 @@ geo_history <- left_join(geo, history, by = c("ward", "area", "year")) %.%
 rm(history)
 ```
 
-Voters have revealed that their preferences aren’t stuck in stone. As shown in the figure below, the positions of voters changed dramatically in 2010 from predominantly left positions to right.
+Voters have revealed that their preferences aren't stuck in stone. As shown in the figure below, the positions of voters changed dramatically in 2010 from predominantly left positions to right.
 
 ```{r history_weighted_votes_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", results='hide', message=FALSE, echo=FALSE, warning=FALSE, fig.height=2}
 toronto_map +
@@ -80,13 +80,13 @@ positions_in_active_areas <- tbl_df(merge(active_areas,vote_history)) %>%
   summarize(position_change=mean(position_change))
 ```
 
-To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas[[1]],2)` on the position scale, on average) -- suggesting that it’s not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
+To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas[[1]],2)` on the position scale, on average) -- suggesting that it's not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
 
 These results suggest good opportunities for candidates to "run on the issues", rather than relying on any traditional voting patterns. Unfortunately for this work, these results also introduce significant variation -- and therefore, uncertainty -- into the modeling.
 
 # Proximity voting and calibration
 
-In order to analyze the upcoming election, we use previous election results and apply both the theory of ‘proximity’ voting (see appendix) and a ‘voteability' variable to calibrate to the most recent polls.
+In order to analyze the upcoming election, we use previous election results and apply both the theory of 'proximity' voting (see the [appendix](#proximity-voter-theory)) and a 'voteability' variable to calibrate to the most recent polls.
 
 'Voteability' covers numerous factors, including:
 
@@ -186,9 +186,9 @@ voteability = list("tory john"=0.304, "chow olivia"=0.504, "ford rob"=0.915,"sok
 output <- election_scenario(preference_sensitivity,voteability)
 ```
 
-This assumes that voters only consider the positions taken by candidates on all of the issues in the campaign. But, of course, this is not true. As described above, the 'voteability' of the candidate is also important to voters. Calibrating to recent polls[^poll_date] suggests that John Tory's current ‘voteability’ is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
+This assumes that voters only consider the positions taken by candidates on all of the issues in the campaign. But, of course, this is not true. As described above, the 'voteability' of the candidate is also important to voters. Calibrating to recent polls[^poll_date] suggests that John Tory's current 'voteability' is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
 
-Taking this into account, the election – if held today – might see the following distribution of votes cast for each of candidates.
+Taking this into account, the election --if held today-- might see the following distribution of votes cast for each of candidates.
 
 [^poll_date]: As of 21 May 2014
 
@@ -228,6 +228,10 @@ top_coefficients <- max_coefficients_by_ward %.%
 
 So far, we've treated all issues the same and derived an overall right-left score for each voter and candidate. Now, we turn to considering each issue separately.
 
+Now we estimate ward-level support for each issue through the votes that each candidate received in the ward. So, for example, if a particular candidate had a strong left position for airport expansion (i.e., no expansion) and received many votes in a particular ward, that ward has a strong left position for airport expansion.
+
+Of course, since _candidates_ -- not issues -- receive votes, we need to use variation in positions taken by candidates and the votes they receive to simultaneously estimate support for particular issues. This was done as a linear model of each major issue (roads/bike lanes, transit, finance and budget, waste management, and airport expansion) on the number of votes for each ward.
+
 We find that, over the last three elections, various issues have been influential in the way wards have voted, but two key issues certainly stand out:
 
 * `r gsub("_", " ", top_coefficients$variable[1])`: top issue overall; top issue in `r top_coefficients$count[1]` wards; close second in another 6. Voters have typically voted against expansion
@@ -245,7 +249,6 @@ toronto_map +
   facet_wrap(~coefficient)
 ```
 
-
 Looking at the distribution of these top issues, shows the dominance of the airport expansion. We can also see that tranportation issues are also most important in the north-west of the city.
 
 ```{r top_issue_map, echo=FALSE, fig.cap="The top issue for voters changes by ward, with airport expansion and transportation dominating.", echo=FALSE, results='hide', message=FALSE}
@@ -255,7 +258,6 @@ toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=top_issue), alpha = 5/6, data=issue_geo_2014) + 
   scale_fill_brewer("Top issue", type="qual")
 ```
-
 
 # If these issues were still important...
 
@@ -290,7 +292,6 @@ results$adj_votes <- results$votes * results$count
 issue_results <- prop.table(tapply(results$adj_votes, results[1], sum, na.rm=TRUE))
 ```
 
-
 If voters placed the same importance on issues as they have over the last three elections (i.e., not weighted equally as above), then strictly based on currently* stated positions, Chow would narrowly beat Tory with `r round(issue_results[[1]]*100, 1)` of the votes vs. `r round(issue_results[4]*100,1)`. The distribution of results would be:
 
 ```{r issue_votes_map, echo=FALSE, fig.cap="The distribution of votes, based on specific issues.", echo=FALSE, results='hide', message=FALSE}
@@ -320,7 +321,6 @@ we think this modelling is interesting and has certainly helped clarify our thin
 
 These concerns don't invalidate the approach. But they led us to moving on to something completely different, where we use an agent-based approach to simulate entire elections. We are actively working on this now and hope to share our progress soon. 
 
-
 # Appendix
 
 ## Data
@@ -341,7 +341,7 @@ There are two data sources for the issue model:
 * 2003 Election: positions of four candidates (Miller, Tory, Hall, Nunziata) ranked on 6 issues
 * 2006 Election: positions of three candidates (Miller, Pitfield, and LeDrew) ranked on 5 issues
 * 2010 Election: positions of four candidates (Ford, Smitherman, Pantalone, and Rossi) ranked on 17 issues
-* 2014 Election: positions of five candidates (Ford, Chow, Tory, Stintz, Soknacki) and ‘rest of field’ ranked on 9 issues so far, where positions are public
+* 2014 Election: positions of five candidates (Ford, Chow, Tory, Stintz, Soknacki) and 'rest of field' ranked on 9 issues so far, where positions are public
 
 ## Proximity voter theory
 
