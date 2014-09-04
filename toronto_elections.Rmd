@@ -191,7 +191,7 @@ scenario_map(output)
 
 ```{r voteability_scenario, echo=FALSE, cache=TRUE}
 preference_sensitivity <- 0.175
-voteability = list("tory john"=0.304, "chow olivia"=0.504, "ford rob"=0.915,"soknacki david"=0.037)
+voteability = list("tory john"=0.458, "chow olivia"=0.432, "ford rob"=1,"soknacki david"=0.043)
 output <- election_scenario(preference_sensitivity,voteability)
 ```
 
