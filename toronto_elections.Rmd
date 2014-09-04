@@ -33,7 +33,7 @@ Given the privacy of voting and the lack of useful surveys at the municipal leve
 * Voter databases, which identify individual voters, but are small scale
 * In-depth analytical modeling, which is both large-scale and helps to 'identify' voters at a neighbourhood level on average
 
-In this paper, we describe attempts to effectively model -- at a neighbourhood level -- which candidates voters are likely to support in the 2014 Toronto mayoral race. All of our data is based upon publicly available sources. So, the resources required are _far_ less than those of polling or creating voter databases. Through these attempts, we explore the limits of such data and how they can best be used for informing candiates' strategies.
+In this paper, we describe attempts to effectively model--at a neighbourhood level--which candidates voters are likely to support in the 2014 Toronto mayoral race. All of our data is based upon publicly available sources. So, the resources required are _far_ less than those of polling or creating voter databases. Through these attempts, we explore the limits of such data and how they can best be used for informing candiates' strategies.
 
 # Voters aren't stuck in their ways
 
@@ -80,9 +80,9 @@ positions_in_active_areas <- tbl_df(merge(active_areas,vote_history)) %>%
   summarize(position_change=mean(position_change))
 ```
 
-To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas[[1]],2)` on the position scale, on average) -- suggesting that it's not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
+To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas[[1]],2)` on the position scale, on average)--suggesting that it's not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
 
-These results suggest good opportunities for candidates to "run on the issues", rather than relying on any traditional voting patterns. Unfortunately for this work, these results also introduce significant variation -- and therefore, uncertainty -- into the modeling.
+These results suggest good opportunities for candidates to "run on the issues", rather than relying on any traditional voting patterns. Unfortunately for this work, these results also introduce significant variation--and therefore, uncertainty--into the modeling.
 
 # Proximity voting and calibration
 
@@ -230,7 +230,7 @@ So far, we've treated all issues the same and derived an overall right-left scor
 
 Now we estimate ward-level support for each issue through the votes that each candidate received in the ward. So, for example, if a particular candidate had a strong left position for airport expansion (i.e., no expansion) and received many votes in a particular ward, that ward has a strong left position for airport expansion.
 
-Of course, since _candidates_ -- not issues -- receive votes, we need to use variation in positions taken by candidates and the votes they receive to simultaneously estimate support for particular issues. This was done as a linear model of each major issue (roads/bike lanes, transit, finance and budget, waste management, and airport expansion) on the number of votes for each ward.
+Of course, since _candidates_--not issues--receive votes, we need to use variation in positions taken by candidates and the votes they receive to simultaneously estimate support for particular issues. This was done as a linear model of each major issue (roads/bike lanes, transit, finance and budget, waste management, and airport expansion) on the number of votes for each ward.
 
 We find that, over the last three elections, various issues have been influential in the way wards have voted, but two key issues certainly stand out:
 
