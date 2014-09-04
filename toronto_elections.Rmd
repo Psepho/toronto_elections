@@ -1,10 +1,10 @@
 ---
 title: "Analyzing the 2014 Toronto Mayoral Election"
-author: 
-  - name: Matt DesRosiers
-    email: matthew.desrosiers@gmail.com
-  - name: Matthew Routley
-    email: matt@routleynet.org
+author:
+- email: matthew.desrosiers@gmail.com
+  name: Matt DesRosiers
+- email: matt@routleynet.org
+  name: Matthew Routley
 date: "September 4, 2014"
 output:
   html_document:
@@ -13,10 +13,9 @@ output:
     toc: yes
   word_document:
     fig_caption: yes
-    toc: yes
 ---
 
-```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=TRUE}
+```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
 load("data/map_data.RData")
 load("data/vote_history.RData")
 load("data/candidate_positions.RData")
@@ -65,7 +64,7 @@ toronto_map +
 
 Is it the case that actual _individual_ voters are changing positions or voting strategically (and are those the same?), or is it simply that different voters are showing up? We can see in the figure below that turnout increased in 2010. Perhaps more right-leaning voters simply turned out to vote in 2010, rather than individual voters changing their positions.
 
-```{r history_turnout_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", results='hide', message=FALSE, echo=FALSE, warning=FALSE, fig.height=2}
+```{r history_turnout_map, fig.cap="Voter turnout increased substantially in 2010.", results='hide', message=FALSE, echo=FALSE, warning=FALSE, fig.height=2}
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=geo_history) + 
   scale_fill_brewer("Turnout") + 
@@ -75,7 +74,7 @@ toronto_map +
 active_areas <- vote_history %>%
   select(year,ward,area,turnout)
 active_areas <- melt(active_areas,id=1:3)
-active_areas <- dcast(active_areas, ward + area ~ year)
+active_areas <- dcast(active_areas, ward + area ~ year, mean)
 turnout_threshold <- 0.6
 active_areas <- active_areas %>%
   filter(`2006`>turnout_threshold,`2010`>turnout_threshold) %>%
@@ -88,7 +87,7 @@ positions_in_active_areas <- tbl_df(merge(active_areas,vote_history)) %>%
   summarize(position_change=mean(position_change))
 ```
 
-To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas[[1]],2)` on the position scale, on average)--suggesting that it's not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
+To try to separate out these effects, we specifically looked at areas where turnout is above `r turnout_threshold*100`% in all three elections to see if those areas change positions. Turns out that they do (by `r round(positions_in_active_areas, 1)[[1]]` on the position scale, on average)--suggesting that it's not simply voters waiting for the 'right' candidate to come along. Many voters are, in fact, changing their minds from one election to the next.
 
 These results suggest good opportunities for candidates to "run on the issues", rather than relying on any traditional voting patterns. Unfortunately for this work, these results also introduce significant variation--and therefore, uncertainty--into the modeling.
 
