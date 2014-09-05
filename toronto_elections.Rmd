@@ -181,7 +181,7 @@ output <- election_scenario(preference_sensitivity,voteability)
 
 If strictly based on currently[^position-date] stated positions, John Tory would win a four-way election with `r scenario_candidate(output,"tory john")`% of the vote, followed closely by David Soknacki with `r scenario_candidate(output,"soknacki david")`%. Olivia Chow would come in third at `r scenario_candidate(output,"chow olivia")`% and Rob Ford would place a distant fourth at `r scenario_candidate(output,"ford rob")`%.
 
-[^position-date]: As of 26 May 2014
+[^position-date]: As of 4 September 2014
 
 As we can see in the map below, support for both Tory and Soknacki is widespread, while Chow's support is concentrated west of downtown. Ford has moderate support around the downtown core.
 
@@ -195,17 +195,17 @@ voteability = list("tory john"=0.458, "chow olivia"=0.432, "ford rob"=1,"soknack
 output <- election_scenario(preference_sensitivity,voteability)
 ```
 
-This assumes that voters only consider the positions taken by candidates on all of the issues in the campaign. But, of course, this is not true. As described above, the 'voteability' of the candidate is also important to voters. Calibrating to recent polls[^poll-date] suggests that John Tory's current 'voteability' is relatively low (about `r round(voteability$tory/voteability$chow,2)*100`% of Chow and `r round(voteability$tory/voteability$ford,2)*100`% of Ford). Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of Tory's.
+This assumes that voters only consider the positions taken by candidates on all of the issues in the campaign. But, of course, this is not true. As described above, the 'voteability' of the candidate is also important to voters. Calibrating to recent polls[^poll-date] suggests that John Tory and Olivia Chow have roughly equivalent 'voteability', but both are about `r round(voteability$tory/voteability$ford,2)*100`% of Ford's score. Soknacki's voteability is much less, at only `r round(voteability$sok/voteability$tory,2)*100`% of both Tory's and Chow's.
 
 Taking this into account, the election--if held today--might see the following distribution of votes cast for each of candidates.
 
-[^poll-date]: As of 21 May 2014
+[^poll-date]: As of 4 September 2014
 
 ```{r voteability_scenario_map, echo=FALSE, fig.cap="Votes cast for each candidate, after taking voteability into account.", echo=FALSE, results='hide', message=FALSE}
 scenario_map(output)
 ```
 
-This distribution of votes gives Chow the lead with `r scenario_candidate(output,"chow olivia")`% of the votes. Tory is far behind with `r scenario_candidate(output,"tory john")`% and Ford is third with `r scenario_candidate(output,"ford rob")`%. Soknacki only obtains `r scenario_candidate(output,"soknacki david")`%.
+This distribution of votes gives Tory the lead with `r scenario_candidate(output,"tory john")`% of the votes. Chow is far behind with `r scenario_candidate(output,"chow olivia")`% and Ford is third with `r scenario_candidate(output,"ford rob")`%. Soknacki only obtains `r scenario_candidate(output,"soknacki david")`%.
 
 # A of couple issues have been important
 
@@ -327,6 +327,14 @@ we think this modelling is interesting and has certainly helped clarify our thin
 2.	Voters writ large appear to readily change their positions from election to election, with the 2010 election seeming particularly different. This is mainly because we don't know individual preferences, which adds significant noise to the model estimates. More data on voter preferences would be really helpful here, but we aren't aware of any public sources for Toronto voters.
 
 These concerns don't invalidate the approach. But they led us to moving on to something completely different, where we use an agent-based approach to simulate entire elections. We are actively working on this now and hope to share our progress soon. 
+
+# Conclusions
+
+This work demonstrates that signficant insights on the upcoming Mayoral Election in Toronto can be obtained from an analysis of publicly available data. In particular, we find that:
+
+* Voters will change their minds in response to issues. So, "getting out the vote" is not a sufficient strategy. Carefully chosen positions and persuasion are also important.
+* Despite this, the 'voteability' of candidates is clearly important, which includes voter's assessments of a candidates ability to lead and how well they know the candidate's positions.
+* The airport expansion and transporation have been the dominant issues across the city in the last three elections.
 
 # Appendix
 
