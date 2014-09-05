@@ -319,6 +319,8 @@ output_major <- results %.%
 issue_map(output_major)
 ```
 
+This implies that Chow has more closely targetted her positions to specific issues. If voters only assess the overall platform of each candidate, Tory looks to be the winner. But, if voters dissect platforms into specific issues and vote based on this dissection, Chow is much more competitive.
+
 # Limitations of this approach
 
 we think this modelling is interesting and has certainly helped clarify our thinking about both this election and the general problem of modeling elections. But, there are at least two major limitations:
