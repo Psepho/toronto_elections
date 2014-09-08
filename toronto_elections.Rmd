@@ -7,12 +7,12 @@ author:
   name: Matthew Routley
 date: "September 4, 2014"
 output:
-  word_document:
-    fig_caption: yes
   html_document:
     fig_caption: yes
     theme: readable
     toc: yes
+  word_document:
+    fig_caption: yes
 ---
 
 ```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
@@ -325,7 +325,7 @@ This implies that Chow has more closely targeted her positions to specific issue
 
 So far, we've focused simply on historical voting patterns and stated positions by candidates. Now, we try to use census data from Statistics Canada to better understand the characteristics of neighbourhoods that could explain why people favour certain candidates.
 
-```{r pca, echo=FALSE, results='hide', message=FALSE, cache=FALSE}
+```{r pca, echo=FALSE, results='hide', message=FALSE, cache=FALSE, warning=FALSE}
 # Basic setup -------------------------------------------------------------
 
 library(ggmap)
