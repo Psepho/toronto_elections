@@ -7,12 +7,12 @@ author:
   name: Matthew Routley
 date: "September 4, 2014"
 output:
+  word_document:
+    fig_caption: yes
   html_document:
     fig_caption: yes
     theme: readable
     toc: yes
-  word_document:
-    fig_caption: yes
 ---
 
 ```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
@@ -319,11 +319,11 @@ output_major <- results %.%
 issue_map(output_major)
 ```
 
-This implies that Chow has more closely targetted her positions to specific issues. If voters only assess the overall platform of each candidate, Tory looks to be the winner. But, if voters dissect platforms into specific issues and vote based on this dissection, Chow is much more competitive.
+This implies that Chow has more closely targeted her positions to specific issues. If voters only assess the overall platform of each candidate, Tory looks to be the winner. But, if voters dissect platforms into specific issues and vote based on this dissection, Chow is much more competitive.
 
 # Neighbourhood characteristics are predictive
 
-So far, we've focussed simply on historical voting patterns and stated positions by candidates. Now, we try to use census data from Statistics Canada to better understand the characteristics of neighbourhoods that could explain why people favour certain candidates.
+So far, we've focused simply on historical voting patterns and stated positions by candidates. Now, we try to use census data from Statistics Canada to better understand the characteristics of neighbourhoods that could explain why people favour certain candidates.
 
 ```{r pca, echo=FALSE, results='hide', message=FALSE, cache=FALSE}
 # Basic setup -------------------------------------------------------------
@@ -351,10 +351,10 @@ census_toronto$prop_children <- census_toronto$children/census_toronto$pop
 #model <- (~ university + commuting_duration + income + median_age + median_home_value + public_transit + children)
 model <- (~ median_age + median_home_value + public_transit + prop_children)
 pca <- princomp(model, data = census_toronto, na.action = na.omit, cor = TRUE)
-summary(pca)
-loadings(pca)
-biplot(pca, c(1,2), scale = TRUE, main = model)
-biplot(pca, c(1,3), scale = TRUE, main = model)
+#summary(pca)
+#loadings(pca)
+#biplot(pca, c(1,2), scale = TRUE, main = model)
+#biplot(pca, c(1,3), scale = TRUE, main = model)
 
 # Test components against voting patterns ---------------------------------
 
@@ -364,7 +364,6 @@ merged_data <- merged_data[,-1]
 position_model <- lm(area_position ~ Comp.1 + Comp.2 + Comp.3, data = merged_data)
 summary(position_model)
 ```
-
 
 To do this, we use principal-component analyses (see the [appendix](#principal-component-analyses)) and the 2011 Census data. There are three general neighbourhood components that have driven voting over the last three elections. Neighbourhoods with:
 
@@ -399,11 +398,11 @@ These concerns don't invalidate the approach. But they led us to moving on to so
 
 # Conclusions
 
-This work demonstrates that signficant insights on the upcoming Mayoral Election in Toronto can be obtained from an analysis of publicly available data. In particular, we find that:
+This work demonstrates that significant insights on the upcoming Mayoral Election in Toronto can be obtained from an analysis of publicly available data. In particular, we find that:
 
 * Voters will change their minds in response to issues. So, "getting out the vote" is not a sufficient strategy. Carefully chosen positions and persuasion are also important.
-* Despite this, the 'voteability' of candidates is clearly important, which includes voter's assessments of a candidates ability to lead and how well they know the candidate's positions.
-* The airport expansion and transporation have been the dominant issues across the city in the last three elections.
+* Despite this, the 'voteability' of candidates is clearly important, which includes voter's assessments of a candidate's ability to lead and how well they know the candidate's positions.
+* The airport expansion and transportation have been the dominant issues across the city in the last three elections.
 * A combination of family size, mode of commuting, and home values (at the neighbourhood level) can partially predict voting patterns.
 
 # Appendix
