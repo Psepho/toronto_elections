@@ -7,12 +7,12 @@ author:
   name: Matthew Routley
 date: "September 4, 2014"
 output:
-  html_document:
-    fig_caption: yes
-    theme: readable
-    toc: yes
   word_document:
     fig_caption: yes
+  html_document:
+    css: styles.css
+    fig_caption: yes
+    toc: yes
 ---
 
 ```{r setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
@@ -58,7 +58,7 @@ Voters have revealed that their preferences aren't stuck in stone. As shown in t
 ```{r history_weighted_votes_map, fig.cap="The position of voters changed dramatically from 2006 to 2010.", results='hide', message=FALSE, echo=FALSE, warning=FALSE, fig.height=2}
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(weighted_votes, length=0.15)), alpha = 5/6, data=geo_history) + 
-  scale_fill_brewer("Position", type="div", labels=c("Left", rep("",3), "Right")) +
+  scale_fill_brewer("Position", type="div", palette = "PuOr", labels=c("Left", rep("",3), "Right")) +
   facet_wrap(~year)
 ```
 
@@ -67,7 +67,7 @@ Is it the case that actual _individual_ voters are changing positions or voting 
 ```{r history_turnout_map, fig.cap="Voter turnout increased substantially in 2010.", results='hide', message=FALSE, echo=FALSE, warning=FALSE, fig.height=2}
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(turnout,length = 0.25)), alpha = 5/6, data=geo_history) + 
-  scale_fill_brewer("Turnout") + 
+  scale_fill_brewer("Turnout", palette = "YlOrRd") + 
   facet_wrap(~year)
 ```
 ```{r position_change, echo=FALSE, cache=TRUE, results='hide', warning=FALSE, message=FALSE}
@@ -163,7 +163,7 @@ scenario_map <- function(output) { # Plot the results on a map by ward area
   print(prop.table(tapply(region_summary$value, region_summary[1:2], sum),2))
   toronto_map +
     geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(votes, n = 9)), alpha = 5/6, data = data) +
-    scale_fill_brewer("Votes", labels=c("Low", rep("",7), "High")) + 
+    scale_fill_brewer("Votes", labels=c("Low", rep("",7), "High"), palette = "YlOrRd") + 
     facet_wrap(~candidate)
 }
 scenario_candidate <- function(output, candidate_name) { # Summarize the percent of votes for a candidate
@@ -252,7 +252,7 @@ coefs_melt$ward <- as.integer(coefs_melt$ward)
 data <- as.data.frame(inner_join(geo_2014,coefs_melt, by=c("ward")))
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(beta,7)), alpha = 5/6, data=data) +
-  scale_fill_brewer("Position", type="div", labels=c("Left", rep("",5), "Right")) + 
+  scale_fill_brewer("Position", type="div", labels=c("Left", rep("",5), "Right"), palette = "PuOr") + 
   facet_wrap(~coefficient)
 ```
 
@@ -263,7 +263,7 @@ issue_geo_2014 <- left_join(geo_2014, max_coefficients_by_ward[,1:2], by = "ward
 names(issue_geo_2014)[13] <- "top_issue"
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=top_issue), alpha = 5/6, data=issue_geo_2014) + 
-  scale_fill_brewer("Top issue", type="qual")
+  scale_fill_brewer("Top issue", type="qual", palette = "Set1")
 ```
 
 # If these issues were still important...
@@ -310,7 +310,7 @@ issue_map <- function(output) { # Plot the results on a map by ward
   levels(data$candidate) <- unlist(strsplit(candidate_labels, split=" "))
   toronto_map +
     geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(adj_votes, n = 8)), alpha = 5/6, data=data) +
-    scale_fill_brewer("Votes", labels=c("Low", rep("",6), "High")) + 
+    scale_fill_brewer("Votes", labels=c("Low", rep("",6), "High"), palette = "YlOrRd") + 
     facet_wrap(~candidate)
 }
 output_major <- results %.%
@@ -371,17 +371,17 @@ To do this, we use principal-component analyses (see the [appendix](#principal-c
 * Fewer children and above-average home values tend to vote left (e.g., Toronto-Danforth). Those with more children and inexpensive homes tend to vote right (e.g., York West).
 * Parents, transit users, and expensive homes tend to vote left (e.g., Eglington-Lawrence). Those with fewer children, many drivers, and less expensive home tend to vote right (e.g., Etobicoke North).
 
-```{r pca_map, fig.cap="The distribution of PCA scores, based on the 2011 Census. For each component, high loadings are correlated with left positions.", echo=FALSE, results='hide', message=FALSE}
+```{r pca_map, fig.cap="The distribution of PCA scores, based on the 2011 Census. For each component, high loadings are correlated with left positions.", echo=FALSE, results='hide', message=FALSE, fig.width=7}
 # Map components ----------------------------------------------------------
 
 component_data <- merged_data[,c(9,10,11,14:17)]
 component_data <- melt(component_data, id.vars = c("year", "ward", "area"), variable.name = "component", value.name = "loading")
 geo <- left_join(component_data, geo, by = c("ward", "area", "year"))
-levels(geo$component) <- c("Young transit users", "Wealthy individuals", "Wealthy families", "Comp.4")
+levels(geo$component) <- c("Young and transit", "Rich individuals", "Rich families", "Comp.4")
 geo <- filter(geo, component!="Comp.4")
 toronto_map +
   geom_polygon(aes(x=long, y=lat, group=group, fill=cut_interval(loading, n = 8)), alpha = 5/6, data=geo) + 
-  scale_fill_brewer("Component loading", type = "div", palette = "RdBu", labels=c("Low", rep("", 6), "High")) +   
+  scale_fill_brewer("Component loading", type = "div", palette = "PuOr", labels=c("Low", rep("", 6), "High")) +   
   facet_wrap(~component)
 ```
 
@@ -447,5 +447,6 @@ PCA filters out noise and redundancy to better express 'messy' data by providing
 
 The main benefit is that PCA can take multi-dimensional data and reduce it to two or three 'components', allowing for graphical representation with a minimal loss of useful information. These components typically account for most of the variability in the data.
 
-![An example of the output from a principal-component analysis.](fig/pca_plot.png)
-
+```{r pca_plot, fig.cap="An example of the output from a principal-component analysis.", echo=FALSE, results='hide', message=FALSE, fig.width=7, fig.height=7}
+biplot(pca, c(1,3), scale = TRUE, main = model)
+```
