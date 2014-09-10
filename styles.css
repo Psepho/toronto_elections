@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10pt 0pt 0pt 0pt;
   font-family: Cambria;
   font-weight: bold;
+  color: #fa5204;
 }
  
 /* h1 has a slightly larger top margins 
@@ -56,38 +57,32 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   margin: 24pt 0pt 0pt 0pt;
   font-size: 14pt;
-  color: #365F91;
 }
  
  
 h2 {
   font-size: 13pt;
-  color: #4F81BD;
 }
  
 h3 {
   font-size: 11pt;
-  color: #4F81BD;
 }
  
 h4 {
   font-size: 11pt;
   font-weight: bold;
   font-style: italic;
-  color: #4F81BD;
 }
  
 h5 {
   font-size: 11pt;
   font-weight: normal;
-  color: #243F5D;
 }
  
 h6 {
   font-size: 11pt;
   font-weight: normal;
   font-style: italic;
-  color: #243F5D;
 }
 
 tt, code, pre {
