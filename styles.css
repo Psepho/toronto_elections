@@ -89,8 +89,12 @@ tt, code, pre {
    font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
 }
  
+a {
+   color: #fa5204;
+}
+
 a:visited {
-   color: rgb(50%, 0%, 50%);
+   color: #963102;
 }
  
 pre {  
